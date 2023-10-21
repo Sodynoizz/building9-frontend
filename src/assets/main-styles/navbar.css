@@ -16,7 +16,7 @@ nav {
 nav > .Left > .logo {
     height: 79px;
 }
-nav > .Left > .logo > img {
+nav > .Left > .logo img {
     width: 60px;
     margin: 10px;
     border-radius: 100%;
@@ -110,10 +110,15 @@ nav > .User > li img {
     margin: 10px;
     border-radius: 100%;
 }
-nav > .User > li p {
+nav > .User > li p:nth-child(1) {
     font-family: MN_Light;
     color: var(--white);
     font-size: 25px;
+}
+nav > .User > li p:nth-child(2) {
+    font-family: MN_Light;
+    color: var(--yellow);
+    font-size: 15px;
 }
 nav > .User > .DropDown {
     display: flex;

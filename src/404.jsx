@@ -6,12 +6,12 @@ import Ticket from "./assets/img/Log_ticket.png";
 import axios from "axios";
 import App from "./App";
 
-function Forget() {
+function Notf() {
     return (
         <div>
-            <h1>Nano</h1>
+            <h1>wsefe</h1>
         </div>
     );
 }
 
-export default Forget;
+export default Notf;

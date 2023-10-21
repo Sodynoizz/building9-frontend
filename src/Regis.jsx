@@ -61,7 +61,7 @@ function Regis() {
                     LineID === "" ||
                     Email === ""
                 ) {
-                    return toast("Please input all required fields", {
+                    return toast.error("Please input all required fields", {
                         className: "error-message",
                         className: "error-message",
                         progressBar: true,
@@ -101,7 +101,7 @@ function Regis() {
                 console.log(response);
             } catch (error) {
                 if (error.response) {
-                    return toast(error.response.data, {
+                    return toast.error(error.response.data, {
                         className: "error-message",
                         className: "error-message",
                         progressBar: true,
@@ -120,7 +120,7 @@ function Regis() {
                         },
                     });
                 } else if (error.request) {
-                    return toast(error.message, {
+                    return toast.error(error.message, {
                         className: "error-message",
                         className: "error-message",
                         progressBar: true,
@@ -139,7 +139,7 @@ function Regis() {
                         },
                     });
                 } else {
-                    return toast("An unexpected error occurred.", {
+                    return toast.error("An unexpected error occurred.", {
                         className: "error-message",
                         className: "error-message",
                         progressBar: true,
@@ -161,7 +161,7 @@ function Regis() {
             }
         } else {
             if (Email !== ConEmail) {
-                return toast("Email is not matching", {
+                return toast.error("Email is not matching", {
                     className: "error-message",
                     className: "error-message",
                     progressBar: true,
@@ -180,7 +180,7 @@ function Regis() {
                     },
                 });
             } else if (Password !== ConPass) {
-                return toast("Password is not matching", {
+                return toast.error("Password is not matching", {
                     className: "error-message",
                     className: "error-message",
                     progressBar: true,
@@ -199,7 +199,7 @@ function Regis() {
                     },
                 });
             } else {
-                return toast("Please Check", {
+                return toast.error("Please Check", {
                     className: "error-message",
                     progressBar: true,
                     hideProgressBar: false,
@@ -217,6 +217,11 @@ function Regis() {
                     },
                 });
             }
+        }
+    };
+    const handleFormSubmit = (e) => {
+        if (e.key === "Enter") {
+            handleSubmit(e);
         }
     };
     return (
@@ -321,6 +326,7 @@ function Regis() {
                     value={ConPass}
                     onChange={(event) => setConPass(event.target.value)}
                     placeholder="ยืนยัน Password *"
+                    onKeyPress={handleFormSubmit}
                 />
             </form>
             <div className="Submit_btn">
@@ -333,9 +339,6 @@ function Regis() {
                         </a>
                     </p>
                 </div>
-                {errorMessage && (
-                    <p className="error-message">{errorMessage}</p>
-                )}
                 {success ? (
                     <Navigate to="/Login" />
                 ) : (

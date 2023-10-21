@@ -46,12 +46,51 @@
     height: 300px;
     border-radius: 16px 16px;
     /*ลบเอา*/
-    background: rgba(255, 255, 255, 0.2);
+    /* background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative; */
+    z-index: 1;
+}
+
+.public > .Catalog > .item > .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(243, 88, 181, 0.488);
+    padding: 1rem;
+    font-family: MN;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 19%;
+    z-index: 3;
+    border-radius: 16px;
+    transition: all 0.5s;
+}
+.public > .Catalog > .item > .content p,
+.public > .Catalog > .item > .content a {
+    display: none;
+    transition: all 0.3s;
+}
+.public > .Catalog > .item:hover .content a {
+    color: var(--magenta);
+}
+.public > .Catalog > .item:hover .content p,
+.public > .Catalog > .item:hover .content a {
+    display: block;
+}
+.public > .Catalog > .item:hover .content {
+    height: 100%;
+}
+.public > .Catalog > .item > .content > .head {
+    font-size: 2rem;
 }
 .public > button {
     margin-top: 30px;

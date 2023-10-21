@@ -6,6 +6,8 @@ import Regis from "./assets/img/Regis.png";
 import Announce from "./assets/img/announce.png";
 import Report from "./assets/img/report.png";
 import Table from "./assets/img/table.png";
+import BumpCar from "./assets/img/footer.png";
+import White from "./assets/img/white.jpg";
 import Home1 from "./assets/img/home1.jpg";
 import {
     Navigation,
@@ -30,12 +32,16 @@ import "./assets/main-styles/public.css";
 import "./assets/main-styles/road.css";
 import { FaChevronDown } from "react-icons/fa";
 import { CiLogin } from "react-icons/ci";
+import { MdEmail } from "react-icons/md";
+import { AiFillInstagram } from "react-icons/ai";
 import { Spin as Hamburger } from "hamburger-react";
 import { StudentID } from "./Login";
 const UserURL = "https://building9-backend.vercel.app/api/auth/profile";
 import axios from "axios";
 
 function App() {
+    let [STDID, setSTDID] = useState("");
+    STDID = StudentID;
     const [user, setUser] = useState("");
     const [STNumber, setSTNumber] = useState("");
     const [STRoom, setSTRoom] = useState("");
@@ -43,7 +49,7 @@ function App() {
     const Start = async (e) => {
         try {
             const response = await axios.post(UserURL, {
-                studentID: StudentID,
+                studentID: STDID,
                 environmentKey: import.meta.env.VITE_LOGRE,
             });
             setCheck(true);
@@ -110,23 +116,16 @@ function App() {
         },
         {
             id: "DC8",
-            title: "กต.๙",
-            items: ["FAQ", "ครู", "B9SC'66"],
+            title: "เกี่ยวกับตึก ๙",
+            items: [
+                "ประวัติ",
+                "ทำเนียบครูหัวหน้าตึก",
+                "ครูและบุคลากร",
+                "คณะกรรมการตึก",
+            ],
         },
     ]);
 
-    // function toggleDropdown(id) {
-    //     const dropdown = dropdowns.find((dropdown) => dropdown.id === id);
-    //     const Dropdowncontent = document.getElementById(dropdown.id);
-    //     dropdown.shown = !dropdown.shown;
-    //     setDropdowns([...dropdowns]);
-    //     if (dropdown.shown === true) {
-    //         Dropdowncontent.style.display = "block";
-    //     } else {
-    //         Dropdowncontent.style.display = "none";
-    //         Dropdowncontent.dataset.shown = "false";
-    //     }
-    // }
     function Dropdown9() {
         var Dropdown = document.getElementById("DC9");
 
@@ -140,7 +139,7 @@ function App() {
     }
     const [isOpen, setOpen] = useState(false);
     const [previosID, setPreviousID] = useState(0);
-    const [select, setSelect] = useState(true);
+    const [select, setSelect] = useState(false);
 
     const showSidebar = () => setOpen(!isOpen);
     function Dropdownww(id) {
@@ -164,21 +163,22 @@ function App() {
                 Dropdowncontent.classList.add("hidden");
             }
         }
-        // setSelect(!select);
-        // const dropdown = dropdowns.find((dropdown) => dropdown.id === id);
-        // const Dropdowncontent = document.getElementById(dropdown.id);
-        // if (select) {
-        //     Dropdowncontent.classList.remove("hidden");
-        // } else {
-        //     Dropdowncontent.classList.add("hidden");
-        // }
-        // dropdown.shown = !dropdown.shown;
-        // if (dropdown.shown === true) {
-        //     Dropdowncontent.classList.remove("hidden");
-        // } else {
-        //     Dropdowncontent.classList.add("hidden");
-        // }
     }
+
+    function getHrefForItem(item) {
+        switch (item) {
+            case "รายงานการประชุม":
+                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+            case "สรุปบัญชี":
+                return "/Regis";
+            default:
+                return "/";
+        }
+    }
+
+    const logout = () => {
+        window.location.reload();
+    };
     return (
         <div className="main-content">
             <div className={isOpen ? "Hamburger actives" : "Hamburger"}>
@@ -193,7 +193,9 @@ function App() {
             <nav id="nav" className={isOpen ? "nav active" : "nav"}>
                 <div className="Left">
                     <div className="logo">
-                        <img src={logo} alt="" />
+                        <a href="#Home">
+                            <img src={logo} alt="" />
+                        </a>
                     </div>
                     <ul className="nav-lists">
                         <li>
@@ -218,7 +220,7 @@ function App() {
                                 >
                                     {dropdown.items.map((item) => (
                                         <a
-                                            href="#"
+                                            href={getHrefForItem(item)}
                                             className="DropDown-item"
                                             key={item}
                                         >
@@ -237,10 +239,12 @@ function App() {
                     {check ? (
                         <li className="DropDown">
                             <button className="Dropbtn" onClick={Dropdown9}>
-                                <p>
-                                    {user}
-                                    {STNumber}/{STRoom}
-                                </p>{" "}
+                                <div className="text">
+                                    <p>{user}</p>
+                                    <p>
+                                        {STNumber}/{STRoom}
+                                    </p>
+                                </div>
                                 <img src={User} alt="" />
                                 <FaChevronDown color="white" />
                             </button>
@@ -252,7 +256,11 @@ function App() {
                                 <a href="#" className="DropDown-item">
                                     จัดการบัญชี
                                 </a>
-                                <a href="#" className="DropDown-item">
+                                <a
+                                    href="#"
+                                    onClick={logout}
+                                    className="DropDown-item"
+                                >
                                     Log out
                                 </a>
                                 <a href="#" className="DropDown-item">
@@ -283,8 +291,6 @@ function App() {
                         spaceBetween={0}
                         slidesPerView={1}
                         className="mySwiper"
-                        // onSlideChange={() => console.log("slide change")}
-                        // onSwiper={(swiper) => console.log(swiper)}
                     >
                         <SwiperSlide>
                             <img src={Home1} alt="" />
@@ -297,12 +303,84 @@ function App() {
                 <div className="public">
                     <h1>ข่าวประชาสัมพันธ์</h1>
                     <div className="Catalog">
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
+                        <div className="item">
+                            {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                        </div>
+                        <div className="item">
+                            {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                        </div>
+                        <div className="item">
+                            {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                        </div>
+                        <div className="item">
+                            {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                        </div>
+                        <div className="item">
+                            {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                        </div>
+                        <div className="item">
+                            {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                        </div>
                     </div>
                     <button>
                         <p>อ่านทั้งหมด</p>
@@ -311,9 +389,45 @@ function App() {
                 <div className="activity">
                     <h1>กิจกรรม</h1>
                     <div className="Catalog">
-                        <div className="item"></div>
-                        <div className="item"></div>
-                        <div className="item"></div>
+                        <div className="item">
+                            {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                        </div>
+                        <div className="item">
+                            {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                        </div>
+                        <div className="item">
+                            {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                        </div>
                     </div>
                     <button>
                         <p>ดูทั้งหมด</p>
@@ -322,9 +436,9 @@ function App() {
                 <div className="road">
                     <div className="Catalog">
                         <div className="item">
-                            <a href="">
+                            <Link to="/Information">
                                 <img src={User} alt="" />
-                            </a>
+                            </Link>
                             <p>สารสนเทศ</p>
                         </div>
                         <div className="item">
@@ -359,7 +473,35 @@ function App() {
                         </div>
                     </div>
                 </div>
-                <footer></footer>
+                <footer>
+                    <img src={BumpCar} alt="" />
+                    <div className="footer_text">
+                        <h2>
+                            คณะกรรมการตึก ๙ โรงเรียนเตรียมอุดมศึกษา <br />
+                            277 ถนนพญาไท แขวงวังใหม่ เขตปทุมวัน <br />
+                            กรุงเทพมหานคร 10330
+                        </h2>
+                        <h3>
+                            Contact us : <br />
+                            <div className="email">
+                                <img src="" alt="" />
+                                <MdEmail color="var(--persian-pink)" />{" "}
+                                <p>tubuilding9.sc@gmail.com</p>
+                            </div>
+                            <div className="email">
+                                <img src="" alt="" />
+                                <AiFillInstagram color="var(--persian-pink)" />{" "}
+                                <p>building9.tu</p>
+                            </div>
+                        </h3>
+                    </div>
+                    <div className="Condi">
+                        <a href="#">
+                            ข้อกำหนด
+                            เงื่อนไขการใช้งานและนโยบายคุ้มครองข้อมูลส่วนบุลคล
+                        </a>
+                    </div>
+                </footer>
             </div>
         </div>
     );

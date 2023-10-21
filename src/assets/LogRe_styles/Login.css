@@ -21,6 +21,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+    background-position: center;
 }
 .ticket {
     display: flex;
@@ -28,11 +29,17 @@
     height: 635px;
     position: relative;
 }
-.ticket > img {
+.ticket > img:nth-child(1) {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
+}
+.ticket > img:nth-child(2) {
+    display: none;
+}
+.ticket > img:nth-child(3) {
+    display: none;
 }
 .ticket > .text {
     padding: 2rem 2rem;
@@ -90,7 +97,6 @@
 }
 .Log_pas > .forget {
     margin-top: 0.5rem;
-    text-decoration: none;
     color: rgb(112, 112, 112);
     font-size: 20px;
 }
@@ -125,4 +131,78 @@
     font-family: MN;
     text-decoration: none;
     color: rgb(112, 112, 112);
+}
+@media (max-width: 1174px) {
+    .ticket {
+        display: flex;
+        width: 445px;
+        height: 822px;
+        position: relative;
+    }
+    .ticket > img:nth-child(1) {
+        display: none;
+    }
+    .ticket > img:nth-child(2) {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    .ticket > .text {
+        padding: 2rem 2rem;
+        height: 68%;
+        width: 100%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .ticket > .text > form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 70%;
+        width: 100%;
+        padding: 20px 0;
+    }
+}
+@media (max-width: 447px) {
+    .ticket {
+        display: flex;
+        width: 420px;
+        height: 776px;
+        position: relative;
+    }
+    .ticket > img:nth-child(2) {
+        display: none;
+    }
+    .ticket > img:nth-child(3) {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    .ticket > .text {
+        padding: 2rem 2rem;
+        height: 68%;
+        width: 100%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .ticket > .text > form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 70%;
+        width: 100%;
+        padding: 20px 0;
+    }
 }

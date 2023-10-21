@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Navigate } from "react-router-dom";
 import "./assets/main-styles/font.css";
 import "./assets/LogRe_styles/Login.css";
 import Ticket from "./assets/img/Log_ticket.png";
+import TicketPhone from "./assets/img/Ticket_Phone.png";
+import TicketfPhone from "./assets/img/ticketfphone.png";
 import axios from "axios";
 import App from "./App";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LoginURL = "https://building9-backend.vercel.app/api/auth/login";
 
@@ -32,22 +36,92 @@ function Login() {
             StudentID = StudentId;
         } catch (error) {
             if (error.response) {
-                setErrorMessage(error.response.data.message);
+                toast.error(error.response.data.message, {
+                    className: "error-message",
+                    progressBar: true,
+                    hideProgressBar: false,
+                    progressStyle: {
+                        background: "rgb(255,168,212)",
+                        background:
+                            "linear-gradient(90deg, rgba(255,168,212,1) 0%, rgba(245,119,185,1) 38%, rgba(245,29,140,1) 100%)",
+                        height: "5px",
+                    },
+                    style: {
+                        fontFamily: "MN_Light",
+                        fontSize: "1.2rem",
+                        fontWeight: "bold",
+                        color: "rgba(245,119,185,1)",
+                    },
+                });
             } else if (error.request) {
-                setErrorMessage("Network error. Please try again later.");
+                toast.error(error.message, {
+                    className: "error-message",
+                    progressBar: true,
+                    hideProgressBar: false,
+                    progressStyle: {
+                        background: "rgb(255,168,212)",
+                        background:
+                            "linear-gradient(90deg, rgba(255,168,212,1) 0%, rgba(245,119,185,1) 38%, rgba(245,29,140,1) 100%)",
+                        height: "5px",
+                    },
+                    style: {
+                        fontFamily: "MN_Light",
+                        fontSize: "1.2rem",
+                        fontWeight: "bold",
+                        color: "rgba(245,119,185,1)",
+                    },
+                });
             } else {
-                setErrorMessage("An unexpected error occurred.");
+                toast.error("An unexpected error occurred.", {
+                    className: "error-message",
+                    progressBar: true,
+                    hideProgressBar: false,
+                    progressStyle: {
+                        background: "rgb(255,168,212)",
+                        background:
+                            "linear-gradient(90deg, rgba(255,168,212,1) 0%, rgba(245,119,185,1) 38%, rgba(245,29,140,1) 100%)",
+                        height: "5px",
+                    },
+                    style: {
+                        fontFamily: "MN_Light",
+                        fontSize: "1.2rem",
+                        fontWeight: "bold",
+                        color: "rgba(245,119,185,1)",
+                    },
+                });
             }
             setStudentId("");
             setPassWord("");
-            setErrorMessage("StudentID or Password wrong");
+            toast.error("StudentID or Password is wrong", {
+                className: "error-message",
+                progressBar: true,
+                hideProgressBar: false,
+                progressStyle: {
+                    background: "rgb(255,168,212)",
+                    background:
+                        "linear-gradient(90deg, rgba(255,168,212,1) 0%, rgba(245,119,185,1) 38%, rgba(245,29,140,1) 100%)",
+                    height: "5px",
+                },
+                style: {
+                    fontFamily: "MN_Light",
+                    fontSize: "1.2rem",
+                    fontWeight: "bold",
+                    color: "rgba(245,119,185,1)",
+                },
+            });
         }
     };
-
+    const handleFormSubmit = (e) => {
+        if (e.key === "Enter") {
+            handleSubmit(e);
+        }
+    };
     return (
         <div className="Content">
             <div className="ticket">
                 <img src={Ticket} alt="" />
+                <img src={TicketPhone} alt="" />
+                <img src={TicketfPhone} alt="" />
                 <div className="text">
                     <div className="head">
                         <h1>Log in</h1>
@@ -69,15 +143,13 @@ function Login() {
                                 onChange={(event) =>
                                     setPassWord(event.target.value)
                                 }
+                                onKeyPress={handleFormSubmit}
                             />
                             <Link to="/Forget_password" className="forget">
-                                Forget password?
+                                Forgot password?
                             </Link>
                         </div>
                     </form>
-                    {errorMessage && (
-                        <p className="error-message">{errorMessage}</p>
-                    )}
                     <div className="SB">
                         {success ? (
                             <Navigate to="/" />
@@ -88,6 +160,17 @@ function Login() {
                     </div>
                 </div>
             </div>
+            <ToastContainer
+                position="bottom-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </div>
     );
 }
