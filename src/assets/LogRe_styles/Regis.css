@@ -1,0 +1,227 @@
+:root {
+    --magenta: #f51d8cff;
+    --persian-pink: #f577b9ff;
+    --persian-pink-2: #fc8bc7ff;
+    --alice-blue: #f0f8ffff;
+    --white: #ffffffff;
+    --yellow: #f8fad8;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.AllContent {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("../img/Regis_Background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 17%;
+    color: var(--persian-pink-2);
+}
+.header > h1 {
+    font-family: MN_Light;
+    font-size: 8rem;
+}
+.AllContent > form {
+    width: 100%;
+    height: 66%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.AllContent > form input {
+    height: 40px;
+}
+.AllContent > form > input {
+    width: 30rem;
+    height: 40px;
+    padding: 0 1rem;
+    font-family: MN;
+    font-size: 20px;
+    margin-bottom: 14px;
+    outline: none;
+    border-radius: 25px 25px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.AllContent > form > .line1,
+.AllContent > form > .line {
+    display: flex;
+    width: 30rem;
+    justify-content: space-between;
+}
+.AllContent > form > .line > input {
+    font-family: MN;
+    font-size: 20px;
+    width: 48%;
+    padding: 0 1rem;
+    margin-bottom: 14px;
+    outline: none;
+    border-radius: 25px 25px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.AllContent > form > .line1 > select option {
+    width: 100%;
+}
+.AllContent > form > .line1 > select option:hover {
+    background: var(--persian-pink-2);
+}
+.AllContent > form > .line1 > select {
+    font-family: MN;
+    font-size: 20px;
+    width: 25%;
+    padding: 0 1rem;
+    margin-bottom: 14px;
+    outline: none;
+    border-radius: 25px 25px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    color: rgb(195, 195, 195);
+}
+.AllContent > form > .line1 > input {
+    font-family: MN;
+    font-size: 20px;
+    width: 70%;
+    padding: 0 1rem;
+    margin-bottom: 14px;
+    outline: none;
+    border-radius: 25px 25px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.Submit_btn {
+    width: 100%;
+    height: 17%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Submit_btn > .Accept {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.Submit_btn > .Accept > input {
+    outline: none;
+    margin-right: 8px;
+    width: 16px;
+    position: relative;
+}
+
+.Submit_btn > .Accept > p > a {
+    color: black;
+}
+.Submit_btn > .Accept > p {
+    font-family: MN;
+    font-size: 16px;
+    color: black;
+}
+.Submit_btn > input[type="Submit"] {
+    width: 8rem;
+    height: 2.5rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: var(--persian-pink);
+    font-size: 24px;
+    font-family: MN;
+    border-radius: 25px 25px;
+    color: var(--alice-blue);
+    transition: all 0.3s;
+}
+.Submit_btn > a {
+    font-family: MN;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
+.Submit_btn > input[type="Submit"]:hover {
+    transform: scale(1.1, 1.1);
+}
+.Submit_btn {
+    row-gap: 16px;
+}
+.AllContent input::placeholder {
+    font-family: MN;
+    font-size: 20px;
+    color: rgb(195, 195, 195);
+}
+.error-message {
+    background: var(--alice-blue);
+    font-size: 1.2rem;
+    text-align: left;
+}
+@media (min-height: 1000px) {
+    .AllContent > form > .line1,
+    .AllContent > form > .line {
+        display: flex;
+        width: 40rem;
+        justify-content: space-between;
+        height: 50px;
+    }
+    .AllContent > form > input {
+        height: 45px;
+        width: 40rem;
+    }
+    .AllContent input::placeholder {
+        font-family: MN;
+        font-size: 25px;
+        color: rgb(195, 195, 195);
+    }
+    .AllContent > form > .line1 > select {
+        font-size: 25px;
+    }
+    .Submit_btn > .Accept > p {
+        font-size: 20px;
+    }
+    .Submit_btn > input[type="Submit"] {
+        width: 10rem;
+        height: 4rem;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        background-color: var(--persian-pink);
+        font-size: 30px;
+        font-family: MN;
+        border-radius: 25px 25px;
+        color: var(--alice-blue);
+        transition: all 0.3s;
+    }
+    .Submit_btn > a {
+        font-family: MN;
+        font-size: 25px;
+        color: black;
+        text-decoration: none;
+    }
+}
+@media (max-width: 483px) {
+    .header > h1 {
+        font-family: MN_Light;
+        font-size: 6rem;
+    }
+    .AllContent > form > .line1,
+    .AllContent > form > .line {
+        display: flex;
+        width: 22rem;
+        justify-content: space-between;
+        height: 50px;
+    }
+    .AllContent > form > input {
+        width: 22rem;
+    }
+}

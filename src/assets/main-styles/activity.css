@@ -1,0 +1,160 @@
+.activity {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.activity > h1 {
+    font-family: MN_Bold;
+    font-size: 50px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    position: relative;
+}
+.activity > h1::before {
+    content: "";
+    position: absolute;
+    width: 3rem;
+    height: 5px;
+    background-color: var(--magenta);
+    left: 0;
+    bottom: 10px;
+}
+.activity > h1::after {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 5px;
+    background-color: var(--magenta);
+    left: 0;
+    bottom: 0;
+}
+.activity > button {
+    margin-top: 30px;
+    border: none;
+    font-size: 20px;
+    font-family: MN_Light;
+    padding: 8px 32px;
+    cursor: pointer;
+    color: var(--white);
+    background: var(--persian-pink-2);
+    border-radius: 20px 20px;
+}
+.activity > .Catalog {
+    max-width: 80%;
+    height: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    column-gap: 40px;
+    row-gap: 20px;
+}
+.activity > .Catalog > .item {
+    margin: auto;
+    width: 369px;
+    height: 300px;
+    border-radius: 16px 16px;
+    /*ลบเอา*/
+    /* background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3); */
+}
+.activity > .Catalog > .item > .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(243, 88, 181, 0.488);
+    padding: 1rem;
+    font-family: MN;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 19%;
+    z-index: 3;
+    border-radius: 16px;
+    transition: all 0.5s;
+}
+.activity > .Catalog > .item > .content p,
+.activity > .Catalog > .item > .content a {
+    display: none;
+    transition: all 0.3s;
+}
+.activity > .Catalog > .item:hover .content a {
+    color: var(--magenta);
+}
+.activity > .Catalog > .item:hover .content p,
+.activity > .Catalog > .item:hover .content a {
+    display: block;
+}
+.activity > .Catalog > .item:hover .content {
+    height: 100%;
+}
+.activity > .Catalog > .item > .content > .head {
+    font-size: 2rem;
+}
+.activity > button {
+    margin-top: 30px;
+    border: none;
+    font-size: 20px;
+    font-family: MN_Light;
+    padding: 8px 32px;
+    cursor: pointer;
+    color: var(--white);
+    background: var(--persian-pink-2);
+    border-radius: 20px 20px 20px 20px;
+}
+@media (max-width: 1356px) {
+    .public > .Catalog > .item {
+        width: 360px;
+        min-height: 300px;
+    }
+    .activity > .Catalog > .item {
+        width: 360px;
+        min-height: 300px;
+    }
+    .public > .Catalog {
+        grid-template-columns: 1fr 1fr;
+    }
+    .activity > .Catalog {
+        grid-template-columns: 1fr 1fr;
+    }
+    .activity > button {
+        font-size: 30px;
+    }
+    .activity > button {
+        font-size: 30px;
+    }
+    .activity > h1 {
+        font-size: 40px;
+    }
+    .activity > h1::before {
+        height: 2px;
+    }
+    .activity > h1::after {
+        height: 2px;
+    }
+}
+@media (max-width: 600px) {
+    .activity > .Catalog {
+        grid-template-columns: 1fr;
+    }
+    .public > .Catalog {
+        grid-template-columns: 1fr;
+    }
+    .public > .Catalog > .item:nth-child(4),
+    .public > .Catalog > .item:nth-child(5),
+    .public > .Catalog > .item:nth-child(6) {
+        display: none;
+    }
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}

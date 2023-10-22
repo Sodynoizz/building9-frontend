@@ -1,0 +1,98 @@
+.road {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.road > .Catalog {
+    background-color: var(--yellow);
+    min-height: 25rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-content: space-around;
+    align-items: center;
+}
+.road > .Catalog > .item {
+    padding: 20px;
+    font-family: MN_Bold;
+    text-align: center;
+    font-size: 35px;
+    color: var(--persian-pink);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.road > .Catalog > .item:nth-child(1)::after,
+.road > .Catalog > .item:nth-child(2)::after,
+.road > .Catalog > .item:nth-child(3)::after,
+.road > .Catalog > .item:nth-child(6)::after {
+    position: absolute;
+    bottom: -30px;
+}
+.road > .Catalog > .item:nth-child(1)::after {
+    content: "นักเรียน";
+}
+.road > .Catalog > .item:nth-child(2)::after {
+    content: "และตารางสอน";
+}
+.road > .Catalog > .item:nth-child(3)::after {
+    content: "กิจกรรม";
+}
+.road > .Catalog > .item:nth-child(6)::after {
+    content: "ปัญหา";
+}
+.road > .Catalog > .item > a > img {
+    width: 150px;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+.road > .Catalog > .item:hover a > img {
+    transform: scale(1.1, 1.1);
+}
+@media (max-width: 1280px) {
+    .road > .Catalog > .item:nth-child(1)::after,
+    .road > .Catalog > .item:nth-child(2)::after,
+    .road > .Catalog > .item:nth-child(3)::after,
+    .road > .Catalog > .item:nth-child(6)::after {
+        bottom: -20px;
+    }
+    .road > .Catalog {
+        background-color: var(--yellow);
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 40px;
+        width: auto;
+        height: 40rem;
+    }
+    .road > .Catalog > .item > a > img {
+        width: 125px;
+    }
+    .road > .Catalog > .item {
+        font-size: 30px;
+    }
+}
+@media (max-width: 768px) {
+    .road > .Catalog > .item:nth-child(1)::after,
+    .road > .Catalog > .item:nth-child(2)::after,
+    .road > .Catalog > .item:nth-child(3)::after,
+    .road > .Catalog > .item:nth-child(6)::after {
+        bottom: 0px;
+    }
+    .road > .Catalog {
+        background-color: var(--yellow);
+        grid-template-columns: 1fr 1fr;
+        width: auto;
+        row-gap: 0px;
+        height: 30rem;
+    }
+    .road > .Catalog > .item {
+        font-size: 20px;
+        width: 10rem;
+    }
+    .road > .Catalog > .item > a > img {
+        width: 80px;
+    }
+}

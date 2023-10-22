@@ -1,0 +1,26 @@
+.home {
+    max-height: 100vh;
+    background-image: none;
+    overflow: hidden;
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+.swiper-slide {
+    height: 100%;
+}
+.home img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    display: block;
+    object-fit: cover;
+    transition: all 0.3s;
+}
+.mySwiper .swiper-pagination-bullet-active {
+    background: var(--persian-pink);
+    width: 10px;
+    height: 10px;
+}

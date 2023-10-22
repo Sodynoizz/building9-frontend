@@ -1,0 +1,273 @@
+:root {
+    --magenta: #f51d8cff;
+    --persian-pink: #f577b9ff;
+    --persian-pink-2: #fc8bc7ff;
+    --alice-blue: #f0f8ffff;
+    --white: #ffffffff;
+    --yellow: #f8fad8;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    cursor: context-menu;
+}
+.main-content {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.page {
+    height: 100vh;
+    overflow: auto;
+}
+.public,
+.activity,
+.road {
+    background-image: url("../img/background.png");
+    background-size: cover;
+    background-attachment: fixed;
+}
+footer {
+    padding: 20px 20px;
+    height: 40vh;
+    width: 100%;
+    background-color: #fee7f1;
+    font-family: MN;
+    position: relative;
+}
+footer > img {
+    position: absolute;
+    top: 0;
+    right: 4%;
+    width: 25%;
+}
+footer > .footer_text {
+    padding: 0 0 0 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80%;
+    width: 60%;
+}
+footer > .footer_text > h2,
+footer > .footer_text > h3 {
+    font-size: 1.8rem;
+    line-height: 50px;
+}
+footer > .footer_text > h3 > .email {
+    display: flex;
+    align-items: center;
+}
+footer > .footer_text > h3 > .email > svg {
+    margin-right: 5px;
+}
+footer > .Condi {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+}
+footer > .Condi > a {
+    color: black;
+    font-size: 1.5rem;
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+.hidden {
+    display: none !important;
+}
+.show {
+    display: block !important;
+}
+@media (max-width: 1356px) {
+    .public > .Catalog > .item {
+        width: 300px;
+        min-height: 450px;
+    }
+    .activity > .Catalog > .item {
+        width: 300px;
+        min-height: 450px;
+    }
+    .public > .Catalog {
+        grid-template-columns: 1fr 1fr;
+    }
+    .activity > .Catalog {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 600px) {
+    .public > .Catalog > .item {
+        width: 350px;
+        min-height: 450px;
+    }
+    .activity > .Catalog > .item {
+        width: 350px;
+        min-height: 450px;
+    }
+    .activity > .Catalog {
+        grid-template-columns: 1fr;
+    }
+    .public > .Catalog {
+        grid-template-columns: 1fr;
+    }
+    .public > .Catalog > .item:nth-child(4),
+    .public > .Catalog > .item:nth-child(5),
+    .public > .Catalog > .item:nth-child(6) {
+        display: none;
+    }
+}
+@media (max-width: 1498px) {
+    footer {
+        padding: 20px 20px;
+        height: 30vh;
+        width: 100%;
+        background-color: #fee7f1;
+        font-family: MN;
+        position: relative;
+    }
+    footer > img {
+        position: absolute;
+        top: 0;
+        right: 4%;
+        width: 25%;
+    }
+    footer > .footer_text {
+        padding: 0 5% 0 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80%;
+        width: 70%;
+    }
+    footer > .footer_text > h2,
+    footer > .footer_text > h3 {
+        font-size: 1.5rem;
+        line-height: 30px;
+    }
+    footer > .Condi {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20%;
+    }
+    footer > .Condi > a {
+        color: black;
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 1057px) {
+    footer {
+        padding: 20px 20px;
+        height: 20vh;
+        width: 100%;
+        background-color: #fee7f1;
+        font-family: MN;
+        position: relative;
+    }
+    footer > img {
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 4%;
+        width: 25%;
+    }
+    footer > .footer_text {
+        padding: 0 5% 0 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80%;
+        width: 100%;
+    }
+    footer > .footer_text > h2,
+    footer > .footer_text > h3 {
+        font-size: 1.5rem;
+        line-height: 30px;
+    }
+    footer > .Condi {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20%;
+    }
+    footer > .Condi > a {
+        color: black;
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .road > .Catalog > .item:nth-child(1)::after,
+    .road > .Catalog > .item:nth-child(2)::after,
+    .road > .Catalog > .item:nth-child(3)::after,
+    .road > .Catalog > .item:nth-child(6)::after {
+        bottom: -30px;
+    }
+    .road > .Catalog {
+        background-color: var(--yellow);
+        width: 45rem;
+        height: 20rem;
+    }
+    .road > .Catalog > .item {
+        padding: 0px 0px;
+        font-family: MN_Bold;
+        text-align: center;
+        font-size: 20px;
+        color: var(--persian-pink);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .road > .Catalog > .item > a > img {
+        width: 100px;
+    }
+    footer {
+        padding: 20px 20px;
+        height: 25vh;
+        width: 100%;
+        background-color: #fee7f1;
+        font-family: MN;
+        position: relative;
+    }
+    footer > img {
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 4%;
+        width: 25%;
+    }
+    footer > .footer_text {
+        padding: 0 0 0 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80%;
+        width: 100%;
+    }
+    footer > .footer_text > h2,
+    footer > .footer_text > h3 {
+        font-size: 0.8rem;
+        line-height: 20px;
+    }
+    footer > .Condi {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20%;
+    }
+    footer > .Condi > a {
+        color: black;
+        font-size: 1rem;
+    }
+}
