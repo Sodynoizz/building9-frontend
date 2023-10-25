@@ -250,3 +250,21 @@
         width: 22rem;
     }
 }
+@media (max-height: 783px) {
+    .AllContent form input {
+        height: auto;
+    }
+    .AllContent > form > .passW > .Eye svg {
+        width: 20px;
+        height: 20px;
+    }
+    .AllContent > form > .passW > input {
+        height: auto;
+    }
+    .AllContent > form > .passW > .Eye {
+        position: absolute;
+        top: 10%;
+        right: 3%;
+        cursor: pointer;
+    }
+}

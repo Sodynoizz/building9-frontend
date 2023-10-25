@@ -32,7 +32,6 @@ function User() {
                     environmentKey: import.meta.env.VITE_LOGRE,
                 });
                 setCheck(true);
-                console.log(response?.data);
                 setFullname(response?.data.studentName);
                 setNickname(response?.data.studentNickname);
                 setSTRoom(response?.data.studentRoom);

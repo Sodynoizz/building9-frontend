@@ -66,7 +66,6 @@ function App() {
                     environmentKey: import.meta.env.VITE_LOGRE,
                 });
                 setCheck(true);
-                console.log(response?.data);
                 name = response?.data.studentName;
                 name = name.split(" ");
                 setUser(name[0]);
@@ -90,7 +89,6 @@ function App() {
         studentID: StudentID,
         environmentKey: import.meta.env.VITE_LOGRE,
     });
-    console.log(response);
     const [dropdowns, setDropdowns] = useState([
         {
             id: "DC1",
@@ -147,49 +145,49 @@ function App() {
     function getHrefForItem(item) {
         switch (item) {
             case "รายงานการประชุม":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "สรุปบัญชี":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "ปฏิทินตึก":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "นโยบาย checklist":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "ข่าว":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "Intercom":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "สรุป":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "Quiz":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "อุปกรณ์กีฬา":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "ยา":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "Lost & Found":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "กีฬา":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "งานสืบสานฯ":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "คริสต์มาส":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "ประกาศผล/ยืนยันสิทธิ์":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "SHOP":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "คำสั่งซื้อ":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "2566":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "ประวัติ":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "ทำเนียบครูหัวหน้าตึก":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "ครูและบุคลากร":
-                return "/CommingSoon";
+                return "/ComingSoon";
             case "คณะกรรมการตึก":
-                return "/CommingSoon";
+                return "/ComingSoon";
             default:
                 return "/";
         }
@@ -520,25 +518,25 @@ function App() {
                                     <p>ตารางเรียน</p>
                                 </div>
                                 <div className="item">
-                                    <Link to="/CommingSoon">
+                                    <Link to="/ComingSoon">
                                         <img src={Calender} alt="" />
                                     </Link>
                                     <p>ปฏิทิน</p>
                                 </div>
                                 <div className="item">
-                                    <Link to="/CommingSoon">
+                                    <Link to="/ComingSoon">
                                         <img src={Regis} alt="" />
                                     </Link>
                                     <p>ลงทะเบียน</p>
                                 </div>
                                 <div className="item">
-                                    <Link to="/CommingSoon">
+                                    <Link to="/ComingSoon">
                                         <img src={Announce} alt="" />
                                     </Link>
                                     <p>ประกาศ</p>
                                 </div>
                                 <div className="item">
-                                    <Link to="/CommingSoon">
+                                    <Link to="/ComingSoon">
                                         <img src={Report} alt="" />
                                     </Link>
                                     <p>ระบบร้องเรียน</p>
@@ -569,7 +567,7 @@ function App() {
                                 </h3>
                             </div>
                             <div className="Condi">
-                                <a href="#">
+                                <a href="/ComingSoon">
                                     ข้อกำหนด
                                     เงื่อนไขการใช้งานและนโยบายคุ้มครองข้อมูลส่วนบุลคล
                                 </a>

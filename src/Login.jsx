@@ -23,8 +23,6 @@ function Login() {
     const [errorMessage, setErrorMessage] = useState("");
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(StudentId, PassWord);
-        console.log(import.meta.env.VITE_LOGRE);
         try {
             const response = await axios.post(LoginURL, {
                 studentID: StudentId,
@@ -33,7 +31,6 @@ function Login() {
             });
             setStudentId("");
             setPassWord("");
-            console.log(response?.data);
             setSuccess(true);
             StudentID = StudentId;
         } catch (error) {
