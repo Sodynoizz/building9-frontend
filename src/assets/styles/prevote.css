@@ -1,0 +1,138 @@
+.Prevote_container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #ffcde8;
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-family: MN_Bold;
+}
+.Topper {
+    width: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
+.flood {
+    width: 100%;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+.flood .house {
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.flood .house img {
+    width: 80%;
+}
+.flood img {
+    width: 100%;
+}
+.text_pre {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    z-index: 2;
+}
+.line_one,
+.line_two,
+.line_three {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+}
+.line_one {
+    width: 70%;
+    justify-content: center;
+}
+.line_one img {
+    width: 10rem;
+    height: 14rem;
+}
+.line_one h1 {
+    color: #ff75bc;
+    -webkit-text-stroke: 2px white;
+    align-self: end;
+    font-size: 10rem;
+}
+.line_two {
+    width: 60%;
+    justify-content: end;
+}
+.line_two img {
+    width: 6rem;
+    height: 6rem;
+}
+.line_two h1,
+.line_three h1 {
+    color: white;
+    -webkit-text-stroke: 2px #ff75bc;
+    align-self: end;
+    font-size: 10rem;
+}
+.line_three {
+    width: 50%;
+    justify-content: end;
+}
+.text_pre > .btn {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+.text_pre a {
+    font-size: 4rem;
+    text-decoration: none;
+    color: white;
+    background-color: #ff75bc;
+    padding: 1rem;
+    border-radius: 25px 25px;
+    width: 11rem;
+    align-self: center;
+}
+@media (max-width: 1133px) {
+    .text_pre {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        z-index: 2;
+        align-items: center;
+    }
+    .line_one h1,
+    .line_two h1,
+    .line_three h1 {
+        font-size: 9rem;
+    }
+}
+@media (max-width: 588px) {
+    .line_one h1,
+    .line_two h1,
+    .line_three h1 {
+        font-size: 5rem;
+    }
+    .text_pre a {
+        font-size: 2rem;
+        width: 6.5rem;
+    }
+    .line_one img {
+        width: 5rem;
+        height: 8rem;
+    }
+    .line_two img {
+        width: 4rem;
+        height: 4rem;
+    }
+}

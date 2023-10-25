@@ -15,7 +15,7 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background-image: url("../img/Regis_Background.png");
+    background-image: url("/src/assets/img/Regis_Background.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -56,6 +56,29 @@
     border-radius: 25px 25px;
     border: none;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.AllContent > form > .passW {
+    position: relative;
+}
+.AllContent > form > .passW > input {
+    width: 30rem;
+    height: 40px;
+    padding: 0 1rem;
+    font-family: MN;
+    font-size: 20px;
+    margin-bottom: 14px;
+    outline: none;
+    border-radius: 25px 25px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.AllContent > form > .passW > .Eye {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: 17%;
+    right: 3%;
+    cursor: pointer;
 }
 .AllContent > form > .line1,
 .AllContent > form > .line {
@@ -174,7 +197,8 @@
         justify-content: space-between;
         height: 50px;
     }
-    .AllContent > form > input {
+    .AllContent > form > input,
+    .AllContent > form > .passW > input {
         height: 45px;
         width: 40rem;
     }
@@ -221,7 +245,8 @@
         justify-content: space-between;
         height: 50px;
     }
-    .AllContent > form > input {
+    .AllContent > form > input,
+    .AllContent > form > .passW > input {
         width: 22rem;
     }
 }

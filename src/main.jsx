@@ -7,6 +7,13 @@ import Forget from "./Forget.jsx";
 import Regis from "./Regis.jsx";
 import Info from "./information.jsx";
 import NotFound from "./404.jsx";
+import Loading_page from "./loading.jsx";
+import OTP_page from "./otp.jsx";
+import Reset_page from "./Reset.jsx";
+import Prevote_page from "./Prevote.jsx";
+import User_page from "./userinfo.jsx";
+import Vote_page from "./vote.jsx";
+import Commingsoon_page from "./ComingSoon.jsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -18,6 +25,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <Route path="/Forget_password" element={<Forget />} />
                 <Route path="/Regis" element={<Regis />} />
                 <Route path="/Information" element={<Info />} />
+                <Route path="/OTP" element={<OTP_page />} />
+                <Route path="/loading" element={<Loading_page />} />
+                <Route path="/Reset_password" element={<Reset_page />} />
+                <Route path="/Prevote" element={<Prevote_page />} />
+                <Route path="/User_info" element={<User_page />} />
+                <Route path="/vote" element={<Vote_page />} />
+                <Route path="/CommingSoon" element={<Commingsoon_page />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>

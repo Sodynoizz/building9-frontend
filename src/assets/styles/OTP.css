@@ -1,0 +1,78 @@
+.OTP_container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/Forget_background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: MN_Light;
+    overflow: hidden;
+    padding: 1.5rem;
+    font-family: MN;
+}
+.OTP_content {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+}
+.OTP_content > .OTP_header > h1 {
+    font-size: 5rem;
+    color: #e76ca5;
+}
+.OTP_content > .OTP_IN input {
+    background-color: var(--yellow);
+    border: none;
+    width: 150px !important;
+    height: 200px !important;
+    border-radius: 25px;
+    font-size: 5rem;
+    font-family: MN;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.OTP_content > .reman_time {
+    display: flex;
+    width: 35%;
+    column-gap: 5px;
+    font-size: 20px;
+    position: relative;
+}
+.OTP_content > .reman_time > p {
+    color: var(--persian-pink);
+}
+.OTP_content > .reman_time button {
+    content: "";
+    position: absolute;
+    right: 0;
+    border: none;
+    background-color: var(--persian-pink-2);
+    color: var(--alice-blue);
+    padding: 8px;
+    border-radius: 25px 25px;
+    cursor: pointer;
+    font-family: MN;
+    font-size: 16px;
+}
+@media (max-width: 813px) {
+    .OTP_content > .OTP_header > h1 {
+        font-size: 3rem;
+        color: #e76ca5;
+    }
+    .OTP_content > .OTP_IN input {
+        width: 70px !important;
+        height: 130px !important;
+    }
+    .OTP_content > .reman_time {
+        display: flex;
+        width: 100%;
+        column-gap: 5px;
+        font-size: 20px;
+    }
+}

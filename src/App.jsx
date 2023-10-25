@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "./assets/img/logo.png";
 import User from "./assets/img/User.png";
 import Calender from "./assets/img/calender.jpg";
@@ -7,6 +7,7 @@ import Announce from "./assets/img/announce.png";
 import Report from "./assets/img/report.png";
 import Table from "./assets/img/table.png";
 import BumpCar from "./assets/img/footer.png";
+import Bowl from "./assets/img/bowl.png";
 import White from "./assets/img/white.jpg";
 import Home1 from "./assets/img/home1.jpg";
 import {
@@ -18,56 +19,73 @@ import {
 } from "swiper/modules";
 import { Link, Navigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useLocalStorage } from "usehooks-ts";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/bundle";
-import "./assets/main-styles/App.css";
-import "./assets/main-styles/activity.css";
-import "./assets/main-styles/font.css";
-import "./assets/main-styles/home.css";
-import "./assets/main-styles/navbar.css";
-import "./assets/main-styles/public.css";
-import "./assets/main-styles/road.css";
+import "./assets/styles/main-styles/App.css";
+import "./assets/styles/main-styles/activity.css";
+import "./assets/styles/main-styles/font.css";
+import "./assets/styles/main-styles/home.css";
+import "./assets/styles/main-styles/navbar.css";
+import "./assets/styles/main-styles/public.css";
+import "./assets/styles/main-styles/road.css";
 import { FaChevronDown } from "react-icons/fa";
 import { CiLogin } from "react-icons/ci";
 import { MdEmail } from "react-icons/md";
 import { AiFillInstagram } from "react-icons/ai";
 import { Spin as Hamburger } from "hamburger-react";
 import { StudentID } from "./Login";
+import { STID_Sin } from "./Regis";
 const UserURL = "https://building9-backend.vercel.app/api/auth/profile";
 import axios from "axios";
+import LoadingPage from "./loading.jsx";
+import { reSTID } from "./Reset";
 
 function App() {
-    let [STDID, setSTDID] = useState("");
-    STDID = StudentID;
+    let [STDID, setSTDID] = useState(
+        localStorage.getItem("STDID") || StudentID || STID_Sin || reSTID || ""
+    );
     const [user, setUser] = useState("");
     const [STNumber, setSTNumber] = useState("");
     const [STRoom, setSTRoom] = useState("");
     const [check, setCheck] = useState(false);
-    const Start = async (e) => {
-        try {
-            const response = await axios.post(UserURL, {
-                studentID: STDID,
-                environmentKey: import.meta.env.VITE_LOGRE,
-            });
-            setCheck(true);
-            console.log(response?.data);
-            setUser(response?.data.studentNickname);
-            setSTNumber(response?.data.studentNumber);
-            setSTRoom(response?.data.studentRoom);
-        } catch (error) {
-            if (error.response) {
-                setErrorMessage(error.response.data.message);
-            } else if (error.request) {
-                setErrorMessage("Network error. Please try again later.");
-            } else {
-                setErrorMessage("An unexpected error occurred.");
+    const [loading, setLoading] = useState(false);
+    let name;
+    useEffect(() => {
+        localStorage.setItem("STDID", STDID);
+    });
+    useEffect(() => {
+        const Start = async (e) => {
+            try {
+                setLoading(true);
+                const response = await axios.post(UserURL, {
+                    studentID: STDID,
+                    environmentKey: import.meta.env.VITE_LOGRE,
+                });
+                setCheck(true);
+                console.log(response?.data);
+                name = response?.data.studentName;
+                name = name.split(" ");
+                setUser(name[0]);
+                setSTNumber(response?.data.studentNumber);
+                setSTRoom(response?.data.studentRoom);
+                setLoading(false);
+            } catch (error) {
+                setLoading(false);
+                if (error.response) {
+                    setErrorMessage(error.response.data.message);
+                } else if (error.request) {
+                    setErrorMessage("Network error. Please try again later.");
+                } else {
+                    setErrorMessage("An unexpected error occurred.");
+                }
             }
-        }
-    };
-    Start();
+        };
+        Start();
+    }, []);
     const response = axios.post(UserURL, {
         studentID: StudentID,
         environmentKey: import.meta.env.VITE_LOGRE,
@@ -126,8 +144,59 @@ function App() {
         },
     ]);
 
+    function getHrefForItem(item) {
+        switch (item) {
+            case "รายงานการประชุม":
+                return "/CommingSoon";
+            case "สรุปบัญชี":
+                return "/CommingSoon";
+            case "ปฏิทินตึก":
+                return "/CommingSoon";
+            case "นโยบาย checklist":
+                return "/CommingSoon";
+            case "ข่าว":
+                return "/CommingSoon";
+            case "Intercom":
+                return "/CommingSoon";
+            case "สรุป":
+                return "/CommingSoon";
+            case "Quiz":
+                return "/CommingSoon";
+            case "อุปกรณ์กีฬา":
+                return "/CommingSoon";
+            case "ยา":
+                return "/CommingSoon";
+            case "Lost & Found":
+                return "/CommingSoon";
+            case "กีฬา":
+                return "/CommingSoon";
+            case "งานสืบสานฯ":
+                return "/CommingSoon";
+            case "คริสต์มาส":
+                return "/CommingSoon";
+            case "ประกาศผล/ยืนยันสิทธิ์":
+                return "/CommingSoon";
+            case "SHOP":
+                return "/CommingSoon";
+            case "คำสั่งซื้อ":
+                return "/CommingSoon";
+            case "2566":
+                return "/CommingSoon";
+            case "ประวัติ":
+                return "/CommingSoon";
+            case "ทำเนียบครูหัวหน้าตึก":
+                return "/CommingSoon";
+            case "ครูและบุคลากร":
+                return "/CommingSoon";
+            case "คณะกรรมการตึก":
+                return "/CommingSoon";
+            default:
+                return "/";
+        }
+    }
+
     function Dropdown9() {
-        var Dropdown = document.getElementById("DC9");
+        let Dropdown = document.getElementById("DC9");
 
         if (Dropdown.dataset.shown === "false") {
             Dropdown.style.display = "block";
@@ -165,344 +234,350 @@ function App() {
         }
     }
 
-    function getHrefForItem(item) {
-        switch (item) {
-            case "รายงานการประชุม":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-            case "สรุปบัญชี":
-                return "/Regis";
-            default:
-                return "/";
-        }
-    }
-
     const logout = () => {
+        localStorage.setItem("STDID", "");
         window.location.reload();
     };
     return (
         <div className="main-content">
-            <div className={isOpen ? "Hamburger actives" : "Hamburger"}>
-                <Hamburger
-                    toggled={isOpen}
-                    toggle={setOpen}
-                    color="#fc77bc"
-                    duration={0.8}
-                    onClick={showSidebar}
-                />
-            </div>
-            <nav id="nav" className={isOpen ? "nav active" : "nav"}>
-                <div className="Left">
-                    <div className="logo">
-                        <a href="#Home">
-                            <img src={logo} alt="" />
-                        </a>
+            {loading ? (
+                <LoadingPage />
+            ) : (
+                <div className="content">
+                    <div className={isOpen ? "Hamburger actives" : "Hamburger"}>
+                        <Hamburger
+                            toggled={isOpen}
+                            toggle={setOpen}
+                            color="#fc77bc"
+                            duration={0.8}
+                            onClick={showSidebar}
+                        />
                     </div>
-                    <ul className="nav-lists">
-                        <li>
-                            <a href="#Home">
-                                <p>หน้าแรก</p>
-                            </a>
-                        </li>
-                        {dropdowns.map((dropdown) => (
-                            <li key={dropdown.id} className="DropDown">
-                                <button
-                                    className="Dropbtn"
-                                    id="Dropbtn"
-                                    onClick={() => Dropdownww(dropdown.id)}
-                                >
-                                    <p>{dropdown.title}</p>
-                                    <FaChevronDown color="white" />
-                                </button>
-                                <div
-                                    className="Dropdown-content hidden"
-                                    data-shown={dropdown.shown}
-                                    id={dropdown.id}
-                                >
-                                    {dropdown.items.map((item) => (
-                                        <a
-                                            href={getHrefForItem(item)}
-                                            className="DropDown-item"
-                                            key={item}
+                    <nav id="nav" className={isOpen ? "nav active" : "nav"}>
+                        <div className="Left">
+                            <div className="logo">
+                                <a href="#Home">
+                                    <img src={logo} alt="" />
+                                </a>
+                            </div>
+                            <ul className="nav-lists">
+                                <li>
+                                    <a href="#Home">
+                                        <p>หน้าแรก</p>
+                                    </a>
+                                </li>
+                                {dropdowns.map((dropdown) => (
+                                    <li key={dropdown.id} className="DropDown">
+                                        <button
+                                            className="Dropbtn"
+                                            id="Dropbtn"
+                                            onClick={() =>
+                                                Dropdownww(dropdown.id)
+                                            }
                                         >
-                                            {item}
+                                            <p>{dropdown.title}</p>
+                                            <FaChevronDown color="white" />
+                                        </button>
+                                        <div
+                                            className="Dropdown-content hidden"
+                                            data-shown={dropdown.shown}
+                                            id={dropdown.id}
+                                        >
+                                            {dropdown.items.map((item) => (
+                                                <a
+                                                    href={getHrefForItem(item)}
+                                                    className="DropDown-item"
+                                                    key={item}
+                                                >
+                                                    {item}
+                                                </a>
+                                            ))}
+                                        </div>
+                                    </li>
+                                ))}
+                                <li>
+                                    <Link to="/Prevote">VOTE</Link>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul className="User">
+                            {check ? (
+                                <li className="DropDown">
+                                    <button
+                                        className="Dropbtn"
+                                        onClick={Dropdown9}
+                                    >
+                                        <div className="text">
+                                            <p>{user}</p>
+                                            <p>
+                                                {STNumber}/{STRoom}
+                                            </p>
+                                        </div>
+                                        <img src={User} alt="" />
+                                        <FaChevronDown color="white" />
+                                    </button>
+                                    <div
+                                        className="Dropdown-content"
+                                        data-shown="false"
+                                        id="DC9"
+                                        style={{ display: "none" }}
+                                    >
+                                        <Link
+                                            to="/User_info"
+                                            className="DropDown-item"
+                                        >
+                                            จัดการบัญชี
+                                        </Link>
+                                        <a
+                                            href="#"
+                                            onClick={logout}
+                                            className="DropDown-item"
+                                        >
+                                            Log out
                                         </a>
-                                    ))}
-                                </div>
-                            </li>
-                        ))}
-                        <li>
-                            <p>VOTE</p>
-                        </li>
-                    </ul>
-                </div>
-                <ul className="User">
-                    {check ? (
-                        <li className="DropDown">
-                            <button className="Dropbtn" onClick={Dropdown9}>
-                                <div className="text">
-                                    <p>{user}</p>
-                                    <p>
-                                        {STNumber}/{STRoom}
-                                    </p>
-                                </div>
-                                <img src={User} alt="" />
-                                <FaChevronDown color="white" />
-                            </button>
-                            <div
-                                className="Dropdown-content"
-                                data-shown="false"
-                                id="DC9"
+                                        <a href="#" className="DropDown-item">
+                                            ดาวโหลดเกียรติบัตร
+                                        </a>
+                                    </div>
+                                </li>
+                            ) : (
+                                <li className="">
+                                    <Link to="/Login">
+                                        Login <CiLogin />
+                                    </Link>
+                                </li>
+                            )}
+                        </ul>
+                    </nav>
+                    <div className="page">
+                        <div className="home" id="Home">
+                            <Swiper
+                                pagination={{
+                                    dynamicBullets: true,
+                                }}
+                                modules={[Pagination, Autoplay]}
+                                autoplay={{
+                                    delay: 3000,
+                                    disableOnInteraction: false,
+                                }}
+                                spaceBetween={0}
+                                slidesPerView={1}
+                                className="mySwiper"
                             >
-                                <a href="#" className="DropDown-item">
-                                    จัดการบัญชี
-                                </a>
-                                <a
-                                    href="#"
-                                    onClick={logout}
-                                    className="DropDown-item"
-                                >
-                                    Log out
-                                </a>
-                                <a href="#" className="DropDown-item">
-                                    ดาวโหลดเกียรติบัตร
+                                <SwiperSlide>
+                                    <img src={Home1} alt="" />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <img src={Home1} alt="" />
+                                </SwiperSlide>
+                            </Swiper>
+                        </div>
+                        <div className="public">
+                            <h1>ข่าวประชาสัมพันธ์</h1>
+                            <div className="Catalog">
+                                <div className="item">
+                                    {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                                </div>
+                                <div className="item">
+                                    {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                                </div>
+                                <div className="item">
+                                    {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                                </div>
+                                <div className="item">
+                                    {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                                </div>
+                                <div className="item">
+                                    {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                                </div>
+                                <div className="item">
+                                    {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                                </div>
+                            </div>
+                            <button>
+                                <p>อ่านทั้งหมด</p>
+                            </button>
+                        </div>
+                        <div className="activity">
+                            <h1>กิจกรรม</h1>
+                            <div className="Catalog">
+                                <div className="item">
+                                    {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                                </div>
+                                <div className="item">
+                                    {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                                </div>
+                                <div className="item">
+                                    {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                                </div>
+                            </div>
+                            <button>
+                                <p>ดูทั้งหมด</p>
+                            </button>
+                        </div>
+                        <div className="road">
+                            <div className="Catalog">
+                                <div className="item">
+                                    <Link to="/Information">
+                                        <img src={User} alt="" />
+                                    </Link>
+                                    <p>สารสนเทศ</p>
+                                </div>
+                                <div className="item">
+                                    <a href="https://schedule.tucm.cc/">
+                                        <img src={Table} alt="" />
+                                    </a>
+                                    <p>ตารางเรียน</p>
+                                </div>
+                                <div className="item">
+                                    <Link to="/CommingSoon">
+                                        <img src={Calender} alt="" />
+                                    </Link>
+                                    <p>ปฏิทิน</p>
+                                </div>
+                                <div className="item">
+                                    <Link to="/CommingSoon">
+                                        <img src={Regis} alt="" />
+                                    </Link>
+                                    <p>ลงทะเบียน</p>
+                                </div>
+                                <div className="item">
+                                    <Link to="/CommingSoon">
+                                        <img src={Announce} alt="" />
+                                    </Link>
+                                    <p>ประกาศ</p>
+                                </div>
+                                <div className="item">
+                                    <Link to="/CommingSoon">
+                                        <img src={Report} alt="" />
+                                    </Link>
+                                    <p>ระบบร้องเรียน</p>
+                                </div>
+                            </div>
+                        </div>
+                        <footer>
+                            <img src={BumpCar} alt="" />
+                            <div className="footer_text">
+                                <h2>
+                                    คณะกรรมการตึก ๙ โรงเรียนเตรียมอุดมศึกษา{" "}
+                                    <br />
+                                    277 ถนนพญาไท แขวงวังใหม่ เขตปทุมวัน <br />
+                                    กรุงเทพมหานคร 10330
+                                </h2>
+                                <h3>
+                                    Contact us : <br />
+                                    <div className="email">
+                                        <img src="" alt="" />
+                                        <MdEmail color="var(--persian-pink)" />{" "}
+                                        <p>tubuilding9.sc@gmail.com</p>
+                                    </div>
+                                    <div className="email">
+                                        <img src="" alt="" />
+                                        <AiFillInstagram color="var(--persian-pink)" />{" "}
+                                        <p>building9.tu</p>
+                                    </div>
+                                </h3>
+                            </div>
+                            <div className="Condi">
+                                <a href="#">
+                                    ข้อกำหนด
+                                    เงื่อนไขการใช้งานและนโยบายคุ้มครองข้อมูลส่วนบุลคล
                                 </a>
                             </div>
-                        </li>
-                    ) : (
-                        <li className="">
-                            <Link to="/Login">
-                                Login <CiLogin />
-                            </Link>
-                        </li>
-                    )}
-                </ul>
-            </nav>
-            <div className="page">
-                <div className="home" id="Home">
-                    <Swiper
-                        pagination={{
-                            dynamicBullets: true,
-                        }}
-                        modules={[Pagination, Autoplay]}
-                        autoplay={{
-                            delay: 3000,
-                            disableOnInteraction: false,
-                        }}
-                        spaceBetween={0}
-                        slidesPerView={1}
-                        className="mySwiper"
-                    >
-                        <SwiperSlide>
-                            <img src={Home1} alt="" />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src={Home1} alt="" />
-                        </SwiperSlide>
-                    </Swiper>
-                </div>
-                <div className="public">
-                    <h1>ข่าวประชาสัมพันธ์</h1>
-                    <div className="Catalog">
-                        <div className="item">
-                            {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                        </div>
-                        <div className="item">
-                            {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                        </div>
-                        <div className="item">
-                            {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                        </div>
-                        <div className="item">
-                            {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                        </div>
-                        <div className="item">
-                            {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                        </div>
-                        <div className="item">
-                            {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                        </div>
-                    </div>
-                    <button>
-                        <p>อ่านทั้งหมด</p>
-                    </button>
-                </div>
-                <div className="activity">
-                    <h1>กิจกรรม</h1>
-                    <div className="Catalog">
-                        <div className="item">
-                            {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                        </div>
-                        <div className="item">
-                            {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                        </div>
-                        <div className="item">
-                            {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                        </div>
-                    </div>
-                    <button>
-                        <p>ดูทั้งหมด</p>
-                    </button>
-                </div>
-                <div className="road">
-                    <div className="Catalog">
-                        <div className="item">
-                            <Link to="/Information">
-                                <img src={User} alt="" />
-                            </Link>
-                            <p>สารสนเทศ</p>
-                        </div>
-                        <div className="item">
-                            <a href="https://schedule.tucm.cc/">
-                                <img src={Table} alt="" />
-                            </a>
-                            <p>ตารางเรียน</p>
-                        </div>
-                        <div className="item">
-                            <a href="">
-                                <img src={Calender} alt="" />
-                            </a>
-                            <p>ปฏิทิน</p>
-                        </div>
-                        <div className="item">
-                            <a href="">
-                                <img src={Regis} alt="" />
-                            </a>
-                            <p>ลงทะเบียน</p>
-                        </div>
-                        <div className="item">
-                            <a href="">
-                                <img src={Announce} alt="" />
-                            </a>
-                            <p>ประกาศ</p>
-                        </div>
-                        <div className="item">
-                            <a href="">
-                                <img src={Report} alt="" />
-                            </a>
-                            <p>ระบบร้องเรียน</p>
-                        </div>
+                        </footer>
                     </div>
                 </div>
-                <footer>
-                    <img src={BumpCar} alt="" />
-                    <div className="footer_text">
-                        <h2>
-                            คณะกรรมการตึก ๙ โรงเรียนเตรียมอุดมศึกษา <br />
-                            277 ถนนพญาไท แขวงวังใหม่ เขตปทุมวัน <br />
-                            กรุงเทพมหานคร 10330
-                        </h2>
-                        <h3>
-                            Contact us : <br />
-                            <div className="email">
-                                <img src="" alt="" />
-                                <MdEmail color="var(--persian-pink)" />{" "}
-                                <p>tubuilding9.sc@gmail.com</p>
-                            </div>
-                            <div className="email">
-                                <img src="" alt="" />
-                                <AiFillInstagram color="var(--persian-pink)" />{" "}
-                                <p>building9.tu</p>
-                            </div>
-                        </h3>
-                    </div>
-                    <div className="Condi">
-                        <a href="#">
-                            ข้อกำหนด
-                            เงื่อนไขการใช้งานและนโยบายคุ้มครองข้อมูลส่วนบุลคล
-                        </a>
-                    </div>
-                </footer>
-            </div>
+            )}
         </div>
     );
 }

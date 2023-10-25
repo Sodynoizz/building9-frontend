@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import "./assets/main-styles/font.css";
-import "./assets/LogRe_styles/Login.css";
-import Ticket from "./assets/img/Log_ticket.png";
+import "./assets/styles/main-styles/font.css";
 import axios from "axios";
-import App from "./App";
 
 function Notf() {
     return (

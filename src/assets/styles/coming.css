@@ -1,0 +1,152 @@
+.Coming_container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/background_coming.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    flex-direction: column;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    font-family: MN;
+    justify-content: flex-end;
+}
+.Coming_lower {
+    position: absolute;
+    display: flex;
+    justify-self: end;
+    justify-content: space-between;
+    width: 100%;
+}
+.Coming_lower img:nth-child(1) {
+    width: 35rem;
+    height: 40rem;
+    align-self: end;
+}
+.Coming_lower img:nth-child(2) {
+    width: 30rem;
+    height: 45rem;
+    align-self: end;
+}
+.Coming_container .Moon {
+    position: absolute;
+    width: 160px;
+    top: 2rem;
+    left: 20rem;
+}
+.Coming_container .ballroon {
+    position: absolute;
+    width: 200px;
+    top: -3rem;
+    right: 30rem;
+}
+.Coming_container .Comingtext {
+    margin: auto auto;
+    color: var(--alice-blue);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Coming_container .Comingtext h1 {
+    font-size: 10rem;
+    text-shadow: 5px 5px #000000;
+}
+@media (max-width: 1577px) {
+    .Coming_lower {
+        position: absolute;
+        display: flex;
+        justify-self: end;
+        justify-content: space-between;
+        width: 130%;
+    }
+    .Coming_lower img:nth-child(1) {
+        width: 30rem;
+        height: 35rem;
+        align-self: end;
+    }
+    .Coming_lower img:nth-child(2) {
+        width: 25rem;
+        height: 40rem;
+        align-self: end;
+    }
+    .Coming_container .Comingtext h1 {
+        font-size: 7rem;
+        text-shadow: 5px 5px #000000;
+    }
+    .Coming_container .Moon {
+        position: absolute;
+        width: 160px;
+        top: 2rem;
+        left: 10rem;
+    }
+    .Coming_container .ballroon {
+        position: absolute;
+        width: 200px;
+        top: -3rem;
+        right: 15rem;
+    }
+}
+@media (max-height: 940px) {
+    .Coming_lower img:nth-child(1) {
+        width: 25rem;
+        height: 30rem;
+        align-self: end;
+    }
+    .Coming_lower img:nth-child(2) {
+        width: 25rem;
+        height: 40rem;
+        align-self: end;
+    }
+}
+@media (max-width: 875px) {
+    .Coming_container .Moon {
+        position: absolute;
+        width: 160px;
+        top: 2rem;
+        left: 5rem;
+    }
+    .Coming_container .ballroon {
+        position: absolute;
+        width: 200px;
+        top: -3rem;
+        right: 7rem;
+    }
+}
+@media (max-width: 677px) {
+    .Coming_lower {
+        position: absolute;
+        display: flex;
+        justify-self: end;
+        justify-content: space-between;
+        width: 180%;
+    }
+    .Coming_lower img:nth-child(1) {
+        width: 20rem;
+        height: 25rem;
+        align-self: end;
+    }
+    .Coming_lower img:nth-child(2) {
+        width: 20rem;
+        height: 25rem;
+        align-self: end;
+    }
+    .Coming_container .Comingtext h1 {
+        font-size: 4rem;
+        text-shadow: 5px 5px #000000;
+    }
+    .Coming_container .Moon {
+        position: absolute;
+        width: 160px;
+        top: -2rem;
+        left: -2rem;
+    }
+    .Coming_container .ballroon {
+        position: absolute;
+        width: 200px;
+        top: -8rem;
+        right: -5rem;
+    }
+}
