@@ -28,7 +28,7 @@ body {
 .public,
 .activity,
 .road {
-    background-image: url("../img/background.png");
+    background-image: url("/src/assets/img/background.png");
     background-size: cover;
     background-attachment: fixed;
 }

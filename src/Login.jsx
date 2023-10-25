@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, Navigate } from "react-router-dom";
-import "./assets/main-styles/font.css";
-import "./assets/LogRe_styles/Login.css";
+import "./assets/styles/main-styles/font.css";
+import "./assets/styles/LogRe_styles/Login.css";
 import Ticket from "./assets/img/Log_ticket.png";
 import TicketPhone from "./assets/img/Ticket_Phone.png";
 import TicketfPhone from "./assets/img/ticketfphone.png";
@@ -9,12 +9,14 @@ import axios from "axios";
 import App from "./App";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 const LoginURL = "https://building9-backend.vercel.app/api/auth/login";
 
 let StudentID;
 
 function Login() {
+    const [passwordType, setPasswordType] = useState("password");
     const [StudentId, setStudentId] = useState("");
     const [PassWord, setPassWord] = useState("");
     const [success, setSuccess] = useState(false);
@@ -116,6 +118,13 @@ function Login() {
             handleSubmit(e);
         }
     };
+    const togglePassword = () => {
+        if (passwordType === "password") {
+            setPasswordType("text");
+            return;
+        }
+        setPasswordType("password");
+    };
     return (
         <div className="Content">
             <div className="ticket">
@@ -137,7 +146,7 @@ function Login() {
                         />
                         <div className="Log_pas">
                             <input
-                                type="password"
+                                type={passwordType}
                                 placeholder="Password"
                                 value={PassWord}
                                 onChange={(event) =>
@@ -145,6 +154,16 @@ function Login() {
                                 }
                                 onKeyPress={handleFormSubmit}
                             />
+                            <a onClick={togglePassword} className="Eye">
+                                {passwordType === "password" ? (
+                                    <AiFillEye color="#f51d8cff" size={24} />
+                                ) : (
+                                    <AiFillEyeInvisible
+                                        color="#f51d8cff"
+                                        size={24}
+                                    />
+                                )}
+                            </a>
                             <Link to="/Forget_password" className="forget">
                                 Forgot password?
                             </Link>

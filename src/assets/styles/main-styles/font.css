@@ -1,0 +1,12 @@
+@font-face {
+    font-family: MN;
+    src: url("/src/assets/font/MN_MINIMON.ttf");
+}
+@font-face {
+    font-family: MN_Bold;
+    src: url("/src/assets/font/MN_MINIMON_Bold.ttf");
+}
+@font-face {
+    font-family: MN_Light;
+    src: url("/src/assets/font/MN_MINIMON_Light.ttf");
+}

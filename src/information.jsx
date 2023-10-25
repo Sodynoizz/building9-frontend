@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import "./assets/main-styles/font.css";
+import "./assets/styles/main-styles/font.css";
 import "./assets/styles/info.css";
 import White from "./assets/img/white.jpg";
 import User from "./assets/img/User.png";

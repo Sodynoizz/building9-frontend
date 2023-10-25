@@ -1,31 +1,27 @@
-import React, { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
-import "./assets/styles/main-styles/font.css";
-import "./assets/styles/forget.css";
-import axios from "axios";
+import React from "react";
+import OTPInput, { ResendOTP } from "otp-input-react";
+import "./assets/styles/otp.css";
+import { useState, useEffect } from "react";
+import { email } from "./Forget.jsx";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
-const ForgetURL = "https://building9-backend.vercel.app/api/auth/otp";
-let email;
-
-function Forget() {
-    const [Email, setEmail] = useState("");
+const OTPURL = "https://building9-backend.vercel.app/api/auth/checkotp";
+let Email = email;
+function OTP() {
+    const [OTP, setOTP] = useState("");
     const [Success, setSuccess] = useState(false);
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleSubmit = async (otp) => {
         try {
-            const response = await axios.post(ForgetURL, {
-                email: Email,
-                subject: "Password Reset",
-                message: "Enter the code below to reset your password",
-                duration: "0.05",
+            const response = await axios.post(OTPURL, {
+                email: email,
+                otp: otp,
                 environmentKey: import.meta.env.VITE_LOGRE,
             });
-            setEmail("");
-            console.log(response?.data);
+            console.log(response);
+            setOTP("");
             setSuccess(true);
-            email = Email;
         } catch (error) {
             if (error.response) {
                 toast.error(error.response.data.message, {
@@ -82,8 +78,8 @@ function Forget() {
                     },
                 });
             }
-            setEmail("");
-            toast.error("StudentID or Password is wrong", {
+            setOTP("");
+            toast.error("Uncorrect", {
                 className: "error-message",
                 progressBar: true,
                 hideProgressBar: false,
@@ -102,28 +98,38 @@ function Forget() {
             });
         }
     };
+    const handleOTPChange = (otp) => {
+        setOTP(otp);
+        console.log(otp.length);
+        if (otp.length >= 4) {
+            console.log(otp);
+            handleSubmit(otp);
+        }
+    };
     return (
-        <div className="forget_container">
-            <div className="forg-header">
-                <h1>Forget Password</h1>
-            </div>
-            <div className="forg-input" action="">
-                <h2>Request OTP</h2>
-                <input
-                    type="email"
-                    placeholder="Email"
-                    value={Email}
-                    onChange={(event) => setEmail(event.target.value)}
-                />
-            </div>
-            <div className="forg-Submit">
-                {Success ? (
-                    <Navigate to="/OTP" />
-                ) : (
-                    <Link onClick={handleSubmit} to="/OTP">
-                        Submit
-                    </Link>
-                )}
+        <div className="OTP_container">
+            <div className="OTP_content">
+                <div className="OTP_header">
+                    <h1>กรอกรหัส OTP</h1>
+                </div>
+                <div className="OTP_IN">
+                    <OTPInput
+                        value={OTP}
+                        onChange={handleOTPChange}
+                        autoFocus
+                        OTPLength={4}
+                        otpType="number"
+                        disabled={false}
+                        inputContainerStyles={{ width: "500px" }}
+                    />
+                </div>
+                <div className="reman_time">
+                    <p>remaning time:</p>
+                    <ResendOTP
+                        onResendClick={() => console.log("Resend clicked")}
+                        maxTime={180}
+                    />
+                </div>
             </div>
             <ToastContainer
                 position="bottom-right"
@@ -139,6 +145,4 @@ function Forget() {
         </div>
     );
 }
-
-export default Forget;
-export { email };
+export default OTP;

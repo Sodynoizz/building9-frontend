@@ -1,15 +1,18 @@
 import { useState } from "react";
-import "./assets/LogRe_styles/Regis.css";
-import "./assets/main-styles/font.css";
+import "./assets/styles/LogRe_styles/Regis.css";
+import "./assets/styles/main-styles/font.css";
 import { HiArrowUturnLeft } from "react-icons/hi2";
 import axios from "axios";
 import { Link, Navigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 const RegisURL = "https://building9-backend.vercel.app/api/auth/register";
 
 function Regis() {
+    const [passwordType1, setPasswordType1] = useState("password");
+    const [passwordType2, setPasswordType2] = useState("password");
     const [StudentID, setStudentID] = useState("");
     const [Prefix, setPrefix] = useState("");
     const [Name, setName] = useState("");
@@ -224,6 +227,20 @@ function Regis() {
             handleSubmit(e);
         }
     };
+    const togglePassword1 = () => {
+        if (passwordType1 === "password") {
+            setPasswordType1("text");
+            return;
+        }
+        setPasswordType1("password");
+    };
+    const togglePassword2 = () => {
+        if (passwordType2 === "password") {
+            setPasswordType2("text");
+            return;
+        }
+        setPasswordType2("password");
+    };
     return (
         <div className="AllContent">
             <div className="header">
@@ -315,19 +332,37 @@ function Regis() {
                         placeholder="Facebook"
                     />
                 </div>
-                <input
-                    type="password"
-                    value={Password}
-                    onChange={(event) => setPassword(event.target.value)}
-                    placeholder="Password *"
-                />
-                <input
-                    type="text"
-                    value={ConPass}
-                    onChange={(event) => setConPass(event.target.value)}
-                    placeholder="ยืนยัน Password *"
-                    onKeyPress={handleFormSubmit}
-                />
+                <div className="passW">
+                    <input
+                        type={passwordType1}
+                        value={Password}
+                        onChange={(event) => setPassword(event.target.value)}
+                        placeholder="Password *"
+                    />
+                    <a onClick={togglePassword1} className="Eye">
+                        {passwordType1 === "password" ? (
+                            <AiFillEye color="#f51d8cff" size={24} />
+                        ) : (
+                            <AiFillEyeInvisible color="#f51d8cff" size={24} />
+                        )}
+                    </a>
+                </div>
+                <div className="passW">
+                    <input
+                        type={passwordType2}
+                        value={ConPass}
+                        onChange={(event) => setConPass(event.target.value)}
+                        placeholder="ยืนยัน Password *"
+                        onKeyPress={handleFormSubmit}
+                    />
+                    <a onClick={togglePassword2} className="Eye">
+                        {passwordType2 === "password" ? (
+                            <AiFillEye color="#f51d8cff" size={24} />
+                        ) : (
+                            <AiFillEyeInvisible color="#f51d8cff" size={24} />
+                        )}
+                    </a>
+                </div>
             </form>
             <div className="Submit_btn">
                 <div className="Accept">

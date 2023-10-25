@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../img/Log_Background.png");
+    background-image: url("/src/assets/img/Log_Background.png");
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -94,6 +94,15 @@
     width: 100%;
     font-family: MN;
     margin-bottom: 40px;
+    position: relative;
+}
+.Log_pas > .Eye {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: 17%;
+    right: 3%;
+    cursor: pointer;
 }
 .Log_pas > .forget {
     margin-top: 0.5rem;

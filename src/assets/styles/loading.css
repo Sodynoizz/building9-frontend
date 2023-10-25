@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.loading-page {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.689);
+}
+.loading-page > p {
+    font-family: MN_Bold;
+    font-size: 4rem;
+    color: var(--persian-pink-2);
+}
+.loading-page > svg {
+    color: var(--magenta);
+}
