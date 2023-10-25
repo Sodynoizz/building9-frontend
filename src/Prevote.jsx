@@ -22,7 +22,7 @@ function Prevote() {
             </div>
             <div className="text_pre">
                 <div className="line_one">
-                    <h1>BUILDIND</h1>
+                    <h1>BUILDING</h1>
                     <img src={Nine} alt="" />
                 </div>
                 <div className="line_two">

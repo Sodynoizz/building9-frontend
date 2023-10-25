@@ -17,7 +17,7 @@ import {
     Scrollbar,
     A11y,
 } from "swiper/modules";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useLocalStorage } from "usehooks-ts";
 import "swiper/css";
@@ -142,10 +142,12 @@ function App() {
         },
     ]);
 
+    const navigate  = useNavigate();
+
     function getHrefForItem(item) {
         switch (item) {
             case "รายงานการประชุม":
-                return "/ComingSoon";
+                return "/ComingSoon"
             case "สรุปบัญชี":
                 return "/ComingSoon";
             case "ปฏิทินตึก":
@@ -282,13 +284,13 @@ function App() {
                                             id={dropdown.id}
                                         >
                                             {dropdown.items.map((item) => (
-                                                <a
-                                                    href={getHrefForItem(item)}
+                                                <Link
+                                                    to={getHrefForItem(item)}
                                                     className="DropDown-item"
                                                     key={item}
                                                 >
                                                     {item}
-                                                </a>
+                                                </Link>
                                             ))}
                                         </div>
                                     </li>
