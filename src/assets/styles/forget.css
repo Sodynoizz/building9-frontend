@@ -75,6 +75,9 @@
 }
 @media (max-width: 798px) {
     .forget_container {
+        background-position: bottom;
+    }
+    .forget_container {
         row-gap: 30px;
         justify-content: start;
     }

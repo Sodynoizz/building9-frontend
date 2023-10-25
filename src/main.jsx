@@ -31,7 +31,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <Route path="/Prevote" element={<Prevote_page />} />
                 <Route path="/User_info" element={<User_page />} />
                 <Route path="/vote" element={<Vote_page />} />
-                <Route path="/CommingSoon" element={<Commingsoon_page />} />
+                <Route path="/ComingSoon" element={<Commingsoon_page />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>

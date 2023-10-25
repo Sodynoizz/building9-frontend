@@ -27,7 +27,6 @@ function Reset() {
                     newpassword: Password,
                     environmentKey: import.meta.env.VITE_LOGRE,
                 });
-                console.log(response?.data.studentID);
                 reSTID = response?.data.studentID;
                 setPassword("");
                 setConPass("");

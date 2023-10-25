@@ -20,7 +20,6 @@ function OTP() {
                 otp: otp,
                 environmentKey: import.meta.env.VITE_LOGRE,
             });
-            console.log(response);
             setOTP("");
             setSuccess(true);
         } catch (error) {
@@ -101,9 +100,7 @@ function OTP() {
     };
     const handleOTPChange = (otp) => {
         setOTP(otp);
-        console.log(otp.length);
         if (otp.length >= 4) {
-            console.log(otp);
             handleSubmit(otp);
         }
     };

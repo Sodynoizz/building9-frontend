@@ -6,7 +6,7 @@ import axios from "axios";
 function Notf() {
     return (
         <div>
-            <h1>wsefe</h1>
+            <h1>not found</h1>
         </div>
     );
 }

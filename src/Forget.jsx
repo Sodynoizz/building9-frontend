@@ -26,7 +26,6 @@ function Forget() {
                 environmentKey: import.meta.env.VITE_LOGRE,
             });
             setEmail("");
-            console.log(response?.data);
             setSuccess(true);
             setLoading(false);
             email = Email;

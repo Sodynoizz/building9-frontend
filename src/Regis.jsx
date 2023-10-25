@@ -104,7 +104,6 @@ function Regis() {
                 ResetForm();
                 setSuccess(true);
                 STID_Sin = StudentID;
-                console.log(response);
             } catch (error) {
                 if (error.response) {
                     return toast.error(error.response.data, {
