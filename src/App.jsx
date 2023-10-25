@@ -118,7 +118,7 @@ function App() {
         {
             id: "DC5",
             title: "ลงทะเบียน",
-            items: ["กีฬา", "งานสืบสานฯ", "คริสต์มาส", "ประกาศผล/ยืนยันสิทธิ์"],
+            items: ["กีฬาสี", "งานสืบสานฯ", "คริสต์มาส", "ประกาศผล/ยืนยันสิทธิ์"],
         },
         {
             id: "DC6",
@@ -141,8 +141,6 @@ function App() {
             ],
         },
     ]);
-
-    const navigate  = useNavigate();
 
     function getHrefForItem(item) {
         switch (item) {
@@ -559,12 +557,12 @@ function App() {
                                     <div className="email">
                                         <img src="" alt="" />
                                         <MdEmail color="var(--persian-pink)" />{" "}
-                                        <p>tubuilding9.sc@gmail.com</p>
+                                        <p><a href="mailto:tubuilding9.sc@gmail.com" className="fucking-text">tubuilding9.sc@gmail.com</a></p>
                                     </div>
                                     <div className="email">
                                         <img src="" alt="" />
                                         <AiFillInstagram color="var(--persian-pink)" />{" "}
-                                        <p>building9.tu</p>
+                                        <p><a href="https://instagram.com/building9.tu?igshid=MzRlODBiNWFlZA==" className="fucking-text">building9.tu</a></p>
                                     </div>
                                 </h3>
                             </div>

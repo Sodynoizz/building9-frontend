@@ -280,3 +280,8 @@ footer > .Condi > a {
         font-size: 1rem;
     }
 }
+
+.fucking-text {
+    text-decoration: none;
+    color: black;
+}
