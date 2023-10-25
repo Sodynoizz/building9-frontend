@@ -32,7 +32,7 @@ function Vote() {
             <div className="vote_Content">
                 <div className="choice1">
                     <div className="vote_header">
-                        <input type="checkbox" checked="" />
+                        <input type="checkbox" />
                         <span class="checkmark"></span>
                         <h1>{name1}</h1>
                     </div>
@@ -43,7 +43,7 @@ function Vote() {
                 </div>
                 <div className="choice2">
                     <div className="vote_header">
-                        <input type="checkbox" checked="" />
+                        <input type="checkbox" />
                         <span class="checkmark"></span>
                         <h1>{name2}</h1>
                     </div>
@@ -54,7 +54,7 @@ function Vote() {
                 </div>
                 <div className="choice3">
                     <div className="vote_header">
-                        <input type="checkbox" checked="" />
+                        <input type="checkbox" />
                         <span class="checkmark"></span>
                         <h1>{name3}</h1>
                     </div>

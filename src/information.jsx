@@ -31,7 +31,7 @@ function Info() {
                     </h2>
                 </div>
                 <div className="item">
-                    <a href="">
+                    <a href="/CommingSoon">
                         <img src={sign} alt="" />
                     </a>
                     <h2>ตรวจสอบห้องสอบ</h2>

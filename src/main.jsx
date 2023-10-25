@@ -13,6 +13,7 @@ import Reset_page from "./Reset.jsx";
 import Prevote_page from "./Prevote.jsx";
 import User_page from "./userinfo.jsx";
 import Vote_page from "./vote.jsx";
+import Commingsoon_page from "./ComingSoon.jsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -30,6 +31,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <Route path="/Prevote" element={<Prevote_page />} />
                 <Route path="/User_info" element={<User_page />} />
                 <Route path="/vote" element={<Vote_page />} />
+                <Route path="/CommingSoon" element={<Commingsoon_page />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>

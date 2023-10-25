@@ -147,49 +147,49 @@ function App() {
     function getHrefForItem(item) {
         switch (item) {
             case "รายงานการประชุม":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "สรุปบัญชี":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "ปฏิทินตึก":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "นโยบาย checklist":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "ข่าว":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "Intercom":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "สรุป":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "Quiz":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "อุปกรณ์กีฬา":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "ยา":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "Lost & Found":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "กีฬา":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "งานสืบสานฯ":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "คริสต์มาส":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "ประกาศผล/ยืนยันสิทธิ์":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "SHOP":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "คำสั่งซื้อ":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "2566":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "ประวัติ":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "ทำเนียบครูหัวหน้าตึก":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "ครูและบุคลากร":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             case "คณะกรรมการตึก":
-                return "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                return "/CommingSoon";
             default:
                 return "/";
         }
@@ -520,27 +520,27 @@ function App() {
                                     <p>ตารางเรียน</p>
                                 </div>
                                 <div className="item">
-                                    <a href="">
+                                    <Link to="/CommingSoon">
                                         <img src={Calender} alt="" />
-                                    </a>
+                                    </Link>
                                     <p>ปฏิทิน</p>
                                 </div>
                                 <div className="item">
-                                    <a href="">
+                                    <Link to="/CommingSoon">
                                         <img src={Regis} alt="" />
-                                    </a>
+                                    </Link>
                                     <p>ลงทะเบียน</p>
                                 </div>
                                 <div className="item">
-                                    <a href="">
+                                    <Link to="/CommingSoon">
                                         <img src={Announce} alt="" />
-                                    </a>
+                                    </Link>
                                     <p>ประกาศ</p>
                                 </div>
                                 <div className="item">
-                                    <a href="">
+                                    <Link to="/CommingSoon">
                                         <img src={Report} alt="" />
-                                    </a>
+                                    </Link>
                                     <p>ระบบร้องเรียน</p>
                                 </div>
                             </div>
