@@ -6,6 +6,7 @@ import { email } from "./Forget.jsx";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import { Link, Navigate } from "react-router-dom";
 
 const OTPURL = "https://building9-backend.vercel.app/api/auth/checkotp";
 let Email = email;
@@ -113,15 +114,19 @@ function OTP() {
                     <h1>กรอกรหัส OTP</h1>
                 </div>
                 <div className="OTP_IN">
-                    <OTPInput
-                        value={OTP}
-                        onChange={handleOTPChange}
-                        autoFocus
-                        OTPLength={4}
-                        otpType="number"
-                        disabled={false}
-                        inputContainerStyles={{ width: "500px" }}
-                    />
+                    {Success ? (
+                        <Navigate to="/Reset_password" />
+                    ) : (
+                        <OTPInput
+                            value={OTP}
+                            onChange={handleOTPChange}
+                            autoFocus
+                            OTPLength={4}
+                            otpType="number"
+                            disabled={false}
+                            inputContainerStyles={{ width: "500px" }}
+                        />
+                    )}
                 </div>
                 <div className="reman_time">
                     <p>remaning time:</p>

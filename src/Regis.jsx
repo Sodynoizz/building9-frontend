@@ -10,6 +10,8 @@ import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 const RegisURL = "https://building9-backend.vercel.app/api/auth/register";
 
+let STID_Sin;
+
 function Regis() {
     const [passwordType1, setPasswordType1] = useState("password");
     const [passwordType2, setPasswordType2] = useState("password");
@@ -101,6 +103,7 @@ function Regis() {
                 });
                 ResetForm();
                 setSuccess(true);
+                STID_Sin = StudentID;
                 console.log(response);
             } catch (error) {
                 if (error.response) {
@@ -375,7 +378,7 @@ function Regis() {
                     </p>
                 </div>
                 {success ? (
-                    <Navigate to="/Login" />
+                    <Navigate to="/" />
                 ) : (
                     <input type="Submit" onClick={handleSubmit} />
                 )}
@@ -399,3 +402,4 @@ function Regis() {
     );
 }
 export default Regis;
+export { STID_Sin };

@@ -28,9 +28,10 @@ body {
 .public,
 .activity,
 .road {
-    background-image: url("/src/assets/img/background.png");
+    background-image: url("/src/assets/img/background4.png");
     background-size: cover;
     background-attachment: fixed;
+    background-position: right;
 }
 footer {
     padding: 20px 20px;
@@ -164,6 +165,14 @@ footer > .Condi > a {
     }
 }
 @media (max-width: 1057px) {
+    .public,
+    .activity,
+    .road {
+        background-image: url("/src/assets/img/background.png");
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: right;
+    }
     footer {
         padding: 20px 20px;
         height: 20vh;

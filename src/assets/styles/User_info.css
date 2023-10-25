@@ -1,0 +1,203 @@
+.User_container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: MN_Light;
+    overflow: hidden;
+    font-family: MN;
+}
+.User_topper {
+    width: 100%;
+    height: 20%;
+    background-color: #f29bc0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+}
+.User_topper .username {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.User_topper h1 {
+    color: var(--alice-blue);
+    font-size: 2rem;
+    width: 100%;
+}
+.User_topper h2 {
+    color: var(--alice-blue);
+    font-size: 2rem;
+    width: 100%;
+}
+.User_topper > img {
+    width: 150px;
+    margin-right: 16px;
+}
+.User_topper > a {
+    position: absolute;
+    content: "";
+    bottom: 1rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+    column-gap: 0.2rem;
+    color: var(--alice-blue);
+    transition: all 0.3s;
+}
+.User_topper > a:hover {
+    transform: scale(1.1, 1.1);
+}
+.User_header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+}
+.User_header h1 {
+    color: #f3a0c3;
+    font-size: 4rem;
+}
+.User_content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 3rem;
+}
+.User_content .User_first > div {
+    display: flex;
+    align-items: center;
+}
+.User_content .User_first div h2,
+.User_content .User_two div h2 {
+    color: #f3a0c3;
+    font-size: 3rem;
+}
+.User_content .User_first div p,
+.User_content .User_two div p {
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+.User_content .User_two {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.User_content .User_two .Room div,
+.User_content .User_two .Number div {
+    display: flex;
+    align-items: center;
+}
+.User_footer {
+    display: flex;
+    height: auto;
+    padding: 0 2rem;
+    font-size: 2.5rem;
+    align-items: center;
+    column-gap: 1rem;
+}
+.User_footer div {
+    display: flex;
+    align-items: end;
+}
+.User_footer p {
+    color: #7b7b7b;
+}
+.User_footer > div > p:nth-child(2) {
+    margin-left: 10px;
+}
+@media (max-width: 1061px) {
+    .User_content .User_two {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .User_content .User_first div h2,
+    .User_content .User_two div h2 {
+        color: #f3a0c3;
+        font-size: 2.5rem;
+    }
+    .User_content .User_two {
+        width: 100%;
+    }
+    .User_content .User_two .Room div,
+    .User_content .User_two .Number div {
+        width: 100%;
+    }
+    .User_footer div {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+    .User_footer > div > p {
+        width: 100%;
+        margin-left: 0rem;
+    }
+    .User_footer svg {
+        align-self: flex-start;
+    }
+}
+@media (max-width: 792px) {
+    .User_content .User_two {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .User_content .User_first div h2,
+    .User_content .User_two div h2,
+    .User_content .User_first div p,
+    .User_content .User_two div p {
+        font-size: 1.3rem;
+    }
+    .User_content .User_two {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .User_header h1 {
+        font-size: 3rem;
+    }
+    .User_header {
+        padding: 0 1rem;
+    }
+    .User_content {
+        padding: 1rem;
+    }
+    .User_footer {
+        font-size: 1.5rem;
+    }
+    .User_content .User_two {
+        width: 100%;
+    }
+    .User_content .User_two .Room div,
+    .User_content .User_two .Number div {
+        width: 100%;
+    }
+    .User_topper > img {
+        width: 100px;
+        margin-right: 16px;
+    }
+    .User_topper > h2 {
+        height: 100px;
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        color: var(--alice-blue);
+        font-size: 2rem;
+    }
+    .User_topper > a {
+        font-size: 1.2rem;
+    }
+    .User_footer svg {
+        align-self: self-start;
+    }
+}

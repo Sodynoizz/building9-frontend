@@ -19,6 +19,7 @@ import {
 } from "swiper/modules";
 import { Link, Navigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useLocalStorage } from "usehooks-ts";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -37,19 +38,25 @@ import { MdEmail } from "react-icons/md";
 import { AiFillInstagram } from "react-icons/ai";
 import { Spin as Hamburger } from "hamburger-react";
 import { StudentID } from "./Login";
+import { STID_Sin } from "./Regis";
 const UserURL = "https://building9-backend.vercel.app/api/auth/profile";
 import axios from "axios";
 import LoadingPage from "./loading.jsx";
+import { reSTID } from "./Reset";
 
 function App() {
-    let [STDID, setSTDID] = useState("");
-    STDID = StudentID;
+    let [STDID, setSTDID] = useState(
+        localStorage.getItem("STDID") || StudentID || STID_Sin || reSTID || ""
+    );
     const [user, setUser] = useState("");
     const [STNumber, setSTNumber] = useState("");
     const [STRoom, setSTRoom] = useState("");
     const [check, setCheck] = useState(false);
     const [loading, setLoading] = useState(false);
-
+    let name;
+    useEffect(() => {
+        localStorage.setItem("STDID", STDID);
+    });
     useEffect(() => {
         const Start = async (e) => {
             try {
@@ -60,7 +67,9 @@ function App() {
                 });
                 setCheck(true);
                 console.log(response?.data);
-                setUser(response?.data.studentNickname);
+                name = response?.data.studentName;
+                name = name.split(" ");
+                setUser(name[0]);
                 setSTNumber(response?.data.studentNumber);
                 setSTRoom(response?.data.studentRoom);
                 setLoading(false);
@@ -187,7 +196,7 @@ function App() {
     }
 
     function Dropdown9() {
-        var Dropdown = document.getElementById("DC9");
+        let Dropdown = document.getElementById("DC9");
 
         if (Dropdown.dataset.shown === "false") {
             Dropdown.style.display = "block";
@@ -226,6 +235,7 @@ function App() {
     }
 
     const logout = () => {
+        localStorage.setItem("STDID", "");
         window.location.reload();
     };
     return (
@@ -286,7 +296,7 @@ function App() {
                                     </li>
                                 ))}
                                 <li>
-                                    <p>VOTE</p>
+                                    <Link to="/Prevote">VOTE</Link>
                                 </li>
                             </ul>
                         </div>
@@ -310,10 +320,14 @@ function App() {
                                         className="Dropdown-content"
                                         data-shown="false"
                                         id="DC9"
+                                        style={{ display: "none" }}
                                     >
-                                        <a href="#" className="DropDown-item">
+                                        <Link
+                                            to="/User_info"
+                                            className="DropDown-item"
+                                        >
                                             จัดการบัญชี
-                                        </a>
+                                        </Link>
                                         <a
                                             href="#"
                                             onClick={logout}

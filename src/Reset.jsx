@@ -1,13 +1,135 @@
 import React from "react";
 import "./assets/styles/reset.css";
 import { useState, useEffect } from "react";
+import { Link, Navigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import { email } from "./Forget.jsx";
+import "react-toastify/dist/ReactToastify.css";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import axios from "axios";
+
+const ReURL = "https://building9-backend.vercel.app/api/auth/reset";
+
+let reSTID;
 
 function Reset() {
     const [passwordType1, setPasswordType1] = useState("password");
     const [passwordType2, setPasswordType2] = useState("password");
     const [Password, setPassword] = useState("");
     const [ConPass, setConPass] = useState("");
+    const [Success, setSuccess] = useState(false);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (Password === ConPass) {
+            try {
+                const response = await axios.post(ReURL, {
+                    email: email,
+                    newpassword: Password,
+                    environmentKey: import.meta.env.VITE_LOGRE,
+                });
+                console.log(response?.data.studentID);
+                reSTID = response?.data.studentID;
+                setPassword("");
+                setConPass("");
+                setSuccess(true);
+                console.log("Success");
+            } catch (error) {
+                if (error.response) {
+                    toast.error(error.response.data.message, {
+                        className: "error-message",
+                        progressBar: true,
+                        hideProgressBar: false,
+                        progressStyle: {
+                            background: "rgb(255,168,212)",
+                            background:
+                                "linear-gradient(90deg, rgba(255,168,212,1) 0%, rgba(245,119,185,1) 38%, rgba(245,29,140,1) 100%)",
+                            height: "5px",
+                        },
+                        style: {
+                            fontFamily: "MN_Light",
+                            fontSize: "1.2rem",
+                            fontWeight: "bold",
+                            color: "rgba(245,119,185,1)",
+                        },
+                    });
+                } else if (error.request) {
+                    toast.error(error.message, {
+                        className: "error-message",
+                        progressBar: true,
+                        hideProgressBar: false,
+                        progressStyle: {
+                            background: "rgb(255,168,212)",
+                            background:
+                                "linear-gradient(90deg, rgba(255,168,212,1) 0%, rgba(245,119,185,1) 38%, rgba(245,29,140,1) 100%)",
+                            height: "5px",
+                        },
+                        style: {
+                            fontFamily: "MN_Light",
+                            fontSize: "1.2rem",
+                            fontWeight: "bold",
+                            color: "rgba(245,119,185,1)",
+                        },
+                    });
+                } else {
+                    toast.error("An unexpected error occurred.", {
+                        className: "error-message",
+                        progressBar: true,
+                        hideProgressBar: false,
+                        progressStyle: {
+                            background: "rgb(255,168,212)",
+                            background:
+                                "linear-gradient(90deg, rgba(255,168,212,1) 0%, rgba(245,119,185,1) 38%, rgba(245,29,140,1) 100%)",
+                            height: "5px",
+                        },
+                        style: {
+                            fontFamily: "MN_Light",
+                            fontSize: "1.2rem",
+                            fontWeight: "bold",
+                            color: "rgba(245,119,185,1)",
+                        },
+                    });
+                }
+                setPassword("");
+                setConPass("");
+                setSuccess(false);
+                toast.error("Password is too short", {
+                    className: "error-message",
+                    progressBar: true,
+                    hideProgressBar: false,
+                    progressStyle: {
+                        background: "rgb(255,168,212)",
+                        background:
+                            "linear-gradient(90deg, rgba(255,168,212,1) 0%, rgba(245,119,185,1) 38%, rgba(245,29,140,1) 100%)",
+                        height: "5px",
+                    },
+                    style: {
+                        fontFamily: "MN_Light",
+                        fontSize: "1.2rem",
+                        fontWeight: "bold",
+                        color: "rgba(245,119,185,1)",
+                    },
+                });
+            }
+        } else {
+            toast.error("Password is no matching", {
+                className: "error-message",
+                progressBar: true,
+                hideProgressBar: false,
+                progressStyle: {
+                    background: "rgb(255,168,212)",
+                    background:
+                        "linear-gradient(90deg, rgba(255,168,212,1) 0%, rgba(245,119,185,1) 38%, rgba(245,29,140,1) 100%)",
+                    height: "5px",
+                },
+                style: {
+                    fontFamily: "MN_Light",
+                    fontSize: "1.2rem",
+                    fontWeight: "bold",
+                    color: "rgba(245,119,185,1)",
+                },
+            });
+        }
+    };
 
     const togglePassword1 = () => {
         if (passwordType1 === "password") {
@@ -70,10 +192,28 @@ function Reset() {
                     </div>
                 </div>
                 <div className="Re_Submit">
-                    <a href="#">Submit</a>
+                    {Success ? (
+                        <Navigate to="/" />
+                    ) : (
+                        <a href="#" onClick={handleSubmit}>
+                            Submit
+                        </a>
+                    )}
                 </div>
             </div>
+            <ToastContainer
+                position="bottom-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </div>
     );
 }
 export default Reset;
+export { reSTID };

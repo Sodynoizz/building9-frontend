@@ -5,6 +5,7 @@ import "./assets/styles/forget.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import LoadingPage from "./loading.jsx";
 
 const ForgetURL = "https://building9-backend.vercel.app/api/auth/otp";
 let email;
@@ -12,9 +13,11 @@ let email;
 function Forget() {
     const [Email, setEmail] = useState("");
     const [Success, setSuccess] = useState(false);
+    const [loading, setLoading] = useState(false);
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            setLoading(true);
             const response = await axios.post(ForgetURL, {
                 email: Email,
                 subject: "Password Reset",
@@ -25,8 +28,10 @@ function Forget() {
             setEmail("");
             console.log(response?.data);
             setSuccess(true);
+            setLoading(false);
             email = Email;
         } catch (error) {
+            setLoading(false);
             if (error.response) {
                 toast.error(error.response.data.message, {
                     className: "error-message",
@@ -104,38 +109,44 @@ function Forget() {
     };
     return (
         <div className="forget_container">
-            <div className="forg-header">
-                <h1>Forget Password</h1>
-            </div>
-            <div className="forg-input" action="">
-                <h2>Request OTP</h2>
-                <input
-                    type="email"
-                    placeholder="Email"
-                    value={Email}
-                    onChange={(event) => setEmail(event.target.value)}
-                />
-            </div>
-            <div className="forg-Submit">
-                {Success ? (
-                    <Navigate to="/OTP" />
-                ) : (
-                    <Link onClick={handleSubmit} to="/OTP">
-                        Submit
-                    </Link>
-                )}
-            </div>
-            <ToastContainer
-                position="bottom-right"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-            />
+            {loading ? (
+                <LoadingPage />
+            ) : (
+                <div className="forget_container">
+                    <div className="forg-header">
+                        <h1>Forget Password</h1>
+                    </div>
+                    <div className="forg-input" action="">
+                        <h2>Request OTP</h2>
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            value={Email}
+                            onChange={(event) => setEmail(event.target.value)}
+                        />
+                    </div>
+                    <div className="forg-Submit">
+                        {Success ? (
+                            <Navigate to="/OTP" />
+                        ) : (
+                            <Link onClick={handleSubmit} to="/OTP">
+                                Submit
+                            </Link>
+                        )}
+                    </div>
+                    <ToastContainer
+                        position="bottom-right"
+                        autoClose={3000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                    />
+                </div>
+            )}
         </div>
     );
 }
