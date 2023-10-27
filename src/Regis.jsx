@@ -68,9 +68,11 @@ function Regis() {
                 ) {
                     return toast.error("Please input all required fields", {
                         className: "error-message",
+                        className: "error-message",
                         progressBar: true,
                         hideProgressBar: false,
                         progressStyle: {
+                            background: "rgb(255,168,212)",
                             background:
                                 "linear-gradient(90deg, rgba(255,168,212,1) 0%, rgba(245,119,185,1) 38%, rgba(245,29,140,1) 100%)",
                             height: "5px",
@@ -106,9 +108,11 @@ function Regis() {
                 if (error.response) {
                     return toast.error(error.response.data, {
                         className: "error-message",
+                        className: "error-message",
                         progressBar: true,
                         hideProgressBar: false,
                         progressStyle: {
+                            background: "rgb(255,168,212)",
                             background:
                                 "linear-gradient(90deg, rgba(255,168,212,1) 0%, rgba(245,119,185,1) 38%, rgba(245,29,140,1) 100%)",
                             height: "5px",
@@ -123,9 +127,11 @@ function Regis() {
                 } else if (error.request) {
                     return toast.error(error.message, {
                         className: "error-message",
+                        className: "error-message",
                         progressBar: true,
                         hideProgressBar: false,
                         progressStyle: {
+                            background: "rgb(255,168,212)",
                             background:
                                 "linear-gradient(90deg, rgba(255,168,212,1) 0%, rgba(245,119,185,1) 38%, rgba(245,29,140,1) 100%)",
                             height: "5px",
@@ -140,9 +146,11 @@ function Regis() {
                 } else {
                     return toast.error("An unexpected error occurred.", {
                         className: "error-message",
+                        className: "error-message",
                         progressBar: true,
                         hideProgressBar: false,
                         progressStyle: {
+                            background: "rgb(255,168,212)",
                             background:
                                 "linear-gradient(90deg, rgba(255,168,212,1) 0%, rgba(245,119,185,1) 38%, rgba(245,29,140,1) 100%)",
                             height: "5px",
@@ -160,9 +168,11 @@ function Regis() {
             if (Email !== ConEmail) {
                 return toast.error("Email is not matching", {
                     className: "error-message",
+                    className: "error-message",
                     progressBar: true,
                     hideProgressBar: false,
                     progressStyle: {
+                        background: "rgb(255,168,212)",
                         background:
                             "linear-gradient(90deg, rgba(255,168,212,1) 0%, rgba(245,119,185,1) 38%, rgba(245,29,140,1) 100%)",
                         height: "5px",
@@ -177,9 +187,11 @@ function Regis() {
             } else if (Password !== ConPass) {
                 return toast.error("Password is not matching", {
                     className: "error-message",
+                    className: "error-message",
                     progressBar: true,
                     hideProgressBar: false,
                     progressStyle: {
+                        background: "rgb(255,168,212)",
                         background:
                             "linear-gradient(90deg, rgba(255,168,212,1) 0%, rgba(245,119,185,1) 38%, rgba(245,29,140,1) 100%)",
                         height: "5px",
@@ -197,6 +209,7 @@ function Regis() {
                     progressBar: true,
                     hideProgressBar: false,
                     progressStyle: {
+                        background: "rgb(255,168,212)",
                         background:
                             "linear-gradient(90deg, rgba(255,168,212,1) 0%, rgba(245,119,185,1) 38%, rgba(245,29,140,1) 100%)",
                         height: "5px",

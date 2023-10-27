@@ -16,6 +16,8 @@ function Vote() {
     const [description2, setdescription2] = useState("");
     const [thumbnail_link2, setthumbnail_link2] = useState("");
     const [name3, setname3] = useState("");
+    const [isChecked, setIsChecked] = useState(false);
+    const [Checked, setChecked] = useState(0);
     useEffect(() => {
         axios.get(VoteURL).then((response) => {
             setname1(response?.data.choices[0].name);
@@ -27,13 +29,26 @@ function Vote() {
             setname3(response?.data.choices[2].name);
         });
     }, []);
+    const handleChange = (event) => {
+        setIsChecked(event.target.checked);
+        if (isChecked == true) {
+            setChecked(1);
+        } else setChecked(0);
+        console.log(Checked);
+    };
     return (
         <div className="Vote_container">
             <div className="vote_Content">
                 <div className="choice1">
                     <div className="vote_header">
-                        <input type="checkbox" />
-                        <span class="checkmark"></span>
+                        <div className="checkbox_container">
+                            <input
+                                type="checkbox"
+                                onChange={handleChange}
+                                checked={isChecked}
+                            />
+                            <span className="checkmark"></span>
+                        </div>
                         <h1>{name1}</h1>
                     </div>
                     <img src={white} alt="" />
@@ -43,8 +58,10 @@ function Vote() {
                 </div>
                 <div className="choice2">
                     <div className="vote_header">
-                        <input type="checkbox" />
-                        <span class="checkmark"></span>
+                        <div className="checkbox_container">
+                            <input type="checkbox" />
+                            <span className="checkmark"></span>
+                        </div>
                         <h1>{name2}</h1>
                     </div>
                     <img src={white} alt="" />
@@ -54,10 +71,15 @@ function Vote() {
                 </div>
                 <div className="choice3">
                     <div className="vote_header">
-                        <input type="checkbox" />
-                        <span class="checkmark"></span>
+                        <div className="checkbox_container">
+                            <input type="checkbox" />
+                            <span className="checkmark"></span>
+                        </div>
                         <h1>{name3}</h1>
                     </div>
+                </div>
+                <div className="vote_btn">
+                    <Link>Submit</Link>
                 </div>
             </div>
         </div>
