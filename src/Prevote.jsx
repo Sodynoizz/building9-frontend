@@ -34,7 +34,7 @@ function Prevote() {
                     <h1>SYSTEM</h1>
                 </div>
                 <div className="btn">
-                    <Link to="/CommingSoon">VOTE!</Link>
+                    <Link to="/ComingSoon">VOTE!</Link>
                 </div>
             </div>
         </div>

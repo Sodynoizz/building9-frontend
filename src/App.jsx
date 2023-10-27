@@ -66,9 +66,8 @@ function App() {
                     environmentKey: import.meta.env.VITE_LOGRE,
                 });
                 setCheck(true);
-                name = response?.data.studentName;
-                name = name.split(" ");
-                setUser(name[0]);
+                name = response?.data.studentNickname;
+                setUser(name);
                 setSTNumber(response?.data.studentNumber);
                 setSTRoom(response?.data.studentRoom);
                 setLoading(false);
@@ -567,10 +566,10 @@ function App() {
                                 </h3>
                             </div>
                             <div className="Condi">
-                                <a href="/ComingSoon">
+                                <Link to="/ComingSoon">
                                     ข้อกำหนด
                                     เงื่อนไขการใช้งานและนโยบายคุ้มครองข้อมูลส่วนบุลคล
-                                </a>
+                                </Link>
                             </div>
                         </footer>
                     </div>
