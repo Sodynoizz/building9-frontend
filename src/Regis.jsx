@@ -68,7 +68,6 @@ function Regis() {
                 ) {
                     return toast.error("Please input all required fields", {
                         className: "error-message",
-                        className: "error-message",
                         progressBar: true,
                         hideProgressBar: false,
                         progressStyle: {
@@ -108,7 +107,6 @@ function Regis() {
                 if (error.response) {
                     return toast.error(error.response.data, {
                         className: "error-message",
-                        className: "error-message",
                         progressBar: true,
                         hideProgressBar: false,
                         progressStyle: {
@@ -127,7 +125,6 @@ function Regis() {
                 } else if (error.request) {
                     return toast.error(error.message, {
                         className: "error-message",
-                        className: "error-message",
                         progressBar: true,
                         hideProgressBar: false,
                         progressStyle: {
@@ -145,7 +142,6 @@ function Regis() {
                     });
                 } else {
                     return toast.error("An unexpected error occurred.", {
-                        className: "error-message",
                         className: "error-message",
                         progressBar: true,
                         hideProgressBar: false,
@@ -168,7 +164,6 @@ function Regis() {
             if (Email !== ConEmail) {
                 return toast.error("Email is not matching", {
                     className: "error-message",
-                    className: "error-message",
                     progressBar: true,
                     hideProgressBar: false,
                     progressStyle: {
@@ -186,7 +181,6 @@ function Regis() {
                 });
             } else if (Password !== ConPass) {
                 return toast.error("Password is not matching", {
-                    className: "error-message",
                     className: "error-message",
                     progressBar: true,
                     hideProgressBar: false,
