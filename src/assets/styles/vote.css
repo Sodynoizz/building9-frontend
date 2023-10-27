@@ -1,17 +1,21 @@
 .Vote_container {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem;
     font-family: MN;
+    background-image: url(../img/background_vote.png);
+    background-position: center;
+    background-size: cover;
 }
 .vote_Content {
+    z-index: 1;
     height: 100%;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 60%;
 }
 .vote_header {
     display: flex;
@@ -36,4 +40,77 @@
 }
 .vote_des p {
     font-size: 1.5rem;
+}
+.vote_btn {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.vote_btn a {
+    background-color: var(--persian-pink);
+    text-decoration: none;
+    color: var(--alice-blue);
+    font-size: 2rem;
+    border-radius: 25px 25px;
+    padding: 16px;
+    transition: all 0.3s;
+}
+.vote_btn a:hover {
+    transform: scale(1.1, 1.1);
+}
+.checkbox_container {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.checkbox_container > input {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+.checkbox_container > .checkmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f9fde2;
+    z-index: 1;
+    border-radius: 25%;
+}
+.checkmark::before {
+    content: url(../img/cross.png);
+    position: absolute;
+    transform: scale(0.7);
+    display: none;
+}
+.checkbox_container input:checked ~ .checkmark::before {
+    display: block;
+}
+@media (max-width: 833px) {
+    .vote_des p {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .vote_Content {
+        width: 80%;
+    }
+}
+@media (max-width: 519px) {
+    .vote_header h1 {
+        font-size: 2rem;
+        margin-left: 1rem;
+    }
+    .vote_Content {
+        width: 90%;
+    }
 }

@@ -57,7 +57,7 @@ footer > .footer_text {
 }
 footer > .footer_text > h2,
 footer > .footer_text > h3 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     line-height: 50px;
 }
 footer > .footer_text > h3 > .email {
@@ -164,7 +164,7 @@ footer > .Condi > a {
         font-size: 1.5rem;
     }
 }
-@media (max-width: 1057px) {
+@media (max-width: 1060px) {
     .public,
     .activity,
     .road {
@@ -279,9 +279,4 @@ footer > .Condi > a {
         color: black;
         font-size: 1rem;
     }
-}
-
-.fucking-text {
-    text-decoration: none;
-    color: black;
 }

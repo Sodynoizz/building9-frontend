@@ -17,7 +17,7 @@ import {
     Scrollbar,
     A11y,
 } from "swiper/modules";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useLocalStorage } from "usehooks-ts";
 import "swiper/css";
@@ -66,6 +66,8 @@ function App() {
                     environmentKey: import.meta.env.VITE_LOGRE,
                 });
                 setCheck(true);
+                //name = response?.data.studentName;
+                //name = name.split(" ");
                 name = response?.data.studentNickname;
                 setUser(name);
                 setSTNumber(response?.data.studentNumber);
@@ -117,7 +119,12 @@ function App() {
         {
             id: "DC5",
             title: "ลงทะเบียน",
-            items: ["กีฬาสี", "งานสืบสานฯ", "คริสต์มาส", "ประกาศผล/ยืนยันสิทธิ์"],
+            items: [
+                "กีฬาสี",
+                "งานสืบสานฯ",
+                "คริสต์มาส",
+                "ประกาศผล/ยืนยันสิทธิ์",
+            ],
         },
         {
             id: "DC6",
@@ -144,7 +151,7 @@ function App() {
     function getHrefForItem(item) {
         switch (item) {
             case "รายงานการประชุม":
-                return "/ComingSoon"
+                return "/ComingSoon";
             case "สรุปบัญชี":
                 return "/ComingSoon";
             case "ปฏิทินตึก":
@@ -281,13 +288,13 @@ function App() {
                                             id={dropdown.id}
                                         >
                                             {dropdown.items.map((item) => (
-                                                <Link
-                                                    to={getHrefForItem(item)}
+                                                <a
+                                                    href={getHrefForItem(item)}
                                                     className="DropDown-item"
                                                     key={item}
                                                 >
                                                     {item}
-                                                </Link>
+                                                </a>
                                             ))}
                                         </div>
                                     </li>
@@ -556,20 +563,20 @@ function App() {
                                     <div className="email">
                                         <img src="" alt="" />
                                         <MdEmail color="var(--persian-pink)" />{" "}
-                                        <p><a href="mailto:tubuilding9.sc@gmail.com" className="fucking-text">tubuilding9.sc@gmail.com</a></p>
+                                        <p>tubuilding9.sc@gmail.com</p>
                                     </div>
                                     <div className="email">
                                         <img src="" alt="" />
                                         <AiFillInstagram color="var(--persian-pink)" />{" "}
-                                        <p><a href="https://instagram.com/building9.tu?igshid=MzRlODBiNWFlZA==" className="fucking-text">building9.tu</a></p>
+                                        <p>building9.tu</p>
                                     </div>
                                 </h3>
                             </div>
                             <div className="Condi">
-                                <Link to="/ComingSoon">
+                                <a href="/ComingSoon">
                                     ข้อกำหนด
                                     เงื่อนไขการใช้งานและนโยบายคุ้มครองข้อมูลส่วนบุลคล
-                                </Link>
+                                </a>
                             </div>
                         </footer>
                     </div>

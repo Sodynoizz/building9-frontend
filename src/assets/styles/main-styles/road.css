@@ -37,7 +37,7 @@
     content: "นักเรียน";
 }
 .road > .Catalog > .item:nth-child(2)::after {
-    content: "และตารางสอบ";
+    content: "และตารางสอน";
 }
 .road > .Catalog > .item:nth-child(3)::after {
     content: "กิจกรรม";
