@@ -1,6 +1,6 @@
 import React from "react";
 import OTPInput, { ResendOTP } from "otp-input-react";
-import "./assets/styles/otp.css";
+import "./assets/styles/OTP.css";
 import { useState, useEffect } from "react";
 import { email } from "./Forget.jsx";
 import { ToastContainer, toast } from "react-toastify";
