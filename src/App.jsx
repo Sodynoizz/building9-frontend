@@ -573,10 +573,10 @@ function App() {
                                 </h3>
                             </div>
                             <div className="Condi">
-                                <a href="/ComingSoon">
+                                <Link to="/ComingSoon">
                                     ข้อกำหนด
                                     เงื่อนไขการใช้งานและนโยบายคุ้มครองข้อมูลส่วนบุลคล
-                                </a>
+                                </Link>
                             </div>
                         </footer>
                     </div>
