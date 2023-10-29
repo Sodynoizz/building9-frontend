@@ -376,12 +376,11 @@ function App() {
                                 </SwiperSlide>
                             </Swiper>
                         </div>
-                        <div className="background">
-                            <div className="public">
-                                <h1>ข่าวประชาสัมพันธ์</h1>
-                                <div className="Catalog">
-                                    <div className="item">
-                                        {/* <img src="" alt="" />
+                        <div className="public">
+                            <h1>ข่าวประชาสัมพันธ์</h1>
+                            <div className="Catalog">
+                                <div className="item">
+                                    {/* <img src="" alt="" />
                             <div className="content">
                                 <div className="head">Nano</div>
                                 <p>
@@ -392,82 +391,9 @@ function App() {
                                 </p>
                                 <a href="">Read more</a>
                             </div> */}
-                                    </div>
-                                    <div className="item">
-                                        {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                                    </div>
-                                    <div className="item">
-                                        {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                                    </div>
-                                    <div className="item">
-                                        {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                                    </div>
-                                    <div className="item">
-                                        {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                                    </div>
-                                    <div className="item">
-                                        {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                                    </div>
                                 </div>
-                                <button>
-                                    <p>อ่านทั้งหมด</p>
-                                </button>
-                            </div>
-                            <div className="activity">
-                                <h1>กิจกรรม</h1>
-                                <div className="Catalog">
-                                    <div className="item">
-                                        {/* <img src="" alt="" />
+                                <div className="item">
+                                    {/* <img src="" alt="" />
                             <div className="content">
                                 <div className="head">Nano</div>
                                 <p>
@@ -478,76 +404,148 @@ function App() {
                                 </p>
                                 <a href="">Read more</a>
                             </div> */}
-                                    </div>
-                                    <div className="item">
-                                        {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                                    </div>
-                                    <div className="item">
-                                        {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                                    </div>
                                 </div>
-                                <button>
-                                    <p>ดูทั้งหมด</p>
-                                </button>
+                                <div className="item">
+                                    {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                                </div>
+                                <div className="item">
+                                    {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                                </div>
+                                <div className="item">
+                                    {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                                </div>
+                                <div className="item">
+                                    {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                                </div>
                             </div>
-                            <div className="road">
-                                <div className="Catalog">
-                                    <div className="item">
-                                        <Link to="/Information">
-                                            <img src={User} alt="" />
-                                        </Link>
-                                        <p>สารสนเทศ</p>
-                                    </div>
-                                    <div className="item">
-                                        <a href="https://schedule.tucm.cc/">
-                                            <img src={Table} alt="" />
-                                        </a>
-                                        <p>ตารางเรียน</p>
-                                    </div>
-                                    <div className="item">
-                                        <Link to="/ComingSoon">
-                                            <img src={Calender} alt="" />
-                                        </Link>
-                                        <p>ปฏิทิน</p>
-                                    </div>
-                                    <div className="item">
-                                        <Link to="/ComingSoon">
-                                            <img src={Regis} alt="" />
-                                        </Link>
-                                        <p>ลงทะเบียน</p>
-                                    </div>
-                                    <div className="item">
-                                        <Link to="/ComingSoon">
-                                            <img src={Announce} alt="" />
-                                        </Link>
-                                        <p>ประกาศ</p>
-                                    </div>
-                                    <div className="item">
-                                        <Link to="/ComingSoon">
-                                            <img src={Report} alt="" />
-                                        </Link>
-                                        <p>ระบบร้องเรียน</p>
-                                    </div>
+                            <button>
+                                <p>อ่านทั้งหมด</p>
+                            </button>
+                        </div>
+                        <div className="activity">
+                            <h1>กิจกรรม</h1>
+                            <div className="Catalog">
+                                <div className="item">
+                                    {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                                </div>
+                                <div className="item">
+                                    {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                                </div>
+                                <div className="item">
+                                    {/* <img src="" alt="" />
+                            <div className="content">
+                                <div className="head">Nano</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Quas commodi quo numquam
+                                    repellat labore enim iste dolorum non dolore
+                                    a.
+                                </p>
+                                <a href="">Read more</a>
+                            </div> */}
+                                </div>
+                            </div>
+                            <button>
+                                <p>ดูทั้งหมด</p>
+                            </button>
+                        </div>
+                        <div className="road">
+                            <div className="Catalog">
+                                <div className="item">
+                                    <Link to="/Information">
+                                        <img src={User} alt="" />
+                                    </Link>
+                                    <p>สารสนเทศ</p>
+                                </div>
+                                <div className="item">
+                                    <a href="https://schedule.tucm.cc/">
+                                        <img src={Table} alt="" />
+                                    </a>
+                                    <p>ตารางเรียน</p>
+                                </div>
+                                <div className="item">
+                                    <Link to="/ComingSoon">
+                                        <img src={Calender} alt="" />
+                                    </Link>
+                                    <p>ปฏิทิน</p>
+                                </div>
+                                <div className="item">
+                                    <Link to="/ComingSoon">
+                                        <img src={Regis} alt="" />
+                                    </Link>
+                                    <p>ลงทะเบียน</p>
+                                </div>
+                                <div className="item">
+                                    <Link to="/ComingSoon">
+                                        <img src={Announce} alt="" />
+                                    </Link>
+                                    <p>ประกาศ</p>
+                                </div>
+                                <div className="item">
+                                    <Link to="/ComingSoon">
+                                        <img src={Report} alt="" />
+                                    </Link>
+                                    <p>ระบบร้องเรียน</p>
                                 </div>
                             </div>
                         </div>
