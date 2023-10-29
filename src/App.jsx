@@ -288,13 +288,13 @@ function App() {
                                             id={dropdown.id}
                                         >
                                             {dropdown.items.map((item) => (
-                                                <a
-                                                    href={getHrefForItem(item)}
+                                                <Link
+                                                    to={getHrefForItem(item)}
                                                     className="DropDown-item"
                                                     key={item}
                                                 >
                                                     {item}
-                                                </a>
+                                                </Link>
                                             ))}
                                         </div>
                                     </li>
@@ -573,10 +573,10 @@ function App() {
                                 </h3>
                             </div>
                             <div className="Condi">
-                                <a href="/ComingSoon">
+                                <Link to="https://www.npmjs.com/package/otp-input-react">
                                     ข้อกำหนด
                                     เงื่อนไขการใช้งานและนโยบายคุ้มครองข้อมูลส่วนบุลคล
-                                </a>
+                                </Link>
                             </div>
                         </footer>
                     </div>
