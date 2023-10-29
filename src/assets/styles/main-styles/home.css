@@ -1,6 +1,5 @@
 .home {
     max-height: 100vh;
-    background-image: none;
     overflow: hidden;
     overflow-x: auto;
     display: flex;
