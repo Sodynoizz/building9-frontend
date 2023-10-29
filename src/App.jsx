@@ -573,11 +573,7 @@ function App() {
                                 </h3>
                             </div>
                             <div className="Condi">
-<<<<<<< HEAD
-                                <Link to="https://www.npmjs.com/package/otp-input-react">
-=======
                                 <Link to="/ComingSoon">
->>>>>>> 8a475e89e0ba3acb415bc96db6950069497690ba
                                     ข้อกำหนด
                                     เงื่อนไขการใช้งานและนโยบายคุ้มครองข้อมูลส่วนบุลคล
                                 </Link>
