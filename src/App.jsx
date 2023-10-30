@@ -563,12 +563,16 @@ function App() {
                                     <div className="email">
                                         <img src="" alt="" />
                                         <MdEmail color="var(--persian-pink)" />{" "}
-                                        <p>tubuilding9.sc@gmail.com</p>
+                                        <a href="mailto:tubuilding9.sc@gmail.com">
+                                            tubuilding9.sc@gmail.com
+                                        </a>
                                     </div>
                                     <div className="email">
                                         <img src="" alt="" />
                                         <AiFillInstagram color="var(--persian-pink)" />{" "}
-                                        <p>building9.tu</p>
+                                        <a href="https://www.instagram.com/building9.tu/">
+                                            building9.tu
+                                        </a>
                                     </div>
                                 </h3>
                             </div>

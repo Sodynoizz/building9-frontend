@@ -9,7 +9,7 @@ import axios from "axios";
 import App from "./App";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { AiFillEye, AiFillEyeInvisible, AiFillHome } from "react-icons/ai";
 
 const LoginURL = "https://building9-backend.vercel.app/api/auth/login";
 
@@ -172,7 +172,12 @@ function Login() {
                         ) : (
                             <button onClick={handleSubmit}>Submit</button>
                         )}
-                        <Link to="/Regis">Register</Link>
+                        <div className="link">
+                            <Link to="/Regis">Register</Link>
+                            <Link to="/">
+                                <AiFillHome /> Home Page
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
