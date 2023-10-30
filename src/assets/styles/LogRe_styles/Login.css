@@ -135,7 +135,13 @@
 .ticket > .text > .SB > button:hover {
     transform: scale(1.1, 1.1);
 }
-.ticket > .text > .SB > a {
+.ticket > .text > .SB > .link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ticket > .text > .SB > .link > a {
+    display: flex;
     font-size: 1.5rem;
     font-family: MN;
     text-decoration: none;
@@ -181,7 +187,7 @@
 @media (max-width: 447px) {
     .ticket {
         display: flex;
-        width: 420px;
+        width: 400px;
         height: 776px;
         position: relative;
     }
@@ -210,8 +216,11 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 70%;
+        height: 40%;
         width: 100%;
         padding: 20px 0;
+    }
+    .ticket > .text > .head > h1 {
+        font-size: 6rem;
     }
 }
