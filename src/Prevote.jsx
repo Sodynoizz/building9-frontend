@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./assets/styles/main-styles/font.css";
 import "./assets/styles/prevote.css";
 import Topper from "./assets/img/topper.png";
