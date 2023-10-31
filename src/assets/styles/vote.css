@@ -1,7 +1,8 @@
 .Vote_container {
     width: 100vw;
-    height: auto;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2rem;
@@ -16,6 +17,16 @@
     display: flex;
     flex-direction: column;
     width: 60%;
+}
+.header_vote {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 1rem;
 }
 .vote_header {
     display: flex;
@@ -37,6 +48,7 @@
 .choice2 > img {
     align-self: center;
     padding: 1rem 0;
+    width: 600px;
 }
 .vote_des p {
     font-size: 1.5rem;
@@ -103,6 +115,12 @@
     }
     .vote_Content {
         width: 80%;
+    }
+    .choice1 > img,
+    .choice2 > img {
+        align-self: center;
+        padding: 1rem 0;
+        width: 400px;
     }
 }
 @media (max-width: 519px) {

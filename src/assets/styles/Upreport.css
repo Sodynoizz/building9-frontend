@@ -1,0 +1,109 @@
+.UpReport_container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    font-family: MN;
+    background-image: url(../img/uploadbackground.png);
+    background-position: center;
+    background-size: cover;
+}
+.Upheader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    width: 100%;
+}
+.Upheader h1 {
+    font-size: 4rem;
+    text-align: center;
+    color: var(--magenta);
+}
+.Upsend {
+    height: 50%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.formup {
+    display: flex;
+    padding: 1rem;
+}
+.formup h1 {
+    color: var(--persian-pink);
+    font-size: 2.5rem;
+    font-family: MN_Light;
+}
+.formup input {
+    margin-left: 1rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 25px 25px;
+    width: 30%;
+    font-family: MN;
+}
+.dataup {
+    display: flex;
+    padding: 2rem 1rem;
+}
+.dataup h1 {
+    color: var(--persian-pink);
+    font-size: 2.5rem;
+    font-family: MN_Light;
+}
+.dataup > label {
+    margin-left: 1rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 25px 25px;
+    width: 20%;
+    background-color: var(--persian-pink-2);
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none;
+}
+.dataup > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+.dataup > label > svg {
+    margin: 0 5px;
+}
+.Btn_up {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Btn_up > .SubmitUp {
+    margin-left: 1rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 25px 25px;
+    width: 10%;
+    background-color: var(--magenta);
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-family: MN;
+}

@@ -1,0 +1,102 @@
+.Check_container {
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: MN_Light;
+    background-image: url(../img/background_vote.png);
+    overflow: hidden;
+    padding: 1.5rem;
+    font-family: MN;
+    position: relative;
+}
+.CheckHeader {
+    display: flex;
+    background-color: var(--persian-pink);
+    align-items: center;
+    justify-content: space-around;
+    height: 10%;
+    border-radius: 20px;
+}
+.CheckHeader > .btn_close {
+    font-size: 2rem;
+    padding: 16px 20px;
+    background-color: red;
+    border-radius: 25px;
+    color: aliceblue;
+    cursor: pointer;
+    border: none;
+    font-family: MN;
+}
+.CheckHeader > .btn_open {
+    font-size: 2rem;
+    padding: 16px 20px;
+    background-color: rgb(45, 201, 1);
+    border-radius: 25px;
+    color: aliceblue;
+    cursor: pointer;
+    border: none;
+    font-family: MN;
+}
+.CheckHeader > .voted,
+.CheckHeader > .unvote {
+    display: flex;
+}
+.CheckBody {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: var(--persian-pink);
+    height: 80%;
+    border-radius: 20px;
+    column-gap: 20px;
+    padding: 1rem;
+}
+.CheckBody > .Number {
+    background-color: rgb(244, 211, 248);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.CheckBody > .Number > .many {
+    background-color: var(--magenta);
+    color: aliceblue;
+    width: 100%;
+    height: 10%;
+    border-radius: 0 0 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+.CheckBody > .Number > .content-item {
+    width: 100%;
+    height: 75%;
+    padding: 1rem;
+    font-size: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.CheckBody > .Number > .content-item > p {
+    font-size: 1.3rem;
+}
+.CheckBody > .Number > .content-item > img {
+    width: 30vw;
+}
+.CheckBody > .Number > .header-item {
+    width: 100%;
+    background-color: var(--persian-pink-2);
+    height: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    border-radius: 1rem 1rem 0 0;
+}
