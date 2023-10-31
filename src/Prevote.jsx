@@ -26,7 +26,7 @@ function Prevote() {
         });
     }, []);
     const notify = () => {
-        toast.error("ไม่อยู่ในเวลาที่สามารถโหวดได้", {
+        toast.error("ไม่อยู่ในเวลาที่สามารถลงคะแนนได้", {
             className: "error-message",
             progressBar: true,
             hideProgressBar: false,
