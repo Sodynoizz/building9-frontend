@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import { redirect } from "react-router-dom";
 import shirt1 from "./assets/img/shirt1.png";
 import shirt2 from "./assets/img/shirt2.png";
 import "./assets/styles/main-styles/font.css";
@@ -30,7 +31,7 @@ function CheckV() {
     const [description2, setdescription2] = useState("");
     const [name3, setname3] = useState("");
     const [End, setEnd] = useState(false);
-
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
         try {
             const response = await axios.post(EndVoteURL, {
@@ -41,7 +42,7 @@ function CheckV() {
         } catch (error) {
             console.error(error);
         }
-        window.location.reload();
+        return navigate(0);
     };
 
     useEffect(() => {
