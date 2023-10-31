@@ -611,10 +611,11 @@ function App() {
                                     ข้อกำหนด
                                     เงื่อนไขการใช้งานและนโยบายคุ้มครองข้อมูลส่วนบุลคล
                                 </Link>
-                                {/* <p>
-                                    Copyright © 2023 Building 9. All rights
-                                    reserved. Designed by Nowath.
-                                </p> */}
+                                <p>
+                                    Copyright © 2023 Triamudom Suksa Building
+                                    Nine Student Committee . All rights
+                                    reserved.
+                                </p>
                             </div>
                         </footer>
                     </div>
