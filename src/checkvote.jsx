@@ -42,7 +42,7 @@ function CheckV() {
         } catch (error) {
             console.error(error);
         }
-        return navigate(0);
+        return navigate("/User_info");
     };
 
     useEffect(() => {
