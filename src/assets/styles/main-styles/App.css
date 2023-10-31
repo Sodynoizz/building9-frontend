@@ -67,9 +67,13 @@ footer > .footer_text > h3 > .email > svg {
 footer > .Condi {
     text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 20%;
+}
+footer > .Condi > p {
+    color: rgb(98, 98, 98);
 }
 footer > .Condi > a {
     color: black;

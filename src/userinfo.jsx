@@ -11,6 +11,7 @@ import LoadingPage from "./loading.jsx";
 const UserURL = "https://building9-backend.vercel.app/api/auth/profile";
 
 function User() {
+    let admin_user = import.meta.env.VITE_ADMIN_MERGE;
     let [STDID, setSTDID] = useState(localStorage.getItem("STDID"));
     const [Fullname, setFullname] = useState("");
     const [Nickname, setNickname] = useState("");
@@ -23,6 +24,7 @@ function User() {
     const [Fackbook, setFackbook] = useState("");
     const [check, setCheck] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [Admin, setAdmin] = useState(false);
     useEffect(() => {
         const Start = async () => {
             try {
@@ -54,6 +56,9 @@ function User() {
             }
         };
         Start();
+        if (admin_user.includes(parseInt(STDID))) {
+            setAdmin(true);
+        }
     }, []);
     return (
         <div className="User_container">
@@ -133,6 +138,13 @@ function User() {
                             <p>หากต้องการแก้ไขข้อมูลส่วนตัว</p>
                             <p> โปรดติดต่อคณะกรรมการตึก ๙</p>
                         </div>
+                    </div>
+                    <div className="Check_vote">
+                        {Admin ? (
+                            <Link to="/Checkvote_page">Check Vote!</Link>
+                        ) : (
+                            <div></div>
+                        )}
                     </div>
                 </div>
             )}

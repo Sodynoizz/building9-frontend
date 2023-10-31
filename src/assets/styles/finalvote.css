@@ -1,0 +1,91 @@
+.Finvote_container {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-family: MN;
+    background-image: url(../img/background_final_vote.png);
+    background-position: top;
+    background-size: cover;
+}
+.Finvote_container > h1 {
+    font-size: 7rem;
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    color: #102d51;
+    text-align: center;
+}
+.Finvote_container > h2 {
+    font-size: 6rem;
+    text-align: center;
+    color: #102d51;
+    margin-bottom: 2rem;
+}
+.Finvote_container > h3 {
+    font-size: 4rem;
+    color: #102d51;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.Finvote_container > .Btn_home > a > img {
+    margin-right: 0.3rem;
+}
+.Finvote_container > .Btn_home > a {
+    font-size: 4rem;
+    text-decoration: none;
+    color: var(--alice-blue);
+    background-color: #f8a7d0;
+    padding: 16px 16px;
+    border-radius: 25px 25px;
+    box-shadow: rgba(236, 236, 236, 0.386) 0px -12px 30px,
+        rgba(236, 236, 236, 0.386) 0px 4px 6px,
+        rgba(236, 236, 236, 0.386) 0px 12px 13px,
+        rgba(236, 236, 236, 0.386) 0px -3px 5px;
+}
+@media (max-width: 1257px) {
+    .Finvote_container > h1 {
+        font-size: 5rem;
+    }
+    .Finvote_container > h2 {
+        font-size: 4rem;
+    }
+    .Finvote_container > h3 {
+        font-size: 2.5rem;
+    }
+}
+@media (max-width: 942px) {
+    .Finvote_container > h1 {
+        font-size: 4rem;
+    }
+    .Finvote_container > h2 {
+        font-size: 3.5rem;
+    }
+    .Finvote_container > h3 {
+        font-size: 1.9rem;
+    }
+    .Finvote_container > a {
+        font-size: 3rem;
+    }
+}
+@media (max-width: 745px) {
+    .Finvote_container > h1 > svg {
+        display: none;
+    }
+    .Finvote_container > h1 {
+        font-size: 2.5rem;
+    }
+    .Finvote_container > h2 {
+        font-size: 2rem;
+    }
+    .Finvote_container > h3 {
+        font-size: 1.7rem;
+        margin-bottom: 5rem;
+    }
+    .Finvote_container > a {
+        font-size: 2.5rem;
+    }
+}

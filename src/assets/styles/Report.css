@@ -1,0 +1,25 @@
+.Report_container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url("../img/Background_report.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    background-position: bottom;
+    font-family: MN;
+    padding: 2rem;
+}
+.header_report > h1 {
+    color: var(--magenta);
+    font-size: 5rem;
+}
+.header_report {
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

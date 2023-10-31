@@ -10,6 +10,7 @@ import BumpCar from "./assets/img/footer.png";
 import Bowl from "./assets/img/bowl.png";
 import White from "./assets/img/white.jpg";
 import Home1 from "./assets/img/home1.jpg";
+import Home3 from "./assets/img/home3.png";
 import {
     Navigation,
     Pagination,
@@ -39,10 +40,14 @@ import { AiFillInstagram } from "react-icons/ai";
 import { Spin as Hamburger } from "hamburger-react";
 import { StudentID } from "./Login";
 import { STID_Sin } from "./Regis";
-const UserURL = "https://building9-backend.vercel.app/api/auth/profile";
 import axios from "axios";
 import LoadingPage from "./loading.jsx";
 import { reSTID } from "./Reset";
+
+const UserURL = "https://building9-backend.vercel.app/api/auth/profile";
+const VoteInfoURL = `https://building9-backend.vercel.app/api/vote/getpollinfo/${
+    import.meta.env.VITE_LOGRE
+}`;
 
 function App() {
     let [STDID, setSTDID] = useState(
@@ -53,7 +58,12 @@ function App() {
     const [STRoom, setSTRoom] = useState("");
     const [check, setCheck] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [Vote, setVote] = useState("");
+    const [Alrv, setAlrv] = useState(false);
+    const [Alrvf, setAlrvf] = useState(false);
     let name;
+    let STDIDN = parseInt(STDID);
+
     useEffect(() => {
         localStorage.setItem("STDID", STDID);
     });
@@ -86,8 +96,22 @@ function App() {
         };
         Start();
     }, []);
+    useEffect(() => {
+        axios.get(VoteInfoURL).then((response) => {
+            setVote(response?.data.participants);
+        });
+    }, []);
+    useEffect(() => {
+        if (Vote.includes(STDIDN)) {
+            setAlrv(true);
+        }
+        if (STDID === "") {
+            setAlrvf(true);
+        }
+    }, [Vote]);
+
     const response = axios.post(UserURL, {
-        studentID: StudentID,
+        studentID: STDID,
         environmentKey: import.meta.env.VITE_LOGRE,
     });
     const [dropdowns, setDropdowns] = useState([
@@ -300,7 +324,13 @@ function App() {
                                     </li>
                                 ))}
                                 <li>
-                                    <Link to="/Prevote">VOTE</Link>
+                                    {Alrv ? (
+                                        <Link to="/final_page">VOTE</Link>
+                                    ) : Alrvf ? (
+                                        <Link to="/Login">VOTE</Link>
+                                    ) : (
+                                        <Link to="/Prevote">VOTE</Link>
+                                    )}
                                 </li>
                             </ul>
                         </div>
@@ -361,7 +391,7 @@ function App() {
                                 }}
                                 modules={[Pagination, Autoplay]}
                                 autoplay={{
-                                    delay: 3000,
+                                    delay: 5000,
                                     disableOnInteraction: false,
                                 }}
                                 spaceBetween={0}
@@ -372,7 +402,7 @@ function App() {
                                     <img src={Home1} alt="" />
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <img src={Home1} alt="" />
+                                    <img src={Home3} alt="" />
                                 </SwiperSlide>
                             </Swiper>
                         </div>
@@ -581,6 +611,10 @@ function App() {
                                     ข้อกำหนด
                                     เงื่อนไขการใช้งานและนโยบายคุ้มครองข้อมูลส่วนบุลคล
                                 </Link>
+                                {/* <p>
+                                    Copyright © 2023 Building 9. All rights
+                                    reserved. Designed by Nowath.
+                                </p> */}
                             </div>
                         </footer>
                     </div>
