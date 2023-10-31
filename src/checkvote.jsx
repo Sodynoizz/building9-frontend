@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import shirt1 from "./assets/img/shirt1.png";
 import shirt2 from "./assets/img/shirt2.png";
 import "./assets/styles/main-styles/font.css";

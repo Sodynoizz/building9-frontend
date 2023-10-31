@@ -612,9 +612,8 @@ function App() {
                                     เงื่อนไขการใช้งานและนโยบายคุ้มครองข้อมูลส่วนบุลคล
                                 </Link>
                                 <p>
-                                    Copyright © 2023 Triamudom Suksa Building
-                                    Nine Student Committee . All rights
-                                    reserved.
+                                    Copyright © 2023 Triam udom Suksa Building ๙
+                                    Student Committee . All rights reserved.
                                 </p>
                             </div>
                         </footer>
