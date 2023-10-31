@@ -611,10 +611,10 @@ function App() {
                                     ข้อกำหนด
                                     เงื่อนไขการใช้งานและนโยบายคุ้มครองข้อมูลส่วนบุลคล
                                 </Link>
-                                <p>
+                                {/* <p>
                                     Copyright © 2023 Triam udom Suksa Building ๙
                                     Student Committee . All rights reserved.
-                                </p>
+                                </p> */}
                             </div>
                         </footer>
                     </div>
