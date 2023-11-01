@@ -196,7 +196,7 @@ function App() {
                 return "/ComingSoon";
             case "Lost & Found":
                 return "/ComingSoon";
-            case "กีฬา":
+            case "กีฬาสี":
                 return "/ComingSoon";
             case "งานสืบสานฯ":
                 return "/ComingSoon";

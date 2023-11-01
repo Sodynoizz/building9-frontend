@@ -66,6 +66,7 @@ thead::before {
 tr:nth-child(odd) {
     background-color: #ffffffc9;
 }
+
 tr:nth-child(even) {
     background-color: #fcc1dcdc;
 }
