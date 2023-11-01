@@ -20,7 +20,9 @@ function FinV() {
     return (
         <div className="Finvote_container">
             <h1>
-                บันทึกการลงคะแนนเรียบร้อย <BsCheckCircleFill color="lime" />
+                <BsCheckCircleFill className="topf" size={100} color="lime" />
+                บันทึกการลงคะแนนเรียบร้อย{" "}
+                <BsCheckCircleFill className="bottomf" color="lime" />
             </h1>
             <h2>ขอบคุณที่มาใช้สิทธิ์ลงคะแนนใน</h2>
             <h3>"{Name}"</h3>
