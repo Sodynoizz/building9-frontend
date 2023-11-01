@@ -66,10 +66,8 @@ function CheckV() {
         });
     }, []);
     useEffect(() => {
-        const Numvotestr = Numvote.map((num) => num.toString());
-        const unvoteall = numofvote.filter((x) => !Numvotestr.includes(x));
-        setUnvoteall(unvoteall.length);
-    }, []);
+        setUnvoteall(numofvote.length - parseInt(Allvote));
+    }, [numofvote, Allvote]);
     return (
         <div className="Check_container">
             <div className="CheckHeader">

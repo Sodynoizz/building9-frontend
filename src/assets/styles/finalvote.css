@@ -19,6 +19,9 @@
     color: #102d51;
     text-align: center;
 }
+.topf {
+    display: none;
+}
 .Finvote_container > h2 {
     font-size: 6rem;
     text-align: center;
@@ -72,11 +75,15 @@
     }
 }
 @media (max-width: 745px) {
-    .Finvote_container > h1 > svg {
+    .Finvote_container > h1 > .bottomf {
         display: none;
+    }
+    .Finvote_container > h1 > .topf {
+        display: block;
     }
     .Finvote_container > h1 {
         font-size: 2.5rem;
+        flex-direction: column;
     }
     .Finvote_container > h2 {
         font-size: 2rem;
