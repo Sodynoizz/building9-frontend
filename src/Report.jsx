@@ -3,22 +3,34 @@ import { Link, Navigate } from "react-router-dom";
 import "./assets/styles/main-styles/font.css";
 import "./assets/styles/Report.css";
 import axios from "axios";
-import { useTable } from "react-table";
 
 const GetpostURL = `https://building9-backend.vercel.app/api/report/get`;
 
 function Report() {
     const [users, setUsers] = useState([]);
+    const [Pdfname, setPdfname] = useState("");
     useEffect(() => {
         axios
-            .get("https://jsonplaceholder.typicode.com/users")
+            .post(GetpostURL, {
+                environmentKey: import.meta.env.VITE_LOGRE,
+            })
             .then((response) => {
                 setUsers(response.data);
+                setPdfname(users.data.files.name);
             })
             .catch((error) => {
                 console.log(error);
             });
     }, []);
+    function downloadPDF(pdf) {
+        const linkSource = `data:application/pdf;base64,${pdf}`;
+        const downloadLink = document.createElement("a");
+        const fileName = Pdfname;
+
+        downloadLink.href = linkSource;
+        downloadLink.download = fileName;
+        downloadLink.click();
+    }
     return (
         <div className="Report_container">
             <div className="header_report">
@@ -28,17 +40,21 @@ function Report() {
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
+                            <th>การประชุมครั้งที่</th>
+                            <th>จำนวนกต.ทั้งหมด</th>
+                            <th>เข้าร่วมประชุม</th>
+                            <th>ร้อยละ</th>
+                            <th>รายงานการประชุม</th>
                         </tr>
                     </thead>
                     <tbody>
                         {users.map((user) => (
                             <tr key={user.id}>
-                                <td>{user.id}</td>
-                                <td>{user.name}</td>
-                                <td>{user.email}</td>
+                                <td>{user.order}</td>
+                                <td>{user.members}</td>
+                                <td>{user.participants}</td>
+                                <td>{user.percentage}</td>
+                                <td>{downloadPDF(user.files)}</td>
                             </tr>
                         ))}
                     </tbody>
