@@ -140,7 +140,8 @@
         align-self: end;
     }
     .Coming_container .Comingtext h1 {
-        font-size: 4rem;
+        font-size: 3.5rem;
+        text-align: center;
         text-shadow: 5px 5px #000000;
     }
     .Coming_container .Moon {
