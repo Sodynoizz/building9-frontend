@@ -89,7 +89,7 @@ function CheckV() {
                         }}
                         className="btn_open"
                     >
-                        เปิดโหวดอีกครั้ง
+                        เปิดโหวตอีกครั้ง
                     </button>
                 ) : (
                     <button
@@ -103,7 +103,7 @@ function CheckV() {
                         }}
                         className="btn_close"
                     >
-                        ปิดโหวด
+                        ปิดโหวต
                     </button>
                 )}
             </div>
