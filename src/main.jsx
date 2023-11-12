@@ -18,6 +18,10 @@ import Commingsoon_page from "./ComingSoon.jsx";
 import Checkvote_page from "./checkvote.jsx";
 import UpReport_page from "./UpReport.jsx";
 import Report_page from "./Report.jsx";
+import Verify_page from "./verifyroom.jsx";
+import ExM6_page from "./ExamroomM6.jsx";
+import ExM54_page from "./ExamroomM54.jsx";
+import MainShop from "./mainShop.jsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -40,6 +44,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <Route path="/Checkvote_page" element={<Checkvote_page />} />
                 <Route path="/UpReport_page" element={<UpReport_page />} />
                 <Route path="/Report_page" element={<Report_page />} />
+                <Route path="/Verify_page" element={<Verify_page />} />
+                <Route path="/ExM6_page" element={<ExM6_page />} />
+                <Route path="/ExM54_page" element={<ExM54_page />} />
+                <Route path="/MainShop" element={<MainShop />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import logo from "./assets/img/logo.png";
 import User from "./assets/img/User.png";
 import Calender from "./assets/img/calender.jpg";
@@ -7,7 +7,6 @@ import Announce from "./assets/img/announce.png";
 import Report from "./assets/img/report.png";
 import Table from "./assets/img/table.png";
 import BumpCar from "./assets/img/footer.png";
-import Bowl from "./assets/img/bowl.png";
 import White from "./assets/img/white.jpg";
 import Home1 from "./assets/img/home1.jpg";
 import Home3 from "./assets/img/home3.png";
@@ -43,6 +42,7 @@ import { STID_Sin } from "./Regis";
 import axios from "axios";
 import LoadingPage from "./loading.jsx";
 import { reSTID } from "./Reset";
+import { motion } from "framer-motion";
 
 const UserURL = "https://building9-backend.vercel.app/api/auth/profile";
 const VoteInfoURL = `https://building9-backend.vercel.app/api/vote/getpollinfo/${
@@ -63,7 +63,6 @@ function App() {
     const [Alrvf, setAlrvf] = useState(false);
     let name;
     let STDIDN = parseInt(STDID);
-
     useEffect(() => {
         localStorage.setItem("STDID", STDID);
     });
@@ -175,7 +174,7 @@ function App() {
     function getHrefForItem(item) {
         switch (item) {
             case "รายงานการประชุม":
-                return "/ComingSoon";
+                return "/Report_page";
             case "สรุปบัญชี":
                 return "/ComingSoon";
             case "ปฏิทินตึก":
@@ -281,7 +280,16 @@ function App() {
                             onClick={showSidebar}
                         />
                     </div>
-                    <nav id="nav" className={isOpen ? "nav active" : "nav"}>
+                    <motion.nav
+                        initial={{ opacity: 0, y: -40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                            duration: 0.8,
+                            delay: 0.5,
+                        }}
+                        id="nav"
+                        className={isOpen ? "nav active" : "nav"}
+                    >
                         <div className="Left">
                             <div className="logo">
                                 <a href="#Home">
@@ -382,7 +390,7 @@ function App() {
                                 </li>
                             )}
                         </ul>
-                    </nav>
+                    </motion.nav>
                     <div className="page">
                         <div className="home" id="Home">
                             <Swiper
@@ -406,21 +414,29 @@ function App() {
                                 </SwiperSlide>
                             </Swiper>
                         </div>
-                        <div className="public">
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{
+                                duration: 0.6,
+                                delay: 0.5,
+                            }}
+                            className="public"
+                        >
                             <h1>ข่าวประชาสัมพันธ์</h1>
                             <div className="Catalog">
                                 <div className="item">
-                                    {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
+                                    <img src={Home1} alt="" />
+                                    <div className="content">
+                                        <div className="head">Nano</div>
+                                        <p>
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit. Quas
+                                            commodi quo numquam repellat labore
+                                            enim iste dolorum non dolore a.
+                                        </p>
+                                        <a href="">Read more</a>
+                                    </div>
                                 </div>
                                 <div className="item">
                                     {/* <img src="" alt="" />
@@ -491,22 +507,30 @@ function App() {
                             <button>
                                 <p>อ่านทั้งหมด</p>
                             </button>
-                        </div>
-                        <div className="activity">
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{
+                                duration: 0.6,
+                                delay: 0.5,
+                            }}
+                            className="activity"
+                        >
                             <h1>กิจกรรม</h1>
                             <div className="Catalog">
                                 <div className="item">
                                     {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
+                                    <div className="content">
+                                        <div className="head">Nano</div>
+                                        <p>
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit. Quas
+                                            commodi quo numquam repellat labore
+                                            enim iste dolorum non dolore a.
+                                        </p>
+                                        <a href="">Read more</a>
+                                    </div> */}
                                 </div>
                                 <div className="item">
                                     {/* <img src="" alt="" />
@@ -538,73 +562,141 @@ function App() {
                             <button>
                                 <p>ดูทั้งหมด</p>
                             </button>
-                        </div>
-                        <div className="road">
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{
+                                duration: 0.6,
+                                delay: 0.5,
+                            }}
+                            className="road"
+                        >
                             <div className="Catalog">
-                                <div className="item">
+                                <motion.div
+                                    initial={{ opacity: 0, y: 60 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{
+                                        duration: 0.8,
+                                        delay: 0.5,
+                                    }}
+                                    className="item"
+                                >
                                     <Link to="/Information">
                                         <img src={User} alt="" />
                                     </Link>
                                     <p>สารสนเทศ</p>
-                                </div>
-                                <div className="item">
+                                </motion.div>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 60 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{
+                                        duration: 0.8,
+                                        delay: 0.5,
+                                    }}
+                                    className="item"
+                                >
                                     <a href="https://schedule.tucm.cc/">
                                         <img src={Table} alt="" />
                                     </a>
                                     <p>ตารางเรียน</p>
-                                </div>
-                                <div className="item">
+                                </motion.div>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 60 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{
+                                        duration: 0.8,
+                                        delay: 0.5,
+                                    }}
+                                    className="item"
+                                >
                                     <Link to="/ComingSoon">
                                         <img src={Calender} alt="" />
                                     </Link>
                                     <p>ปฏิทิน</p>
-                                </div>
-                                <div className="item">
+                                </motion.div>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 60 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{
+                                        duration: 0.8,
+                                        delay: 0.5,
+                                    }}
+                                    className="item"
+                                >
                                     <Link to="/ComingSoon">
                                         <img src={Regis} alt="" />
                                     </Link>
                                     <p>ลงทะเบียน</p>
-                                </div>
-                                <div className="item">
+                                </motion.div>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 60 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{
+                                        duration: 0.8,
+                                        delay: 0.5,
+                                    }}
+                                    className="item"
+                                >
                                     <Link to="/ComingSoon">
                                         <img src={Announce} alt="" />
                                     </Link>
                                     <p>ประกาศ</p>
-                                </div>
-                                <div className="item">
+                                </motion.div>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 60 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{
+                                        duration: 0.8,
+                                        delay: 0.5,
+                                    }}
+                                    className="item"
+                                >
                                     <Link to="/ComingSoon">
                                         <img src={Report} alt="" />
                                     </Link>
                                     <p>ระบบร้องเรียน</p>
-                                </div>
+                                </motion.div>
                             </div>
-                        </div>
+                        </motion.div>
                         <footer>
                             <img src={BumpCar} alt="" />
                             <div className="footer_text">
-                                <h2>
+                                <motion.h2
+                                    initial={{ opacity: 0, x: -60 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{
+                                        duration: 0.8,
+                                        delay: 0.5,
+                                    }}
+                                >
                                     คณะกรรมการตึก ๙ โรงเรียนเตรียมอุดมศึกษา{" "}
                                     <br />
                                     277 ถนนพญาไท แขวงวังใหม่ เขตปทุมวัน <br />
                                     กรุงเทพมหานคร 10330
-                                </h2>
-                                <h3>
+                                </motion.h2>
+                                <motion.h3
+                                    initial={{ opacity: 0, x: 60 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{
+                                        duration: 0.8,
+                                        delay: 0.5,
+                                    }}
+                                >
                                     Contact us : <br />
                                     <div className="email">
-                                        <img src="" alt="" />
                                         <MdEmail color="var(--persian-pink)" />{" "}
                                         <a href="mailto:tubuilding9.sc@gmail.com">
                                             tubuilding9.sc@gmail.com
                                         </a>
                                     </div>
                                     <div className="email">
-                                        <img src="" alt="" />
                                         <AiFillInstagram color="var(--persian-pink)" />{" "}
                                         <a href="https://www.instagram.com/building9.tu/">
                                             building9.tu
                                         </a>
                                     </div>
-                                </h3>
+                                </motion.h3>
                             </div>
                             <div className="Condi">
                                 <Link to="/ComingSoon">
