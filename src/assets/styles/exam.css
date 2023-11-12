@@ -1,0 +1,151 @@
+.Ex_container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/examroom_background.JPG);
+    background-repeat: none;
+    background-size: cover;
+    background-position: bottom;
+    font-family: MN;
+}
+.ExCard {
+    width: 700px;
+    height: 400px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2rem 0 2rem 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: aliceblue;
+    text-shadow: 2px 1px #000000;
+    font-family: MN_light;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.Exheader {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    column-gap: 2rem;
+    margin-bottom: 1rem;
+}
+.Insbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+.Insbtn > button {
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 16px;
+    background-color: rgb(255, 147, 165);
+    color: aliceblue;
+    cursor: pointer;
+}
+.Exlogo {
+    align-self: start;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.Exlogo > img {
+    width: 50px;
+}
+.Exdetail {
+    width: 80%;
+    position: relative;
+}
+.Exdetail::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    top: -10px;
+    background-color: rgb(251, 188, 199);
+}
+.Exdetail::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: -10px;
+    background-color: rgb(251, 188, 199);
+}
+.Excontentx {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    column-gap: 2rem;
+    margin-bottom: 1rem;
+}
+.Exbottom {
+    margin-top: 10px;
+}
+.Excontent > h1:nth-child(1) {
+    margin-bottom: 1rem;
+}
+.Exclassroom,
+.Exnumber,
+.Exfloor,
+.Exbuil {
+    display: flex;
+    column-gap: 0.5rem;
+}
+.ExCard > .Exdetail > .Exbottom > .ExRe {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ReBtn {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 1.2rem;
+    column-gap: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 683px) {
+    .Exlogo {
+        align-self: start;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        row-gap: 1.2rem;
+        width: 100%;
+        margin-bottom: 1.2rem;
+    }
+    .ExCard {
+        height: 700px;
+        padding: 1rem;
+    }
+    .Exdetail {
+        width: 100%;
+        position: relative;
+    }
+    .Exlogo > img {
+        width: 90px;
+    }
+    .Exdetail {
+        font-size: 15px;
+    }
+    .Ex_container {
+        background-position: left;
+    }
+    .Exbottom {
+        margin-top: 0;
+    }
+}
