@@ -11,7 +11,7 @@ import pen from "./assets/img/info/pen.png";
 import sign from "./assets/img/info/sign.png";
 import website from "./assets/img/info/website.png";
 import axios from "axios";
-import App from "./App";
+import { AiFillHome } from "react-icons/ai";
 
 function Info() {
     return (
@@ -66,6 +66,12 @@ function Info() {
                     </a>
                     <h2>TUSC Study Buddy</h2>
                 </div>
+            </div>
+            <div className="reHome">
+                <Link to="/">
+                    <AiFillHome size="20" />
+                    <h1>ReturnHome</h1>
+                </Link>
             </div>
         </div>
     );

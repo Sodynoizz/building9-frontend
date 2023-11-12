@@ -35,6 +35,7 @@
     margin: 0 5%;
     overflow: auto;
     row-gap: 1rem;
+    padding: 1rem 0;
 }
 .Con_grid > .item:hover img {
     transform: scale(1.1, 1.1);
@@ -57,6 +58,27 @@
     text-align: center;
     font-size: 1.9rem;
     color: var(--persian-pink);
+}
+.reHome {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reHome > a {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    column-gap: 0.5rem;
+    font-family: MN;
+    padding: 1rem;
+    border-radius: 25px;
+    color: black;
+    text-decoration: none;
+}
+.reHome > a > h1 {
+    font-size: 20px;
 }
 @media (max-width: 1365px) {
     .Con_grid {

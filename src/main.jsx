@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import App from "./App.jsx";
 import Login from "./Login.jsx";
 import Forget from "./Forget.jsx";
@@ -26,7 +26,7 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <BrowserRouter>
+        <Router>
             <Routes>
                 <Route index element={<App />} />
                 <Route path="/Login" element={<Login />} />
@@ -50,6 +50,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <Route path="/MainShop" element={<MainShop />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
-        </BrowserRouter>
+        </Router>
     </React.StrictMode>
 );

@@ -65,9 +65,6 @@ function ExM6() {
     return (
         <div className="Ex_container">
             <div className="ExCard">
-                <div className="Exlogo">
-                    <img src={logo} alt="" />
-                </div>
                 <div className="Exdetail">
                     <div className="Exheader">
                         <h1>ม.{Mai}</h1>

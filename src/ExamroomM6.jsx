@@ -45,7 +45,6 @@ function ExM6() {
         <div className="Ex_container">
             <div className="ExCard">
                 <div className="Exlogo">
-                    <img src={logo} alt="" />
                     <Link className="ReBtn" to="/Verify_page">
                         return <IoReturnDownBackOutline />
                     </Link>
