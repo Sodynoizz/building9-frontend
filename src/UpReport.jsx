@@ -3,6 +3,10 @@ import "./assets/styles/main-styles/font.css";
 import "./assets/styles/Upreport.css";
 import axios from "axios";
 import { FaArrowUp } from "react-icons/fa";
+import { PiArrowBendUpLeftBold } from "react-icons/pi";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Link, Navigate } from "react-router-dom";
 
 const VoteInfoURL = `https://building9-backend.vercel.app/api/vote/getpollinfo/${
     import.meta.env.VITE_LOGRE
@@ -14,11 +18,6 @@ function UpReport() {
     const [Members, setMembers] = useState("");
     const [Participants, setParticipants] = useState("");
     const handleUpload = async (e) => {
-        console.log(selectedfile);
-        console.log(Order);
-        console.log(Members);
-        console.log(Participants);
-        console.log(import.meta.env.VITE_LOGRE);
         e.preventDefault();
 
         let data = new FormData();
@@ -33,8 +32,23 @@ function UpReport() {
                 "https://building9-backend.vercel.app/api/report/create",
                 data
             );
-            console.log(response.data);
-            console.log("OKAY");
+            toast.success("Success", {
+                className: "error-message",
+                progressBar: true,
+                hideProgressBar: false,
+                progressStyle: {
+                    background: "rgb(255,168,212)",
+                    background:
+                        "linear-gradient(90deg, rgba(255,168,212,1) 0%, rgba(245,119,185,1) 38%, rgba(245,29,140,1) 100%)",
+                    height: "5px",
+                },
+                style: {
+                    fontFamily: "MN_Light",
+                    fontSize: "1.2rem",
+                    fontWeight: "bold",
+                    color: "rgba(245,119,185,1)",
+                },
+            });
         } catch (error) {
             console.error(error);
         }
@@ -102,7 +116,21 @@ function UpReport() {
                 <button className="SubmitUp" onClick={handleUpload}>
                     สร้าง
                 </button>
+                <Link to="/Report_page">
+                    <PiArrowBendUpLeftBold /> Return
+                </Link>
             </div>
+            <ToastContainer
+                position="bottom-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </div>
     );
 }

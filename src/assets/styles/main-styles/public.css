@@ -45,6 +45,11 @@
     width: 369px;
     height: 300px;
     border-radius: 16px 16px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
     /*ลบเอา*/
     /* background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
@@ -52,15 +57,18 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    position: relative; */
+    */
+    position: relative;
     z-index: 1;
 }
-
+.public > .Catalog > .item img {
+    width: 130%;
+}
 .public > .Catalog > .item > .content {
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: rgba(243, 88, 181, 0.488);
+    background-color: rgba(243, 88, 181, 0.726);
     padding: 1rem;
     font-family: MN;
     display: flex;
@@ -77,10 +85,17 @@
 .public > .Catalog > .item > .content p,
 .public > .Catalog > .item > .content a {
     display: none;
+    color: aliceblue;
     transition: all 0.3s;
 }
 .public > .Catalog > .item:hover .content a {
-    color: var(--magenta);
+    color: rgb(101, 211, 84);
+}
+.public > .Catalog > .item img {
+    transition: all 0.3s;
+}
+.public > .Catalog > .item:hover img {
+    transform: scale(1.2, 1.2);
 }
 .public > .Catalog > .item:hover .content p,
 .public > .Catalog > .item:hover .content a {
@@ -91,6 +106,7 @@
 }
 .public > .Catalog > .item > .content > .head {
     font-size: 2rem;
+    color: aliceblue;
 }
 .public > button {
     margin-top: 30px;
