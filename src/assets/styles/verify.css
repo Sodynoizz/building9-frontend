@@ -1,0 +1,89 @@
+.Varify_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: MN;
+    padding: 1rem;
+    background: rgb(255, 255, 255);
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 190, 203, 1) 100%
+    );
+}
+.contentVer {
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.headerVer {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.VerInput {
+    display: flex;
+    flex-direction: column;
+    font-family: MN;
+}
+.VerInput > input {
+    height: 3rem;
+    width: 400px;
+    border-radius: 25px;
+    border: none;
+    padding: 1rem;
+    font-family: MN;
+    font-size: 1.5rem;
+    margin: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.VerInput > input::placeholder {
+    color: rgb(181, 181, 181);
+}
+.headerVer h1 {
+    font-size: 4rem;
+    color: #dd5c8f;
+}
+.headerVer > h1 {
+    align-self: flex-end;
+}
+.headerVer1 {
+    display: flex;
+    align-self: start;
+    align-items: center;
+}
+.Versubmit {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Versubmit > button {
+    font-family: MN;
+    padding: 16px 64px;
+    border-radius: 25px;
+    font-size: 2rem;
+    outline: none;
+    border: none;
+    color: aliceblue;
+    background-color: var(--persian-pink-2);
+    cursor: pointer;
+}
+@media (max-width: 719px) {
+    .headerVer h1 {
+        font-size: 2.5rem;
+    }
+    .headerVer {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+    .headerVer1 > img {
+        width: 70%;
+    }
+}
