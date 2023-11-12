@@ -39,11 +39,11 @@ function MainShop() {
                     <h1>เลือกชนิดผ้า</h1>
                     <div className="Ms_Card">
                         <img src="" alt="" />
-                        <h1>ผ้าเรียบ</h1>
+                        <h2>ผ้าเรียบ</h2>
                     </div>
                     <div className="Ms_Card">
                         <img src="" alt="" />
-                        <h1>ผ้าหยาบ</h1>
+                        <h2>ผ้าหยาบ</h2>
                     </div>
                 </div>
             </section>

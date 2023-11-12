@@ -28,7 +28,7 @@ function Ver() {
             console.log(response);
             if (response?.data == "Not Found") {
                 setNandata(true);
-                toast.error("ไม่มีข้อมูลของผู้ใช้งานนี้ในระบบ", {
+                toast.error("ไม่พบข้อมูล", {
                     className: "error-message",
                     progressBar: true,
                     hideProgressBar: false,
@@ -78,23 +78,6 @@ function Ver() {
                     },
                 });
             } else if (error.request) {
-                toast.error(error.message, {
-                    className: "error-message",
-                    progressBar: true,
-                    hideProgressBar: false,
-                    progressStyle: {
-                        background: "rgb(255,168,212)",
-                        background:
-                            "linear-gradient(90deg, rgba(255,168,212,1) 0%, rgba(245,119,185,1) 38%, rgba(245,29,140,1) 100%)",
-                        height: "5px",
-                    },
-                    style: {
-                        fontFamily: "MN_Light",
-                        fontSize: "1.2rem",
-                        fontWeight: "bold",
-                        color: "rgba(245,119,185,1)",
-                    },
-                });
             } else {
                 toast.error("An unexpected error occurred.", {
                     className: "error-message",
@@ -114,7 +97,7 @@ function Ver() {
                     },
                 });
             }
-            toast.error("ไม่มีข้อมูลของผู้ใช้งานนี้ในระบบ", {
+            toast.error("ไม่พบข้อมูล", {
                 className: "error-message",
                 progressBar: true,
                 hideProgressBar: false,

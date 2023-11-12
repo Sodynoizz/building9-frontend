@@ -174,11 +174,7 @@ function App() {
     function getHrefForItem(item) {
         switch (item) {
             case "รายงานการประชุม":
-                if (STDID != "") {
-                    return "/Report_page";
-                } else {
-                    return "/Login";
-                }
+                return "/Report_page";
             case "สรุปบัญชี":
                 return "/ComingSoon";
             case "ปฏิทินตึก":
