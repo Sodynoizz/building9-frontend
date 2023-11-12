@@ -174,7 +174,11 @@ function App() {
     function getHrefForItem(item) {
         switch (item) {
             case "รายงานการประชุม":
-                return "/Report_page";
+                if (STDID != "") {
+                    return "/Report_page";
+                } else {
+                    return "/Login";
+                }
             case "สรุปบัญชี":
                 return "/ComingSoon";
             case "ปฏิทินตึก":
@@ -426,7 +430,7 @@ function App() {
                             <h1>ข่าวประชาสัมพันธ์</h1>
                             <div className="Catalog">
                                 <div className="item">
-                                    <img src={Home1} alt="" />
+                                    {/* <img src={Home1} alt="" />
                                     <div className="content">
                                         <div className="head">Nano</div>
                                         <p>
@@ -436,7 +440,7 @@ function App() {
                                             enim iste dolorum non dolore a.
                                         </p>
                                         <a href="">Read more</a>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="item">
                                     {/* <img src="" alt="" />
