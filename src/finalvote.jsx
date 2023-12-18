@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, Navigate } from "react-router-dom";
-import "./assets/styles/main-styles/font.css";
-import "./assets/styles/finalvote.css";
+import "./assets/styles/main-styles/font.scss";
+import "./assets/styles/finalvote.scss";
 import Smalltent from "./assets/img/small_tent.png";
 import axios from "axios";
 import { BsCheckCircleFill } from "react-icons/bs";

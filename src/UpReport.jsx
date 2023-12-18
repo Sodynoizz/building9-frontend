@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./assets/styles/main-styles/font.css";
-import "./assets/styles/Upreport.css";
+import "./assets/styles/main-styles/font.scss";
+import "./assets/styles/Upreport.scss";
 import axios from "axios";
 import { FaArrowUp } from "react-icons/fa";
 import { PiArrowBendUpLeftBold } from "react-icons/pi";

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter, Router, Routes, Route } from "react-router-dom";
 import App from "./App.jsx";
 import Login from "./Login.jsx";
 import Forget from "./Forget.jsx";
@@ -22,13 +22,15 @@ import Verify_page from "./verifyroom.jsx";
 import ExM6_page from "./ExamroomM6.jsx";
 import ExM54_page from "./ExamroomM54.jsx";
 import MainShop from "./mainShop.jsx";
+import SeaShop from "./seaShop.jsx";
+import FinalShop from "./FinalShop.jsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <Router>
+        <HashRouter basename="/">
             <Routes>
-                <Route index element={<App />} />
+                <Route path="/" index element={<App />} />
                 <Route path="/Login" element={<Login />} />
                 <Route path="/Forget_password" element={<Forget />} />
                 <Route path="/Regis" element={<Regis />} />
@@ -44,12 +46,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <Route path="/Checkvote_page" element={<Checkvote_page />} />
                 <Route path="/UpReport_page" element={<UpReport_page />} />
                 <Route path="/Report_page" element={<Report_page />} />
-                <Route path="/Verify_page" element={<Verify_page />} />
+                <Route path="/Examroom" element={<Verify_page />} />
                 <Route path="/ExM6_page" element={<ExM6_page />} />
-                <Route path="/ExM54_page" element={<ExM54_page />} />
+                <Route path="/ExamM54" element={<ExM54_page />} />
                 <Route path="/MainShop" element={<MainShop />} />
+                <Route path="/SearchShop" element={<SeaShop />} />
+                <Route path="/FinalShop" element={<FinalShop />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
-        </Router>
+        </HashRouter>
     </React.StrictMode>
 );

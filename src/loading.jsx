@@ -1,6 +1,6 @@
 import React from "react";
 import { ProgressBar } from "react-loader-spinner";
-import "./assets/styles/loading.css";
+import "./assets/styles/loading.scss";
 
 const LoadingPage = () => {
     return (
@@ -20,4 +20,3 @@ const LoadingPage = () => {
 };
 
 export default LoadingPage;
-

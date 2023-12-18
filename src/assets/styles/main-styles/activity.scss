@@ -56,7 +56,6 @@
     width: 369px;
     height: 300px;
     border-radius: 16px 16px;
-    position: relative;
     /*ลบเอา*/
     /* background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
@@ -64,12 +63,24 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3); */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.activity > .Catalog > .item img {
+    width: 130%;
+}
+.activity > .Catalog > .item img {
+    transition: all 0.3s;
+}
+.activity > .Catalog > .item:hover img {
+    transform: scale(1.2, 1.2);
 }
 .activity > .Catalog > .item > .content {
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: rgba(243, 88, 181, 0.488);
+    background-color: rgba(243, 88, 181, 0.726);
     padding: 1rem;
     font-family: MN;
     display: flex;
@@ -89,7 +100,7 @@
     transition: all 0.3s;
 }
 .activity > .Catalog > .item:hover .content a {
-    color: var(--magenta);
+    color: rgb(101, 211, 84);
 }
 .activity > .Catalog > .item:hover .content p,
 .activity > .Catalog > .item:hover .content a {
@@ -100,6 +111,7 @@
 }
 .activity > .Catalog > .item > .content > .head {
     font-size: 2rem;
+    color: aliceblue;
 }
 .activity > button {
     margin-top: 30px;

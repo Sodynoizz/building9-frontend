@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import "./assets/styles/main-styles/font.css";
-import "./assets/styles/Report.css";
+import "./assets/styles/main-styles/font.scss";
+import "./assets/styles/Report.scss";
 import axios from "axios";
 import LoadingPage from "./loading.jsx";
 import { RiDeleteBin6Fill } from "react-icons/ri";
@@ -32,7 +32,6 @@ function Report() {
                 environmentKey: import.meta.env.VITE_LOGRE,
             })
             .then((response) => {
-                console.log(response);
                 setUsers(response.data);
                 setid(response.data.id);
             })
@@ -138,9 +137,34 @@ function Report() {
                 {Admin ? (
                     <div className="btn-admin">
                         <Link to={"/UpReport_page"}>Update Report</Link>
+                        <motion.a
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            transition={{
+                                type: "spring",
+                                stiffness: 400,
+                                damping: 17,
+                            }}
+                            href="/"
+                        >
+                            return Home page
+                        </motion.a>
                     </div>
                 ) : (
-                    <div></div>
+                    <div className="btn-admin">
+                        <motion.a
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            transition={{
+                                type: "spring",
+                                stiffness: 400,
+                                damping: 17,
+                            }}
+                            href="/"
+                        >
+                            return Home page
+                        </motion.a>
+                    </div>
                 )}
             </motion.div>
         </div>

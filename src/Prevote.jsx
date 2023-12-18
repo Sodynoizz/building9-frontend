@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import "./assets/styles/main-styles/font.css";
-import "./assets/styles/prevote.css";
+import "./assets/styles/main-styles/font.scss";
+import "./assets/styles/prevote.scss";
 import Topper from "./assets/img/topper.png";
 import Ground from "./assets/img/ground.png";
 import camp from "./assets/img/camp.png";

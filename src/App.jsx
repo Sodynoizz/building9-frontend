@@ -25,13 +25,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/bundle";
-import "./assets/styles/main-styles/App.css";
-import "./assets/styles/main-styles/activity.css";
-import "./assets/styles/main-styles/font.css";
-import "./assets/styles/main-styles/home.css";
-import "./assets/styles/main-styles/navbar.css";
-import "./assets/styles/main-styles/public.css";
-import "./assets/styles/main-styles/road.css";
+import "./assets/styles/main-styles/App.scss";
+import "./assets/styles/main-styles/activity.scss";
+import "./assets/styles/main-styles/font.scss";
+import "./assets/styles/main-styles/home.scss";
+import "./assets/styles/main-styles/navbar.scss";
+import "./assets/styles/main-styles/public.scss";
+import "./assets/styles/main-styles/road.scss";
 import { FaChevronDown } from "react-icons/fa";
 import { CiLogin } from "react-icons/ci";
 import { MdEmail } from "react-icons/md";
@@ -170,6 +170,64 @@ function App() {
             ],
         },
     ]);
+    const [News, setNews] = useState([
+        {
+            id: "NC1",
+            image: Home1,
+            title: "Nano",
+            items: "",
+        },
+        {
+            id: "NC2",
+            image: "",
+            title: "",
+            items: "",
+        },
+        {
+            id: "NC3",
+            image: "",
+            title: "",
+            items: "",
+        },
+        {
+            id: "NC4",
+            image: "",
+            title: "",
+            items: "",
+        },
+        {
+            id: "NC5",
+            image: "",
+            title: "",
+            items: "",
+        },
+        {
+            id: "NC6",
+            image: "",
+            title: "",
+            items: "",
+        },
+    ]);
+    const [Act, setAct] = useState([
+        {
+            id: "AC1",
+            image: Home1,
+            title: "Nano",
+            items: "",
+        },
+        {
+            id: "AC2",
+            image: "",
+            title: "",
+            items: "",
+        },
+        {
+            id: "AC3",
+            image: "",
+            title: "",
+            items: "",
+        },
+    ]);
 
     function getHrefForItem(item) {
         switch (item) {
@@ -260,11 +318,14 @@ function App() {
             }
         }
     }
-
+    useEffect(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }, []);
     const logout = () => {
         localStorage.setItem("STDID", "");
         window.location.reload();
     };
+
     return (
         <div className="main-content">
             {loading ? (
@@ -292,15 +353,19 @@ function App() {
                     >
                         <div className="Left">
                             <div className="logo">
-                                <a href="#Home">
+                                <Link>
                                     <img src={logo} alt="" />
-                                </a>
+                                </Link>
                             </div>
                             <ul className="nav-lists">
                                 <li>
-                                    <a href="#Home">
+                                    <Link
+                                        onClick={() => {
+                                            window.location.reload();
+                                        }}
+                                    >
                                         <p>หน้าแรก</p>
-                                    </a>
+                                    </Link>
                                 </li>
                                 {dropdowns.map((dropdown) => (
                                     <li key={dropdown.id} className="DropDown">
@@ -425,88 +490,30 @@ function App() {
                         >
                             <h1>ข่าวประชาสัมพันธ์</h1>
                             <div className="Catalog">
-                                <div className="item">
-                                    {/* <img src={Home1} alt="" />
-                                    <div className="content">
-                                        <div className="head">Nano</div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet
-                                            consectetur adipisicing elit. Quas
-                                            commodi quo numquam repellat labore
-                                            enim iste dolorum non dolore a.
-                                        </p>
-                                        <a href="">Read more</a>
-                                    </div> */}
-                                </div>
-                                <div className="item">
-                                    {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                                </div>
-                                <div className="item">
-                                    {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                                </div>
-                                <div className="item">
-                                    {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                                </div>
-                                <div className="item">
-                                    {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                                </div>
-                                <div className="item">
-                                    {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                                </div>
+                                {News.map((news) => (
+                                    <div id={news.id} className="item">
+                                        {/* <img src={news.image} alt="" />
+                                        <div className="content">
+                                            <div className="head">
+                                                {news.title}
+                                            </div>
+                                            <p>{news.items}</p>
+                                            <a href="">Read more</a>
+                                        </div> */}
+                                    </div>
+                                ))}
                             </div>
-                            <button>
+                            <motion.button
+                                whileHover={{ scale: 1.2 }}
+                                whileTap={{ scale: 0.9 }}
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 400,
+                                    damping: 17,
+                                }}
+                            >
                                 <p>อ่านทั้งหมด</p>
-                            </button>
+                            </motion.button>
                         </motion.div>
                         <motion.div
                             initial={{ opacity: 0, y: 40 }}
@@ -519,49 +526,30 @@ function App() {
                         >
                             <h1>กิจกรรม</h1>
                             <div className="Catalog">
-                                <div className="item">
-                                    {/* <img src="" alt="" />
-                                    <div className="content">
-                                        <div className="head">Nano</div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet
-                                            consectetur adipisicing elit. Quas
-                                            commodi quo numquam repellat labore
-                                            enim iste dolorum non dolore a.
-                                        </p>
-                                        <a href="">Read more</a>
-                                    </div> */}
-                                </div>
-                                <div className="item">
-                                    {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                                </div>
-                                <div className="item">
-                                    {/* <img src="" alt="" />
-                            <div className="content">
-                                <div className="head">Nano</div>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quas commodi quo numquam
-                                    repellat labore enim iste dolorum non dolore
-                                    a.
-                                </p>
-                                <a href="">Read more</a>
-                            </div> */}
-                                </div>
+                                {Act.map((act) => (
+                                    <div id={act.id} className="item">
+                                        {/* <img src={act.image} alt="" />
+                                        <div className="content">
+                                            <div className="head">
+                                                {act.title}
+                                            </div>
+                                            <p>{act.items}</p>
+                                            <a href="">Read more</a>
+                                        </div> */}
+                                    </div>
+                                ))}
                             </div>
-                            <button>
+                            <motion.button
+                                whileHover={{ scale: 1.2 }}
+                                whileTap={{ scale: 0.9 }}
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 400,
+                                    damping: 17,
+                                }}
+                            >
                                 <p>ดูทั้งหมด</p>
-                            </button>
+                            </motion.button>
                         </motion.div>
                         <motion.div
                             initial={{ opacity: 0, y: 40 }}
@@ -573,90 +561,42 @@ function App() {
                             className="road"
                         >
                             <div className="Catalog">
-                                <motion.div
-                                    initial={{ opacity: 0, y: 60 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                        duration: 0.8,
-                                        delay: 0.5,
-                                    }}
-                                    className="item"
-                                >
+                                <div className="item">
                                     <Link to="/Information">
                                         <img src={User} alt="" />
                                     </Link>
                                     <p>สารสนเทศ</p>
-                                </motion.div>
-                                <motion.div
-                                    initial={{ opacity: 0, y: 60 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                        duration: 0.8,
-                                        delay: 0.5,
-                                    }}
-                                    className="item"
-                                >
+                                </div>
+                                <div className="item">
                                     <a href="https://schedule.tucm.cc/">
                                         <img src={Table} alt="" />
                                     </a>
                                     <p>ตารางเรียน</p>
-                                </motion.div>
-                                <motion.div
-                                    initial={{ opacity: 0, y: 60 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                        duration: 0.8,
-                                        delay: 0.5,
-                                    }}
-                                    className="item"
-                                >
+                                </div>
+                                <div className="item">
                                     <Link to="/ComingSoon">
                                         <img src={Calender} alt="" />
                                     </Link>
                                     <p>ปฏิทิน</p>
-                                </motion.div>
-                                <motion.div
-                                    initial={{ opacity: 0, y: 60 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                        duration: 0.8,
-                                        delay: 0.5,
-                                    }}
-                                    className="item"
-                                >
+                                </div>
+                                <div className="item">
                                     <Link to="/ComingSoon">
                                         <img src={Regis} alt="" />
                                     </Link>
                                     <p>ลงทะเบียน</p>
-                                </motion.div>
-                                <motion.div
-                                    initial={{ opacity: 0, y: 60 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                        duration: 0.8,
-                                        delay: 0.5,
-                                    }}
-                                    className="item"
-                                >
+                                </div>
+                                <div className="item">
                                     <Link to="/ComingSoon">
                                         <img src={Announce} alt="" />
                                     </Link>
                                     <p>ประกาศ</p>
-                                </motion.div>
-                                <motion.div
-                                    initial={{ opacity: 0, y: 60 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                        duration: 0.8,
-                                        delay: 0.5,
-                                    }}
-                                    className="item"
-                                >
+                                </div>
+                                <div className="item">
                                     <Link to="/ComingSoon">
                                         <img src={Report} alt="" />
                                     </Link>
                                     <p>ระบบร้องเรียน</p>
-                                </motion.div>
+                                </div>
                             </div>
                         </motion.div>
                         <footer>
@@ -703,10 +643,10 @@ function App() {
                                     ข้อกำหนด
                                     เงื่อนไขการใช้งานและนโยบายคุ้มครองข้อมูลส่วนบุลคล
                                 </Link>
-                                {/* <p>
+                                <p>
                                     Copyright © 2023 Triam udom Suksa Building ๙
                                     Student Committee . All rights reserved.
-                                </p> */}
+                                </p>
                             </div>
                         </footer>
                     </div>

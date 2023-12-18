@@ -3,8 +3,8 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { redirect } from "react-router-dom";
 import shirt1 from "./assets/img/shirt1.png";
 import shirt2 from "./assets/img/shirt2.png";
-import "./assets/styles/main-styles/font.css";
-import "./assets/styles/checkvote.css";
+import "./assets/styles/main-styles/font.scss";
+import "./assets/styles/checkvote.scss";
 import axios from "axios";
 
 const VotedURL = `https://building9-backend.vercel.app/api/vote/getvote/${

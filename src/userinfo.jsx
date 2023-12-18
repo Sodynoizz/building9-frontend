@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import User_img from "./assets/img/User.png";
-import "./assets/styles/main-styles/font.css";
-import "./assets/styles/User_info.css";
+import "./assets/styles/main-styles/font.scss";
+import "./assets/styles/User_info.scss";
 import axios from "axios";
 import { BsFillExclamationTriangleFill } from "react-icons/bs";
 import { AiFillHome } from "react-icons/ai";
 import LoadingPage from "./loading.jsx";
+import { motion } from "framer-motion";
 
 const UserURL = "https://building9-backend.vercel.app/api/auth/profile";
 
@@ -66,7 +67,11 @@ function User() {
                 <LoadingPage />
             ) : (
                 <div>
-                    <div className="User_topper">
+                    <motion.div
+                        initial={{ opacity: 0, y: -100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        className="User_topper"
+                    >
                         <img src={User_img} alt="" />
                         <div className="username">
                             <h1>{Fullname}</h1>
@@ -74,15 +79,32 @@ function User() {
                                 {STNum} / {STRoom}
                             </h2>
                         </div>
-                        <Link to="/">
+                        <motion.a
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.9 }}
+                            transition={{
+                                type: "spring",
+                                stiffness: 400,
+                                damping: 17,
+                            }}
+                            href="/"
+                        >
                             <AiFillHome />
                             Back to Home
-                        </Link>
-                    </div>
-                    <div className="User_header">
+                        </motion.a>
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, x: -100 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        className="User_header"
+                    >
                         <h1>ข้อมูลส่วนตัว</h1>
-                    </div>
-                    <div className="User_content">
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        className="User_content"
+                    >
                         <div className="User_first">
                             <div>
                                 <h2>ชื่อ-นามสกุล : </h2>
@@ -131,7 +153,7 @@ function User() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                     <div className="User_footer">
                         <BsFillExclamationTriangleFill color="#f29bc0" />
                         <div>

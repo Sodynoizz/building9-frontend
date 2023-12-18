@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, Navigate } from "react-router-dom";
-import "./assets/styles/main-styles/font.css";
-import "./assets/styles/vote.css";
+import "./assets/styles/main-styles/font.scss";
+import "./assets/styles/vote.scss";
 import white from "./assets/img/white.jpg";
 import shirt1 from "./assets/img/shirt1.png";
 import shirt2 from "./assets/img/shirt2.png";

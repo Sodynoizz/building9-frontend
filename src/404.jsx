@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import "./assets/styles/main-styles/font.css";
+import "./assets/styles/main-styles/font.scss";
 import axios from "axios";
 
 function Notf() {

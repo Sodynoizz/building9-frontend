@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, Navigate } from "react-router-dom";
-import "./assets/styles/main-styles/font.css";
+import "./assets/styles/main-styles/font.scss";
 import logo from "./assets/img/logo.png";
-import "./assets/styles/exam.css";
+import "./assets/styles/exam.scss";
 import { room, number } from "./verifyroom";
 import axios from "axios";
 import { IoReturnDownBackOutline } from "react-icons/io5";

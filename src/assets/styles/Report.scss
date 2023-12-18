@@ -123,6 +123,9 @@ tbody > tr td {
     column-gap: 1rem;
 }
 .btn-admin {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     font-family: MN;
 }
 .btn-admin > a {
@@ -145,6 +148,7 @@ tbody > tr td {
     margin-left: 1rem;
 }
 .slidereport {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,6 +166,9 @@ tbody > tr td {
     }
 }
 @media (max-width: 635px) {
+    .Report_container .Report_container2 {
+        align-items: flex-start;
+    }
     .slidereport {
         display: block;
         display: flex;
@@ -180,8 +187,8 @@ tbody > tr td {
         color: var(--magenta);
         font-size: 3rem;
     }
-    .table {
-        width: 100%;
+    .table table {
+        width: 120%;
     }
     thead > tr > th {
         font-size: 1.5rem;

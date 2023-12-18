@@ -1,0 +1,48 @@
+.SS_form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    row-gap: 2rem;
+    flex-direction: column;
+}
+.SS_form > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+}
+.SS_form > form > input[type="number"],
+.SS_form > form > input[type="text"] {
+    padding: 1rem;
+    width: 25rem;
+    height: 3rem;
+    font-family: MN;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+.SS_form > form > input[type="number"]::placeholder,
+.SS_form > form > input[type="text"]::placeholder {
+    color: rgb(237, 135, 183);
+}
+.SS_form > .SS_Submit_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    width: 10rem;
+    column-gap: 0.2rem;
+    border: 2px solid white;
+    background-color: rgb(253, 135, 202);
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.SS_footer {
+    position: absolute;
+    left: 48%;
+    bottom: 0;
+}
