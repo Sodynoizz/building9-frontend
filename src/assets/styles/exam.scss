@@ -61,7 +61,7 @@
     width: 50px;
 }
 .Exdetail {
-    width: 90%;
+    width: 95%;
     position: relative;
 }
 .Exdetail::before {
@@ -132,6 +132,9 @@
         height: 700px;
         padding: 1rem;
     }
+    .Exheader {
+        justify-content: center;
+    }
     .Exdetail {
         width: 100%;
         position: relative;
@@ -148,8 +151,12 @@
     .Exbottom {
         margin-top: 0;
     }
+    .Excontent {
+        text-align: center;
+    }
     .Excontentx {
         flex-direction: column;
         row-gap: 20px;
+        align-items: center;
     }
 }
