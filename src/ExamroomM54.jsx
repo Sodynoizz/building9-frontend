@@ -78,7 +78,7 @@ function ExM6() {
                         </div>
                     </div>
                     <div className="Excontent">
-                        <h1>ห้องสอบวันที่ 18 , 20 และ 25 ธันวาคม 2566</h1>
+                        <h1>ห้องสอบวันที่ 21 , 25 และ 27 ธันวาคม 2566</h1>
                         <div className="Excontentx">
                             <div className="Exclassroom">
                                 <h1>ห้องสอบ</h1>
