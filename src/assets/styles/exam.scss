@@ -14,7 +14,7 @@
     width: 700px;
     height: 400px;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.523);
     border-radius: 2rem 0 2rem 0;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
@@ -61,7 +61,7 @@
     width: 50px;
 }
 .Exdetail {
-    width: 80%;
+    width: 90%;
     position: relative;
 }
 .Exdetail::before {
@@ -147,5 +147,9 @@
     }
     .Exbottom {
         margin-top: 0;
+    }
+    .Excontentx {
+        flex-direction: column;
+        row-gap: 20px;
     }
 }

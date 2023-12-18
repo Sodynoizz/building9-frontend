@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import "./assets/styles/main-styles/font.css";
-import "./assets/styles/coming.css";
+import "./assets/styles/main-styles/font.scss";
+import "./assets/styles/coming.scss";
 import axios from "axios";
 import Wheel from "./assets/img/wheel.png";
 import moon from "./assets/img/moon.png";

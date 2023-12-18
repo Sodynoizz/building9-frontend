@@ -1,12 +1,13 @@
 import { useState } from "react";
-import "./assets/styles/LogRe_styles/Regis.css";
-import "./assets/styles/main-styles/font.css";
+import "./assets/styles/LogRe_styles/Regis.scss";
+import "./assets/styles/main-styles/font.scss";
 import { HiArrowUturnLeft } from "react-icons/hi2";
 import axios from "axios";
 import { Link, Navigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 const RegisURL = "https://building9-backend.vercel.app/api/auth/register";
 
@@ -240,9 +241,26 @@ function Regis() {
     return (
         <div className="AllContent">
             <div className="header">
-                <h1>Register</h1>
+                <motion.h1
+                    initial={{ scale: 0, y: 40 }}
+                    animate={{ scale: 1, y: 0 }}
+                    transition={{
+                        duration: 0.3,
+                        delay: 0.5,
+                    }}
+                >
+                    Register
+                </motion.h1>
             </div>
-            <form action="">
+            <motion.form
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                    duration: 0.7,
+                    delay: 0.5,
+                }}
+                action=""
+            >
                 <input
                     type="text"
                     value={StudentID}
@@ -359,7 +377,7 @@ function Regis() {
                         )}
                     </a>
                 </div>
-            </form>
+            </motion.form>
             <div className="Submit_btn">
                 <div className="Accept">
                     <input type="checkbox" name="" id="Check" />

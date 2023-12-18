@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "./assets/img/logo.png";
-import "./assets/styles/main-styles/font.css";
-import "./assets/styles/exam.css";
+import "./assets/styles/main-styles/font.scss";
+import "./assets/styles/exam.scss";
 import { room, number } from "./verifyroom";
 import html2canvas from "html2canvas";
 import axios from "axios";
@@ -81,7 +81,7 @@ function ExM6() {
                         <h1>ห้องสอบวันที่ 18 , 20 และ 25 ธันวาคม 2566</h1>
                         <div className="Excontentx">
                             <div className="Exclassroom">
-                                <h1>ห้อง</h1>
+                                <h1>ห้องสอบ</h1>
                                 <h1>{RoomOne}</h1>
                             </div>
                             <div className="Exbuil">
@@ -96,11 +96,11 @@ function ExM6() {
                 </div>
                 <div className="Exbottom">
                     <div className="ExRe">
-                        <Link className="ReBtn" to="/Verify_page">
+                        <Link className="ReBtn" to="/Examroom">
                             return <IoReturnDownBackOutline />
                         </Link>
                     </div>
-                    <div className="Insbtn">
+                    {/* <div className="Insbtn">
                         <button onClick={captureScreenshot}>
                             Capture Screenshot
                         </button>
@@ -110,7 +110,7 @@ function ExM6() {
                                 <img src={screenshotURL} alt="Screenshot" />
                             </div>
                         )}
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

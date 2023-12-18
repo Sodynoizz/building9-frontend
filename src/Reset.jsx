@@ -1,5 +1,5 @@
 import React from "react";
-import "./assets/styles/reset.css";
+import "./assets/styles/reset.scss";
 import { useState, useEffect } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";

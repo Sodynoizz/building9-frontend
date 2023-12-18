@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, Navigate } from "react-router-dom";
-import "./assets/styles/main-styles/font.css";
-import "./assets/styles/LogRe_styles/Login.css";
+import "./assets/styles/main-styles/font.scss";
+import "./assets/styles/LogRe_styles/Login.scss";
 import Ticket from "./assets/img/Log_ticket.png";
 import TicketPhone from "./assets/img/Ticket_Phone.png";
 import TicketfPhone from "./assets/img/ticketfphone.png";
@@ -10,6 +10,7 @@ import App from "./App";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AiFillEye, AiFillEyeInvisible, AiFillHome } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 const LoginURL = "https://building9-backend.vercel.app/api/auth/login";
 
@@ -125,15 +126,38 @@ function Login() {
     return (
         <div className="Content">
             <div className="ticket">
-                <img src={Ticket} alt="" />
+                <motion.img
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        duration: 0.3,
+                        delay: 0.5,
+                    }}
+                    src={Ticket}
+                    alt=""
+                />
                 <img src={TicketPhone} alt="" />
                 <img src={TicketfPhone} alt="" />
                 <div className="text">
-                    <div className="head">
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                            duration: 0.8,
+                            delay: 0.5,
+                        }}
+                        className="head"
+                    >
                         <h1>Log in</h1>
-                    </div>
+                    </motion.div>
                     <form>
-                        <input
+                        <motion.input
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                                duration: 0.8,
+                                delay: 0.5,
+                            }}
                             type="text"
                             value={StudentId}
                             onChange={(event) =>
@@ -141,7 +165,15 @@ function Login() {
                             }
                             placeholder="เลขประจำตัว"
                         />
-                        <div className="Log_pas">
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                                duration: 0.8,
+                                delay: 0.5,
+                            }}
+                            className="Log_pas"
+                        >
                             <input
                                 type={passwordType}
                                 placeholder="Password"
@@ -164,9 +196,17 @@ function Login() {
                             <Link to="/Forget_password" className="forget">
                                 Forgot password?
                             </Link>
-                        </div>
+                        </motion.div>
                     </form>
-                    <div className="SB">
+                    <motion.div
+                        initial={{ scale: 0, y: -40 }}
+                        animate={{ scale: 1, y: 0 }}
+                        transition={{
+                            duration: 1,
+                            delay: 0.5,
+                        }}
+                        className="SB"
+                    >
                         {success ? (
                             <Navigate to="/" />
                         ) : (
@@ -178,7 +218,7 @@ function Login() {
                                 <AiFillHome /> Home Page
                             </Link>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
             <ToastContainer

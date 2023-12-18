@@ -1,0 +1,142 @@
+.Ms_container {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #ffe7f2;
+    font-family: MN;
+    color: #d7679e;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    position: relative;
+}
+.Ms_Section1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 20%;
+    z-index: 2;
+}
+.Ms_Section2 {
+    padding: 1rem;
+    z-index: 1;
+}
+.Ms_Section3 {
+    padding: 1rem;
+    z-index: 1;
+}
+.Ms_header > h1 {
+    z-index: 1;
+    font-size: 3rem;
+}
+.Ms_header > img:nth-child(1) {
+    position: absolute;
+    width: 400px;
+    z-index: 0;
+}
+.Ms_header {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 20%;
+}
+.Ms_header_text {
+    font-size: 2rem;
+}
+.Ms_content {
+    padding: 0 2rem;
+    font-size: 1.3rem;
+}
+.Ms_listsCon {
+    display: flex;
+    align-items: center;
+}
+.Ms_listsCon > .Ms_listsCon_Name {
+    font-size: 1.7rem;
+    display: flex;
+    margin-left: 2rem;
+}
+.Ms_listsCon > .Ms_listsCon_Name > .Ms_listsCon_Class {
+    display: flex;
+    margin-left: 1rem;
+}
+.Ms_listsCon > .Ms_listsCon_Name > .Ms_listsCon_Class > p:nth-child(1),
+.Ms_listsCon > .Ms_listsCon_Name > .Ms_listsCon_Class > p:nth-child(3) {
+    background-color: rgb(255, 255, 255);
+    padding: 0 1rem;
+    border-radius: 25px;
+}
+.css-art2ul-ValueContainer2 {
+    padding: 0 2rem !important;
+}
+.Ms_Dropdown {
+    margin-left: 1rem;
+}
+.Ms_Card > h2 {
+    font-size: 25px;
+}
+.MS_footer > button > h1 {
+    z-index: 1;
+    font-size: 2.5rem;
+    font-family: MN;
+    color: rgb(105, 134, 171);
+}
+.MS_footer > button > img:nth-child(1) {
+    position: absolute;
+    width: 250px;
+    z-index: 1;
+}
+.Ms_img_bottom {
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    width: 100vw;
+    height: 20%;
+    z-index: 0;
+    object-fit: cover;
+}
+.Ms_img_top {
+    position: absolute;
+    top: -3rem;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 20%;
+    object-fit: cover;
+}
+.Ms_lists > li {
+    list-style: none;
+}
+.MS_footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 20%;
+    z-index: 1;
+}
+.MS_footer > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    cursor: pointer;
+}
+.Ms_Allcontent {
+    padding: 2rem;
+    margin-bottom: 3rem;
+    height: 65vh;
+    overflow: auto;
+}
+.Ms_Allcontent::-webkit-scrollbar {
+    display: block;
+    width: 10px;
+}
+.Ms_Allcontent::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.Ms_Allcontent::-webkit-scrollbar-thumb {
+    background: #fd97f1;
+    border-radius: 25px;
+}

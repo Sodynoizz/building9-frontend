@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import "./assets/styles/main-styles/font.css";
-import "./assets/styles/info.css";
+import "./assets/styles/main-styles/font.scss";
+import "./assets/styles/info.scss";
 import White from "./assets/img/white.jpg";
 import User from "./assets/img/User.png";
 import form from "./assets/img/info/form.png";
@@ -12,6 +12,7 @@ import sign from "./assets/img/info/sign.png";
 import website from "./assets/img/info/website.png";
 import axios from "axios";
 import { AiFillHome } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 function Info() {
     return (
@@ -21,7 +22,15 @@ function Info() {
                     สารสนเทศนักเรียน <img src={User} alt="user" />
                 </h1>
             </div>
-            <div className="Con_grid">
+            <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.6,
+                    delay: 0.5,
+                }}
+                className="Con_grid"
+            >
                 <div className="item">
                     <a href="http://43.229.77.153/~ztrad/tu_grade_online_2566/">
                         <img src={form} alt="" />
@@ -31,9 +40,9 @@ function Info() {
                     </h2>
                 </div>
                 <div className="item">
-                    <a href="/CommingSoon">
+                    <Link to="/Examroom">
                         <img src={sign} alt="" />
-                    </a>
+                    </Link>
                     <h2>ตรวจสอบห้องสอบ</h2>
                 </div>
                 <div className="item">
@@ -66,7 +75,7 @@ function Info() {
                     </a>
                     <h2>TUSC Study Buddy</h2>
                 </div>
-            </div>
+            </motion.div>
             <div className="reHome">
                 <Link to="/">
                     <AiFillHome size="20" />
