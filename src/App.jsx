@@ -461,6 +461,7 @@ function App() {
                             <Swiper
                                 pagination={{
                                     dynamicBullets: true,
+                                    clickable: true
                                 }}
                                 modules={[Pagination, Autoplay]}
                                 autoplay={{
