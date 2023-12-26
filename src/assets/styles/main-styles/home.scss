@@ -23,3 +23,21 @@
     width: 10px;
     height: 10px;
 }
+@media (min-width:1300px) {
+    .swiper-pagination{
+        height:2rem;
+        top: 0;
+    }
+}
+@media (min-width:1445px) {
+    .swiper-pagination{
+        height:5rem;
+        top: 0;
+    }
+}
+@media (min-width:1561px) {
+    .swiper-pagination{
+        height:11rem;
+        top: 0;
+    }
+}

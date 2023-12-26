@@ -1,6 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { HashRouter, Router, Routes, Route } from "react-router-dom";
+import { 
+    RouterProvider, 
+    createHashRouter, 
+    HashRouter, 
+    Router, 
+    Routes, 
+    Route 
+} from "react-router-dom";
+
 import App from "./App.jsx";
 import Login from "./Login.jsx";
 import Forget from "./Forget.jsx";
@@ -24,13 +32,14 @@ import ExM54_page from "./ExamroomM54.jsx";
 import MainShop from "./mainShop.jsx";
 import SeaShop from "./seaShop.jsx";
 import FinalShop from "./FinalShop.jsx";
+
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
         <HashRouter basename="/">
             <Routes>
-                <Route path="/" index element={<App />} />
+                <Route path="/" element={<App />} />
                 <Route path="/Login" element={<Login />} />
                 <Route path="/Forget_password" element={<Forget />} />
                 <Route path="/Regis" element={<Regis />} />

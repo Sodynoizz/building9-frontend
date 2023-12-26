@@ -43,6 +43,7 @@ import axios from "axios";
 import LoadingPage from "./loading.jsx";
 import { reSTID } from "./Reset";
 import { motion } from "framer-motion";
+import Snowfall from 'react-snowfall'
 
 const UserURL = "https://building9-backend.vercel.app/api/auth/profile";
 const VoteInfoURL = `https://building9-backend.vercel.app/api/vote/getpollinfo/${
@@ -332,6 +333,7 @@ function App() {
                 <LoadingPage />
             ) : (
                 <div className="content">
+                    <Snowfall/>
                     <div className={isOpen ? "Hamburger actives" : "Hamburger"}>
                         <Hamburger
                             toggled={isOpen}
@@ -442,9 +444,9 @@ function App() {
                                         >
                                             Log out
                                         </a>
-                                        <a href="#" className="DropDown-item">
+                                        <Link to="/ComingSoon" className="DropDown-item">
                                             ดาวโหลดเกียรติบัตร
-                                        </a>
+                                        </Link>
                                     </div>
                                 </li>
                             ) : (
@@ -461,6 +463,7 @@ function App() {
                             <Swiper
                                 pagination={{
                                     dynamicBullets: true,
+                                    clickable: true
                                 }}
                                 modules={[Pagination, Autoplay]}
                                 autoplay={{
